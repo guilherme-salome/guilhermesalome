@@ -2,6 +2,9 @@ body {
     background-color: rgb(243,239,225);
     font-family: 'Open Sans', sans-serif;
     color: rgb(67,66,66);
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
 }
 
 #content {
@@ -29,11 +32,24 @@ h3 {
     font-size: 24px;
 }
 
+h4 {
+    font-size: 18px;
+}
+
 .src {
     width: 100%;
     margin: 0px;
+    padding-bottom: 20px;
     box-sizing: border-box;
+    background-color: rgb(250,250,250);
 }
+
+a {
+    text-decoration: none;
+    color: rgb(29,187,88); /* rgb(67,66,66); rgb(29,187,88);  */
+    font-weight: lighter;
+}
+
 
 /* DATE BOX AND BACK BUTTON  */
 .date-box {
@@ -67,4 +83,18 @@ h3 {
     font-size: 20px;
     margin-top: -10px;
     padding-top: 0px;
+}
+
+/* Ending Horizontal Rule */
+
+#endhr {
+    width: 100%;
+    border: 0.5px solid rgb(67,66,66);
+    position: absolute;
+    margin: 0 auto;
+    bottom: -10px;
+}
+
+body {
+    padding-bottom: 30px;
 }

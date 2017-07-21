@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-07-19 Wed 21:57 -->
+<!-- 2017-07-21 Fri 00:52 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -181,32 +181,32 @@
 </style>
 <link rel="stylesheet" type="text/css" href="../style/blog-post.css" /><link href="https://fonts.googleapis.com/css?family=Cousine|Open+Sans|Unica+One" rel="stylesheet">
 <script type="text/javascript">
- /*
-    @licstart  The following is the entire license notice for the
-    JavaScript code in this tag.
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
 
-    Copyright (C) 2012-2017 Free Software Foundation, Inc.
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
 
-    The JavaScript code in this tag is free software: you can
-    redistribute it and/or modify it under the terms of the GNU
-    General Public License (GNU GPL) as published by the Free Software
-    Foundation, either version 3 of the License, or (at your option)
-    any later version.  The code is distributed WITHOUT ANY WARRANTY;
-    without even the implied warranty of MERCHANTABILITY or FITNESS
-    FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
 
-    As additional permission under GNU GPL version 3 section 7, you
-    may distribute non-source (e.g., minimized or compacted) forms of
-    that code without the copy of the GNU GPL normally required by
-    section 4, provided you include this license notice and a URL
-    through which recipients can access the Corresponding Source.
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
 
 
-    @licend  The above is the entire license notice
-    for the JavaScript code in this tag.
-  */
- <!--/*--><![CDATA[/*><!--*/
-			       function CodeHighlightOn(elem, id)
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
  {
    var target = document.getElementById(id);
    if(null != target) {
@@ -224,47 +224,54 @@
    if(elem.cacheClassTarget)
      target.className = elem.cacheClassTarget;
  }
- /*]]>*///-->
+/*]]>*///-->
 </script>
 </head>
 <body>
-  <div id="content">
-    <div id="outline-container-orgf62a206" class="outline-2">
-      <h2 id="orgf62a206">Making Emacs Look Good</h2>
-      <div class="outline-text-2" id="text-orgf62a206">
-	<div class="date-box">
-	  <div class="date">
-	    <div class="month">JUL</div>
-	    <div class="year">2 0 1 7</div>
-	  </div>
-	</div>
+<div id="content">
+<div id="outline-container-org81cf4bf" class="outline-2">
+<h2 id="org81cf4bf">Making Emacs Look Good</h2>
+<div class="outline-text-2" id="text-org81cf4bf">
+<div class="date-box">
+  <div class="date">
+    <div class="month">JUL</div>
+    <div class="year">2 0 1 7</div>
+  </div>
+</div>
+<div id="endhr"></div>
 
-	<p>
-	  Emacs is an amazing text editor, albeit quite difficult to master. In this post we will start hacking Emacs by making it look good!
-	</p>
+<p>
+Emacs is an amazing text editor. And also one that is quite difficult to master.
+One of the very first things I noticed when I started using Emacs, was that it looked quite ugly, specially when compared to other editors (like Visual Studio, Atom, Sublime). The good news is that Emacs is extremly customizable, and with just a few lines of code and some packages, we can turn Emacs into the prettiest editor we will ever use.
+</p>
+</div>
 
-	<p>
-	  Let's begin by getting the proper version of Emacs for Mac. If you google "Emacs for Mac", you will probably run into the <a href="https://emacsformacosx.com">Emacs for Mac OSX</a> page. This page offers a pure version of Emacs for Mac, but that is not the version we are looking for. Why? Because if you are using a Mac, your screen probably has a very high resolution, and that Emacs version does not support that. Another problem is that when we try to preview Latex equations inside org-mode, they will look pixelated, and we want to avoid that. So, we want to download another Emacs binary that has better support for the Mac high resolution display.
-	</p>
+<div id="outline-container-orgceb8867" class="outline-3">
+<h3 id="orgceb8867">Getting the Right Emacs Version</h3>
+<div class="outline-text-3" id="text-orgceb8867">
+<p>
+Let's begin by getting the proper version of Emacs for Mac. If you google "Emacs for Mac", you will probably run into the <a href="https://emacsformacosx.com">Emacs for Mac OSX</a> page. This page offers a pure version of Emacs for Mac, but that is not the version we are looking for. Why? Because if you are using a Mac, your screen probably has a very high resolution, and that Emacs version does not support that. Another problem is that when we try to preview Latex equations inside org-mode, they will look pixelated, and we want to avoid that. So, we want to download another Emacs binary that has better support for the Mac high resolution display.
+</p>
 
-	<p>
-	  If you google "Emacs Yamamoto" you will run into the <a href="https://github.com/railwaycat/homebrew-emacsmacport">Railwaycat Homebrew Emacs Mac Port</a>, which is a github repository that contains the right Emacs version for us. Follow this link to the <a href="https://github.com/railwaycat/homebrew-emacsmacport/releases">download page</a> and get the newest version. Right now I am using Emacs 25.2 Mac 6.4, but any Emacs 25 or newer should be fine for this tutorial.
-	</p>
+<p>
+If you google "Emacs Yamamoto" you will run into the <a href="https://github.com/railwaycat/homebrew-emacsmacport">Railwaycat Homebrew Emacs Mac Port</a>, which is a github repository that contains the right Emacs version for us. Follow this link to the <a href="https://github.com/railwaycat/homebrew-emacsmacport/releases">download page</a> and get the newest version. Right now I am using Emacs 25.2 Mac 6.4, but any Emacs 25 or newer should be fine for this tutorial.
+</p>
 
-	<p>
-	  Now that you downloaded Yamamoto's Emacs version and moved it to your <code>Applications</code> folder, we can start messing around with the <code>init.el</code> file. This file is located in the folder <code>~/.emacs.d/</code>, and if it does not exist, you can create it. The <code>.el</code> means that the file is going to hold a bunch of Elisp commands, which modify and extend Emacs, customizing it to your needs.
-	</p>
-      </div>
+<p>
+Now that you downloaded Yamamoto's Emacs version and moved it to your <code>Applications</code> folder, we can start messing around with the <code>init.el</code> file. This file is located in the folder <code>~/.emacs.d/</code>, and if it does not exist, you can create it. The <code>.el</code> means that the file is going to hold a bunch of Elisp commands, which modify and extend Emacs, customizing it to your needs.
+</p>
+</div>
+</div>
 
-      <div id="outline-container-orgda5e258" class="outline-3">
-	<h3 id="orgda5e258">Basics: Access to Repositores</h3>
-	<div class="outline-text-3" id="text-orgda5e258">
-	  <p>
-	    In order to make Emacs look pretty, we will need to install some packages. These packages are located in repositories that Emacs can easily access. To enable this easy access, we add the following to the <code>init.el</code> file:
-	  </p>
+<div id="outline-container-org2ed2304" class="outline-3">
+<h3 id="org2ed2304">Getting Access to the Major Packages Repositores</h3>
+<div class="outline-text-3" id="text-org2ed2304">
+<p>
+In order to make Emacs look pretty, we will need to install some packages. These packages are located in repositories that Emacs can easily access. To enable this easy access, we add the following to the <code>init.el</code> file:
+</p>
 
-	  <div class="org-src-container">
-	    <pre class="src src-emacs-lisp"><span style="color: #5B6268;">;; </span><span style="color: #5B6268;">Add Main Repositories for Emacs packages</span>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #5B6268;">;; </span><span style="color: #5B6268;">Add Main Repositories for Emacs packages</span>
 (package-initialize)
 (<span style="color: #51afef;">setq</span> package-archives '((<span style="color: #98be65;">"gnu"</span> . <span style="color: #98be65;">"http://elpa.gnu.org/packages/"</span>)
 			 (<span style="color: #98be65;">"marmalade"</span> . <span style="color: #98be65;">"http://marmalade-repo.org/packages/"</span>)
@@ -286,11 +293,19 @@ Installing packages is an important part of using Emacs, allowing us to use good
 </div>
 </div>
 
-<div id="outline-container-org6cee8b9" class="outline-3">
-<h3 id="org6cee8b9">Making Emacs Look Good</h3>
-<div class="outline-text-3" id="text-org6cee8b9">
+<div id="outline-container-orga5ebf53" class="outline-3">
+<h3 id="orga5ebf53">Making Emacs Look Good</h3>
+<div class="outline-text-3" id="text-orga5ebf53">
 <p>
-Let's begin by getting rid of the toolbar, the scroll bar and the menu bar. Add the following to your <code>init.el</code>:
+Now that we have access to the big repositories, we can start modifying Emacs. Modifying Emacs requires adding elisp code to the <code>init.el</code> file, and installing new packages when required. We can check whether a package has to be installed by running the code related to it. For example, after adding a line of code to your <code>init.el</code> file, move the cursor to the end of the line, and type <code>C-x C-e</code>, which will evaluate the elisp statement. If the statement produces the desired effect, then the package or feature you are modifying is already installed, and nothing else needs to be done. However, if you get an error saying the variable or function does not exist, or if nothing happens to Emacs, then the package you are trying to modify is probably not installed. Then, you should install it using <code>M-x package-install</code> or through <code>M-x list-packages</code>.
+</p>
+</div>
+
+<div id="outline-container-orgb32ae32" class="outline-4">
+<h4 id="orgb32ae32">Removing the Toolbar, Scrollbar and the Menu Bar</h4>
+<div class="outline-text-4" id="text-orgb32ae32">
+<p>
+To make Emacs look less cluttered, we begin by removing the toolbar, the scroll bar and the menu bar. Add the following to your <code>init.el</code>:
 </p>
 
 <div class="org-src-container">
@@ -304,9 +319,14 @@ Let's begin by getting rid of the toolbar, the scroll bar and the menu bar. Add 
 <p>
 This removes all those bars that clutter our space, making Emacs look much cleaner.
 </p>
+</div>
+</div>
 
+<div id="outline-container-org232e00c" class="outline-4">
+<h4 id="org232e00c">Borderless Fullscreen (Removing Title Bar)</h4>
+<div class="outline-text-4" id="text-org232e00c">
 <p>
-Next, we make Emacs occupy the entire screen, but without moving it to a new Desktop area. We want to achieve a "fullscreen borderless" effect, so that Alt-Tabbing from one application to the other is fast. To do so, we add:
+Next, we make Emacs occupy the entire screen, but without moving it to a new Desktop area. We want to achieve a fullscreen borderless effect, so that Alt-Tabbing from one application to the other is fast. To do so, we add:
 </p>
 
 <div class="org-src-container">
@@ -315,9 +335,8 @@ Next, we make Emacs occupy the entire screen, but without moving it to a new Des
 </pre>
 </div>
 
-
 <p>
-If you are not using the Emacs binary we discussed above this command will not work. If, for some reason, you are not willing to use that Emacs, and are using Emacs from emacsformacosx, for example, you can use this command instead:
+If you are not using the Emacs binary we discussed above this command will not work. If for some reason you are not willing to use that Emacs, and are using Emacs from <a href="https://emacsformacosx.com">Emacs for Mac OSX</a>, for example, you can use this command instead:
 </p>
 
 <div class="org-src-container">
@@ -332,9 +351,14 @@ If you are not using the Emacs binary we discussed above this command will not w
 <p>
 Now, when you open Emacs, it should occupy the entire screen, and no menus or scrollbars should be visible.
 </p>
+</div>
+</div>
 
+<div id="outline-container-org59c45c9" class="outline-4">
+<h4 id="org59c45c9">Highlighting the Current Line</h4>
+<div class="outline-text-4" id="text-org59c45c9">
 <p>
-Next, we want Emacs to highlight the line where the cursor is:
+Next, we want Emacs to highlight the line where the cursor is.
 </p>
 
 <div class="org-src-container">
@@ -344,17 +368,36 @@ Next, we want Emacs to highlight the line where the cursor is:
 </div>
 
 <p>
-And we also want Emacs to highlight corresponding parentheses when the cursor is on one:
+This makes jumping from line to line and quickly finding where the cursor is much faster.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1732ebd" class="outline-4">
+<h4 id="org1732ebd">Highlighting Matching Parentheses</h4>
+<div class="outline-text-4" id="text-org1732ebd">
+<p>
+We also want Emacs to highlight matching parentheses when the cursor is on one:
 </p>
 
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #5B6268;">;; </span><span style="color: #5B6268;">Highlight corresponding parentheses when cursor is on one</span>
+(<span style="color: #51afef;">setq</span> show-paren-delay 0) <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">shows matching parenthesis asap</span>
 (show-paren-mode t)
 </pre>
 </div>
 
 <p>
-By default, Emacs wraps lines that are too long by using a small arrow that is displayed near the scroll bar. I find this behavior a slightly ugly, and I prefer to remove it:
+Now it is easy to see when a parenthesis is missing in the text.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4576ab6" class="outline-4">
+<h4 id="org4576ab6">Better Line Wrapping</h4>
+<div class="outline-text-4" id="text-org4576ab6">
+<p>
+By default, Emacs wraps lines that are too long by using a small arrow that is displayed near the scroll bar. I find this behavior slightly ugly and not very helpful. We can use a better wrapper that just moves the overflowing content to the next line:
 </p>
 
 <div class="org-src-container">
@@ -362,9 +405,14 @@ By default, Emacs wraps lines that are too long by using a small arrow that is d
 (global-visual-line-mode t)
 </pre>
 </div>
+</div>
+</div>
 
+<div id="outline-container-orgecd15dd" class="outline-4">
+<h4 id="orgecd15dd">Making Unnecessary White Spaces Visible</h4>
+<div class="outline-text-4" id="text-orgecd15dd">
 <p>
-When we write large files, or write using programming languages that care about white spaces and indentations, it is useful to be able to see white spaces that are useless and out of place. The next line does that:
+When we write large files, or using programming languages that care about white spaces and indentations, it is useful to be able to see white spaces that are useless and out of place. The next line does that:
 </p>
 
 <div class="org-src-container">
@@ -374,7 +422,185 @@ When we write large files, or write using programming languages that care about 
 </div>
 
 <p>
-The next modification requires installing a package named
+Now, whenever an unnecessary whitespace occurs, it will be marked in red.
+</p>
+
+<p>
+Since deleting useless whitespaces by hand each time is time-consuming and annoying, we can automatically delete all of them before we save the file. This can be accomplished via:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #5B6268;">;; </span><span style="color: #5B6268;">Remove useless whitespace before saving a file</span>
+(add-hook 'before-save-hook 'whitespace-cleanup)
+(add-hook 'before-save-hook (<span style="color: #51afef;">lambda</span>() (delete-trailing-whitespace)))
+</pre>
+</div>
+
+<p>
+Now, if you save a file that contains whitespaces, they are all going to be automatically deleted. This reduces file sizes and makes them neat.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3810ba8" class="outline-4">
+<h4 id="org3810ba8">Nice Icons for Emacs</h4>
+<div class="outline-text-4" id="text-org3810ba8">
+<p>
+Some visual modifications of Emacs require displaying icons, like an icon for a folder or a file. The default icons do not look nice and sometimes are not even available to Emacs. Fortunatelly, there is a package called <code>all-the-icons</code> that takes care of making nice icons available for Emacs and other Emacs' packages.
+</p>
+
+<p>
+To install this package run <code>M-x package-install RET all-the-icons</code>, and then confirm the installation. Next, we need to install the fonts that came with this package on our Mac. To do so, run <code>M-x all-the-icons-install-fonts RET</code>. Installing all the icons fonts takes a while, but it is worth it! Now, we can make it available to other packages via the following:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #5B6268;">;; </span><span style="color: #5B6268;">Adds Nice Icons to Emacs so that other themes can use them (required for Doom theme below)</span>
+<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">run M-x all-the-icons-install-fonts RET to install the fonts</span>
+(<span style="color: #51afef;">require</span> '<span style="color: #a9a1e1;">all-the-icons</span>)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc0b95f2" class="outline-4">
+<h4 id="orgc0b95f2">Folder Explorer (File Tree)</h4>
+<div class="outline-text-4" id="text-orgc0b95f2">
+<p>
+Now we add a file explorer for Emacs called Neotree. It can be installed by running <code>M-x package-install RET neotree RET</code> and confirming the installation. To actually enable it inside Emacs, add the following:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #5B6268;">;; </span><span style="color: #5B6268;">Folder explorer (file tree) Neotree</span>
+(<span style="color: #51afef;">require</span> '<span style="color: #a9a1e1;">neotree</span>)
+(Global-set-key [f8] 'neotree-toggle) <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">the F8 key toggles the file tree</span>
+</pre>
+</div>
+
+<p>
+Now, pressing F8 on the keyboard will open Neotree inside Emacs. Neotree can be used to navigate through folders and open files. It is specially useful when working on big projects since it gives a visual representation of the folders/files. You can find more about <a href="https://www.emacswiki.org/emacs/NeoTree#toc4">Neotree Shortcuts here</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8c01bb9" class="outline-4">
+<h4 id="org8c01bb9">Emacs Doom Theme</h4>
+<div class="outline-text-4" id="text-org8c01bb9">
+<p>
+All the changes we have done so far are small quality of life improvements that affect Emacs here and there. Now, we will install a theme that will affect Emacs visually in big ways. This theme will also change how Neotree looks like, and will make use of all-the-icons package.
+</p>
+
+<p>
+We will install a very nice theme package called <a href="https://github.com/hlissner/emacs-doom-themes">Doom</a>. To install it, run <code>M-x package-install RET doom-themes</code>. And to start using it, add the following to your <code>init.el</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #5B6268;">;; </span><span style="color: #5B6268;">Use doom theme for Emacs buffers</span>
+(<span style="color: #51afef;">require</span> '<span style="color: #a9a1e1;">doom-themes</span>)
+(load-theme 'doom-one t) <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">loads doom-one theme, there are other options:</span>
+			 <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">doom-vibrant, doom-molokai, doom-nova, and others</span>
+<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">Use doom theme for Neotree file explorer</span>
+(doom-themes-neotree-config) <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">loads doom theme for the file tree Neotree</span>
+(<span style="color: #51afef;">setq</span> doom-themes-enable-bold t    <span style="color: #5B6268;">; </span><span style="color: #5B6268;">if nil, bold is universally disabled</span>
+      doom-themes-enable-italic t) <span style="color: #5B6268;">; </span><span style="color: #5B6268;">if nil, italics is universally disabled</span>
+<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">Enable all-the-icons beautiful icons for the Neotree doom theme</span>
+(<span style="color: #51afef;">setq</span> doom-neotree-enable-file-icons t)
+(<span style="color: #51afef;">setq</span> doom-neotree-enable-folder-icons t)
+(<span style="color: #51afef;">setq</span> doom-neotree-enable-chevron-icons t)
+<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">Enables different colors for different file types for the Neotree doom theme</span>
+(<span style="color: #51afef;">setq</span> doom-neotree-enable-type-colors t)
+</pre>
+</div>
+
+<p>
+In order to execute all this code, move the cursor to anywhere in the <code>init.el</code> file and run <code>M-x eval-buffer</code>. Now, Emacs and the Neotree explorer are going to look completely different! The theme we are using is called <code>doom-one</code>, and looks very neat and professional. There are other themes available that you can quickly change to. To do so, just change <code>doom-one</code> to the name of some other doom-theme, like <code>doom-molokai</code>. More information is available <a href="https://github.com/hlissner/emacs-doom-themes">on the doom-themes repository</a>.
+</p>
+
+<p>
+If you open Neotree, you will also notice that all the icons have changed. More details on how to further customize Neotree are available <a href="https://github.com/hlissner/emacs-doom-themes/wiki">here</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga02de91" class="outline-4">
+<h4 id="orga02de91">A Better Mode-Line</h4>
+<div class="outline-text-4" id="text-orga02de91">
+<p>
+Emacs has a mode-line on the bottom of any buffer that displays the name of the file you are working on, what major and minor modes are being used, and so on. Let's make it look better! To do so, we install the package <code>smart-mode-line</code> by running <code>M-x package-install RET smart-mode-line RET</code>, and then confirming the installation. Once installed, we add:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #5B6268;">;; </span><span style="color: #5B6268;">Smart-mode-line makes the mode-line better to read</span>
+<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">first remove annoying message at startup that</span>
+<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">asks if you want to run the theme lisp code</span>
+(<span style="color: #51afef;">setq</span> sml/no-confirm-load-theme t)
+<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">load smart-mode-line</span>
+<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">(setq sml/theme 'dark) ;; changes the theme to dark</span>
+(sml/setup) <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">automatically figures out a theme if none is specified</span>
+</pre>
+</div>
+
+<p>
+Now your mode-line will also be themed. Notice that smart-mode-line automatically detects your color scheme and chooses a nice theme for the mode-line. If you want to change the theme to something else, just uncomment the line before <code>(sml/setup)</code>. More details and other themes are available <a href="https://github.com/Malabarba/smart-mode-line#installation">on the smart-mode-line repository</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1920072" class="outline-4">
+<h4 id="org1920072">Nice Looking LaTeX Equations in Org-Mode</h4>
+<div class="outline-text-4" id="text-org1920072">
+<p>
+Some of you might be using <a href="http://orgmode.org">org-mode</a> to take notes and write articles. If you have <a href="http://www.tug.org/mactex/">LaTeX</a> configured to work with Emacs, you can use <code>C-c C-x C-l</code> to preview equations inside org-mode. However, by default Emacs will render Latex equations and display them using PNG images. PNG is a good image format, but the problem is that these renders have a very low resolution when compared to a Mac's display resolution, so they will look very bad. The solution is to use SVG images instead, which are scalable to any resolution!
+</p>
+
+<p>
+Using SVG images requires Emacs to have been installed with SVG support. Unfortunately, SVG support cannot be added to Emacs like we did with packages, it has to be "pre-installed". The good news is that if you followed this tutorial and downloaded the Emacs binary mentioned at the beginning of the post, then you are good to go!
+</p>
+
+<p>
+There is one extra requirement: having the program <code>dvisvgm</code> installed in your machine. If you are running the latest Latex distribution from <a href="http://www.tug.org/mactex/">MacTex</a>, then you most likely already have it, and are also good to go. If you installed Latex from some other source, I highly recommend  you to download the latest release from <a href="http://www.tug.org/mactex/">MacTex</a>. At the time of writing, the latest release was the MacTex 2017 distribution.
+</p>
+
+<p>
+To switch to SVG images just add the following to your <code>init.el</code> file:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #5B6268;">;; </span><span style="color: #5B6268;">Makes Orgmode Preview of Latex equations use SVG images instead of PNG</span>
+<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">so that equations look good on higher dpi screens</span>
+(<span style="color: #51afef;">setq</span> org-latex-create-formula-image-program 'dvisvgm)
+<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">to increase the size of the equations (1.0 is the default)</span>
+(<span style="color: #51afef;">setq</span> org-format-latex-options (plist-put org-format-latex-options <span style="color: #c678dd;">:scale</span> 1.0))
+</pre>
+</div>
+
+<p>
+Now, if you run <code>C-c C-x C-l</code> you should get very sharp images that look great on Emacs.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb12eeb0" class="outline-3">
+<h3 id="orgb12eeb0">Conclusion</h3>
+<div class="outline-text-3" id="text-orgb12eeb0">
+<p>
+In this tutorial we made the following changes to Emacs:
+</p>
+<ol class="org-ol">
+<li>Removed unnecessary toolbars;</li>
+<li>Made Emacs borderless fullscreen;</li>
+<li>Added highlighting to the current line and matching parentheses;</li>
+<li>Improved Emacs' line wrapping;</li>
+<li>Made removing unnecessary white spaces quick and easy;</li>
+<li>Added beautiful icons to Emacs;</li>
+<li>Added a Folder Explorer to Emacs to better manage bigger projects;</li>
+<li>Started using a theme that makes Emacs buffers look good, that makes Neotree look good, and also makes use of the beautiful icons we installed;</li>
+<li>Changed the mode-line so that it also has a theme;</li>
+<li>And changed the way Emacs render Latex equations so that they look sharp.</li>
+</ol>
+
+<p>
+All these changes improved Emacs by a lot, taking it from a bland white screen, to a colorful and captivating editor that we actually want to use. I hope this post was useful to you, and if it was feel free to share it. If you have any suggestions or comments <a href="http://guilhermesalome.com/index.html#toContact">send me an email</a>. Have a wonderful time!
 </p>
 </div>
 </div>
