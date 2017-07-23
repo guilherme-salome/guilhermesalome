@@ -1,0 +1,1483 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta http-equiv="content-script-type" content="text/javascript">
+	<meta http-equiv="content-style-type" content="text/css">
+	<meta http-equiv="content-language" content="nl">
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+
+	<meta name="author" content="Guilherme Salomé">
+	<meta name="description" content="I'm Guilherme Salomé, a webdeveloper, mathematician and economist/ I have good knowledge of HTML, CSS and JavaScript.">
+	<meta name="keywords" content="Guilherme Salomé Interactive Resume, JavaScript programmer, Web developer, Math, Economics, Interactive CV, Resume, CV, HTML5, CSS3, MySQL">
+	<meta name="robots" content="index, follow">
+	<meta name="revisit-after" content="14 days">
+
+	<title>Guilherme Salomé - Web Developer - Interactive Resume</title>
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,600,700" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+
+    <style type="text/css">
+
+		* {
+			margin: 0px;
+			padding: 0px;
+			box-sizing: border-box;
+			z-index: 10;
+			font-family: Open Sans, sans-serif;
+		}
+
+		#logo{
+			background-image:linear-gradient(rgba(29,187,88,0.5),rgba(29,187,88,0.5)),url(images/buildings.jpg);
+			width:0px;
+			height:0px;
+		}
+
+		#front-image {
+			position: fixed;
+
+			z-index: 0 !important;
+		}
+
+		#logo {
+			position: relative;
+		}
+
+		#text {
+			position: relative;
+			text-align: center;
+			top: 100px;
+
+			width:80%;
+			min-width: 320px;
+			max-width: 520px;
+			margin: 0px auto;
+			color: white;
+		}
+
+		#text h1 {
+			font-weight: 700;
+			font-size: 60px;
+			border-bottom: 1px solid rgba(255,255,255,0.35);
+			padding-bottom: 20px;
+			margin-bottom: 10px;
+		}
+
+		#text h2 {
+			font-weight: 300;
+			font-size: 28px;
+		}
+
+		.content {
+			position: relative;
+
+
+			width: 65%;
+			min-width: 320px;
+			max-width: 800px;
+
+			margin: 0px auto;
+			padding: 60px 0px;
+
+			text-align: center;
+			word-wrap: break-word;
+
+			-webkit-transform:translate3d(0,0,0);
+		}
+
+		.content h1 {
+			font-size: 53px;
+			color: #01bd53;
+			font-weight: 300;
+			padding-bottom: 20px;
+		}
+
+		.content h2 {
+			color: #01bd53;
+			font-weight: 300;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+
+		.content h3 {
+			color: #727878;
+			font-weight: 300;
+		}
+
+		.content hr {
+			margin: 40px auto;
+			border-color: #727878;
+			opacity: 0.1;
+		}
+
+		.content h4 {
+			color: #434242;
+			font-size: 18px;
+			font-weight:700;
+			margin-top:20px;
+
+			word-wrap: break-word;
+		}
+
+		.content p {
+			color: #434242;
+		}
+		.background-white {
+			position: relative;
+			width: 100%;
+			background-color: white;
+			-webkit-transform:translate3d(0,0,0);
+		}
+
+		.background-beige {
+			position: relative;
+			width: 100%;
+			background-color: #F3EFE0;
+			-webkit-transform:translate3d(0,0,0);
+		}
+
+		.background-dark {
+			position: relative;
+			width: 100%;
+			background-color: #434242;
+			-webkit-transform:translate3d(0,0,0);
+		}
+
+		.background-dark hr {
+			border-color: white;
+		}
+
+		.align {
+			text-align: left;
+		}
+
+		ul {
+			list-style: none;
+		}
+
+		#experience {
+
+		}
+
+		.left-column {
+			width: 150px;
+			min-width: 150px;
+			max-width: 150px;
+
+			float: left;
+			text-align: left;
+			padding-left: 5px;
+		}
+
+		.right-column {
+			width: 60%;
+			min-width: 315px;
+			max-width: 650px;
+
+
+			float: right;
+			text-align: left;
+			padding-left: 5px;
+		}
+
+		.clear {
+			clear: both;
+		}
+
+		.content a, .content a:visited, .content a:link {
+			color: inherit;
+			text-decoration: none;
+		}
+
+		.content a:hover, .content a:focus {
+			color: black;
+			text-decoration: underline;
+		}
+
+		svg {
+			width: 30px;
+			height: 30px;
+		}
+
+		.skill-level {
+			position: relative;
+
+			width: 100%;
+			min-width: 310px;
+			max-width: 800px;
+			height: 33px;
+
+			background-color: white;
+
+			margin-bottom: 5px;
+			padding-left: 0px;
+		}
+
+		.skill-level p {
+			position: relative;
+			top: 7px;
+			float: left;
+			padding-left: 5px;
+		}
+
+		.stars {
+			float: right;
+		}
+
+		.skills-left-column {
+			float: left;
+			width: 300px;
+		}
+
+		.skills-right-column {
+			float: right;
+			width: 300px;
+
+			position: relative;
+			left: -8px;
+		}
+
+		.float-left-toggle{}
+		.float-right-toggle{}
+
+		.project {
+			width: 97%;
+			height: 300px;
+			position: relative;
+			left:1.5%;
+		}
+
+		.project-resume {
+			background-image:url(images/project-resume.jpg);
+		}
+
+		.project-jumpreg {
+			background-image:url(images/project-jumpreg.jpg);
+		}
+
+		.project-epricing {
+			background-image:url(images/project-epricing.jpg);
+		}
+
+/*		.project-icecream {
+			background-image:url(images/project-icecream.jpg);
+		}
+
+		.project-cupcakes {
+			background-image:url(images/project-cupcakes.jpg);
+		}
+*/
+		.project h3, .project p {
+			color: white;
+		}
+
+		.project h3 {
+			font-weight: 700;
+		}
+
+		.effect {
+			background-color: #019842;
+			height: inherit;
+			opacity: 0.8;
+		}
+
+		.text-position {
+			position: absolute;
+			top: 15%;
+			left: 10%;
+
+			opacity:1;
+			width:80%;
+
+			text-align: left;
+
+			border-bottom: thin solid white;
+			padding-bottom: 20px;
+			margin-bottom: 20px;
+		}
+
+		.text-effect-slide {
+			position:absolute;
+			top:40%;
+			left:100%;
+
+			text-align: left;
+
+			opacity: 1;
+			left:10%;
+
+		}
+
+		.small {
+			width: 15%;
+			min-width: 100px;
+			height: 15%;
+			min-height: 100px;
+
+			vertical-align: middle;
+		}
+
+		#icons {
+			text-align: left;
+		}
+
+		.adjustWidth:hover .social-icon {
+			fill: #018D3F;
+		}
+
+		#icons a:hover, #icons a:focus {
+			color: black;
+			text-decoration: none;
+		}
+
+		#icons h3 {
+			display: inline-block;
+			vertical-align: middle;
+			width: 65%;
+		}
+
+		.adjustWidth:hover h3 {
+			color: #01BD54;
+		}
+
+		.adjustWidth {
+			width: 100%;
+		}
+
+		#menu-arrow-box {
+			width: 10%;
+			min-width: 90px;
+			height: 5%;
+
+			background-color: #222222;
+
+			position: absolute;
+			top: 95%;
+			left: 85%;
+		}
+
+		#arrow {
+			fill: none;
+			stroke: white;
+		}
+
+		#arrow-container {
+			width: 100%;
+			height: 100%;
+
+			position: absolute;
+			top:-10%;
+			left: 0%;
+
+			-webkit-animation-name: upAndDown;
+			-webkit-animation-duration: 0.6s;
+			-webkit-animation-timing-function: linear;
+			-webkit-animation-delay: 0s;
+			-webkit-animation-iteration-count: infinite;
+			-webkit-animation-direction: alternate;
+			-webkit-animation-play-state: running;
+
+			animation-name: upAndDown;
+			animation-duration: 0.6s;
+			animation-timing-function: linear;
+			animation-delay: 0s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+			animation-play-state: running;
+		}
+
+		#arrow-container svg {
+			width: inherit;
+			height: inherit;
+		}
+
+		@-webkit-keyframes upAndDown {
+			from {top:-10%;}
+			to {top:5%;}
+		}
+
+		@keyframes upAndDown {
+			from {top:-10%;}
+			to {top:5%;}
+		}
+
+		#menu {
+			position: fixed;
+			top: 100%;
+			left: 85%;
+
+			z-index: 20 !important;
+			list-style: none;
+
+			display: table;
+
+			width: 10%;
+			min-width: 90px;
+			height: 20%;
+
+		}
+
+		#menu li {
+			color: white;
+			background-color: #222222;
+			text-align: center;
+			height: 50px;
+			line-height:50px;
+		}
+
+		#menu a {
+			display: block;
+			text-decoration: none;
+			color: white;
+		}
+
+		#menu a:hover {
+			color: #F3EFE0;
+		}
+
+		#debug {
+			position: fixed;
+			top: 50%;
+			left:0%;
+			background-color:blue;
+			z-index: 100 !important;
+			color:white;
+
+			display: none;
+		}
+
+
+	</style>
+
+
+</head>
+
+<body>
+<p id="debug"><p>
+<ul id="menu">
+    <li id="profileLink" class=""><a href="#toProfile">Profile</a></li>
+    <li id="experiencesLink" class=""><a href="#toExperiences"><span class="changeMe">Experiences</span></a></li>
+    <li id="skillsLink" class=""><a href="#toSkills">Skills</a></li>
+    <li id="projectsLink" class=""><a href="#toProjects"><span class="changeMe">Projects</span></a></li>
+    <li id="contactLink" class=""><a href="#toContact"><span class="changeMe">Contact</span></a></li>
+</ul>
+
+<!-- FRONT PAGE ------------------------------------------------------------------------------>
+    <div id="logo">
+	<div id="text">
+	<h1>Guilherme Salomé</h1>
+	<h2>Interactive Resume</h2>
+	</div>
+	<a href="#toProfile">
+	<div id="menu-arrow-box">
+	    <div id="arrow-container">
+	    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+		<polyline id="arrow" fill="none" stroke="#000000" stroke-width="10" stroke-miterlimit="10" points="41.7,18 25.1,32.2 8.6,18 "/>
+	    </svg>
+	    </div>
+	</div>
+	</a>
+
+    </div>
+<!-- END: FRONT PAGE -------------------------------------------------------------------------->
+
+<!-- PROFILE ---------------------------------------------------------------------------------->
+	<div id="toProfile" class="background-white">
+	<div class = "content">
+	    <h1>Profile</h1>
+	    <h3>I'm an economist, webdeveloper and mathematician</h3>
+	    <hr />
+
+	    <h2>About me</h2>
+	    <p class="align">I am an economist currently working towards a Ph.D. at Duke University. I graduated in economics in Brazil and hold a master&apos;s degree in mathematical economics. The most important thing you need to know about me can be resumed in a single word: effort. I believe that everything can be achieved through hard work over time and this belief is what guides my life.</p>
+		<br><br>
+			<img src="images/photo.png" />
+
+	    <h2>Details</h2>
+	    <p class="align"><strong>Name:</strong> Guilherme Salomé</p>
+	    <p class="align"><strong>Age:</strong> 27 years</p>
+	    <p class="align"><strong>Location:</strong> Durham, USA, Earth</p>
+	</div>
+
+    </div>
+<!-- END: PROFILE ----------------------------------------------------------------------------->
+
+<!-- EXPERIENCES ------------------------------------------------------------------------------>
+    <div id="toExperiences" class="background-beige">
+	<div class = "content">
+		<h1>Experiences</h1>
+	    <h3>&quot;Never make permanent decisions on temporary feelings.&quot;</h3>
+	    <h3>Unkown</h3>
+	    <hr />
+
+	    <h2>Education</h2>
+
+	    <div class="experience">
+	      <div class="left-column">
+		<h4><a href="http://econ.duke.edu/phd-program/degree-reqs">Duke University</a></h4><p>2015 - Ongoing</p>
+	      </div>
+	      <div class="right-column">
+		<h4>Ph.D. in Economics</h4>
+		<div class="description">
+		  <p><span style="font-weight:600">Area of Study:</span> Financial Econometrics<p>
+		  <p><span style="font-weight:600"><a href="http://econ.duke.edu/people/george-e-tauchen" target="_blank">Advisor:</a></span> Prof. George Tauchen (Ph.D. Univ. of Minnesota, 1977)</p>
+		  <p><span style="font-weight:600">Progress:</span> Rising 3rd Year</p>
+		</div>
+	      </div>
+	      <div class="clear"></div>
+	    </div><br><br>
+
+	    <div class="experience">
+		<div class="left-column">
+			<h4><a href="http://www.impa.br/opencms/en/" target="_blank">IMPA</a></h4>
+		    <p>2012 - 2014/March<p>
+		</div>
+		<div class="right-column">
+			<h4>Master in Mathematical Economics</h4>
+		    <div class="description">
+			    <p><span style="font-weight:600">Area of Study:</span> Pure Math, General Equilibrium</p>
+			<p><span style="font-weight:600"><a href="http://w3.impa.br/~aloisio/" target="_blank">Advisor:</a></span> Prof. Aloísio Araújo (Ph.D. Univ. of California, Berkeley, 1976)</p>
+			<p><span style="font-weight:600">Thesis:</span> Replaced by specialization in Optimization and Numerical Analysis</p>
+		    </div>
+		</div>
+				<div class="clear"></div>
+	    </div>
+			<br><br>
+
+
+	    <div class="experience">
+		<div class="left-column">
+			<h4><a href="http://www.insper.edu.br/en/" target="_blank">INSPER</a></h4>
+		    <p>2008 - 2011<p>
+		</div>
+		<div class="right-column">
+			<h4>Bachelor in Economics</h4>
+		    <div class="description">
+			    <p><span style="font-weight:600">Area of Study:</span> General Equilibrium</p>
+			<p><span style="font-weight:600"><a href="http://www.insper.edu.br/professores/pesquisadores/jose-heleno-faro/" target="_blank">Advisor:</a></span> Prof. José Heleno Faro (Ph.D. IMPA, 2006)</p>
+			<p><span style="font-weight:600"><a href="documents/mono-eng.pdf" target="_blank">Thesis:</a></span> Superhedging in Incomplete Markets</p>
+		    </div>
+		</div>
+				<div class="clear"></div>
+	    </div>
+		<br><br>
+
+	    <div class="experience">
+		<div class="left-column">
+			<h4>Stanford University</h4>
+		    <p>2013<p>
+		</div>
+		<div class="right-column">
+			<h4>MOOC on Coursera.org</h4>
+		    <div class="description">
+			    <p><span style="font-weight:600">Course:</span> Machine Learning</p>
+			<p><span style="font-weight:600"><a href="documents/stanford-certificate.pdf" target="_blank">Certificate:</a></span> Obtained</p>
+		    </div>
+		</div>
+				<div class="clear"></div>
+	    </div>
+	    <br><br>
+
+	    <div class="experience">
+		<div class="left-column">
+			<h4>CALTECH</h4>
+		    <p>2013<p>
+		</div>
+		<div class="right-column">
+			<h4>MOOC on edX.org</h4>
+		    <div class="description">
+			    <p><span style="font-weight:600">Course:</span> Machine Learning</p>
+			<p><span style="font-weight:600"><a href="documents/caltech-certificate.pdf" target="_blank">Certificate:</a></span> Obtained</p>
+		    </div>
+		</div>
+				<div class="clear"></div>
+	    </div>
+	    <hr />
+
+	    <h2>Teaching</h2>
+
+	    <div class="experience">
+	      <div class="left-column">
+		<h4>Duke University</h4>
+		<p>2016</p>
+	      </div>
+	      <div class="right-column">
+		<h4>Teaching Assistant</h4>
+		<p><span style="font-weight:600">High-Frequency Financial Econometrics: </span>Master's Class, <a href="http://econ.duke.edu/people/george-e-tauchen" target="_blank">Dr. George Tauchen</a></p>
+		<p><span style="font-weight:600">Introduction to Econometrics: </span>Undergraduate Class, <a href="http://public.econ.duke.edu/~jr139/" target="_blank">Dr. James Roberts</a></p>
+	      </div>
+	      <div class="clear"></div>
+	    </div>
+	    <br><br>
+
+	    <div class="experience">
+	      <div class="left-column">
+		<h4>Insper</h4>
+		<p>2015</p>
+	      </div>
+	      <div class="right-column">
+		<h4>Teaching Assistant</h4>
+		<p><span style="font-weight:600">Mathematics for Economists: </span>Master's Class, <a href="https://www.insper.edu.br/professores/pesquisadores/jose-heleno-faro/" target="_blank">Dr. José Heleno Faro</a></p>
+	      </div>
+	      <div class="clear"></div>
+	    </div>
+
+	    <hr />
+
+	    <h2>Honors and Awards</h2>
+
+	    <div class="experience">
+	      <div class="left-column">
+		<h4>Duke University</h4>
+		<p>2015 - Ongoing</p>
+	      </div>
+	      <div class="right-column">
+		<h4>Fellowship (Ph.D.)</h4>
+	      </div>
+	      <div class="clear"></div>
+	    </div>
+	    <br><br>
+
+	     <div class="experience">
+		<div class="left-column">
+			<h4>CNPq - Brazil</h4>
+		    <p>2012/March - 2014/March<p>
+		</div>
+		<div class="right-column">
+			<h4>Fellowship for Master's Studies</h4>
+		    <div class="description">
+		    </div>
+		</div>
+				<div class="clear"></div>
+	     </div>
+	     <br><br>
+
+	     <div class="experience">
+		<div class="left-column">
+			<h4>IMPA</h4>
+		    <p>2012/Jan. - 2012/Feb.<p>
+		</div>
+		<div class="right-column">
+			<h4>Fellowship for Summer Course</h4>
+		    <div class="description">
+		    </div>
+		</div>
+				<div class="clear"></div>
+	     </div>
+	     <br><br>
+
+	    <div class="experience">
+	      <div class="left-column">
+		<h4>Insper</h4>
+		<p>2010 - 2011</p>
+	      </div>
+	      <div class="right-column">
+		<h4>Scholarship for the Advanced Studies Program</h4>
+	      </div>
+	      <div class="clear"></div>
+	    </div>
+	    <br><br>
+
+	    <div class="experience">
+	      <div class="left-column">
+		<h4>Insper</h4>
+		<p>2008 - 2011</p>
+	      </div>
+	      <div class="right-column">
+		<h4>Financial Support Award</h4>
+	      </div>
+	      <div class="clear"></div>
+	    </div>
+	    <br><br>
+
+	    <div class="experience">
+		<div class="left-column">
+			<h4>INSPER</h4>
+		    <p>2011<p>
+		</div>
+		<div class="right-column">
+			<h4>Graduated with Honors</h4>
+		    <div class="description">
+			<p><span style="font-weight:600">Cummulative Average Grade:</span> 9&period;01/10</p>
+		    </div>
+		</div>
+				<div class="clear"></div>
+	     </div>
+	     <hr />
+
+		    <h2>Congresses</h2>
+
+	    <div class="experience">
+		<div class="left-column">
+			<h4>Brazil</h4>
+		    <p>2013<p>
+		</div>
+		<div class="right-column">
+			<h4><a href="http://w3.impa.br/~zubelli/rio2012/rio2012poster.jpg" target="_blank">Research in Options</a></h4>
+		    <div class="description">
+			    <p><span style="font-weight:600">Area:</span> Mathematics and Finance</p>
+		    </div>
+		</div>
+				<div class="clear"></div>
+	    </div><br><br>
+
+	    <div class="experience">
+		<div class="left-column">
+			<h4>Brazil</h4>
+		    <p>2012<p>
+		</div>
+		<div class="right-column">
+			<h4><a href="http://w3.impa.br/~zubelli/rio2013/rio2013poster.jpg" target="_blank">Research in Options</a></h4>
+		    <div class="description">
+			    <p><span style="font-weight:600">Area:</span> Mathematics and Finance</p>
+		    </div>
+		</div>
+				<div class="clear"></div>
+	    </div>
+
+	</div>
+    </div>
+<!-- END: EXPERIENCES ------------------------------------------------------------------------->
+
+<!-- SKILLS ----------------------------------------------------------------------------------->
+    <div id="toSkills" class="background-white">
+	<div id="skills" class = "content">
+			<h1>Skills</h1>
+	    <h3>&quot;Live as if you were to die tomorrow. Learn as if you were to live forever.&quot;<br>Mahatma Gandhi</h3>
+	    <hr />
+
+	    <h2>Programming</h2>
+
+	    <div class="skills-left-column float-left-toggle">
+
+		<div class="skill-level">
+		    <p>Matlab</p>
+		    <span class="stars">
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#EDEDED" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+		    </span>
+		    <div class="clear"></div>
+		</div>
+	<div class="skill-level">
+		    <p>LaTeX</p>
+		    <span class="stars">
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#EDEDED" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+		    </span>
+		    <div class="clear"></div>
+		</div>
+
+	</div>
+
+	    <div class="skills-right-column float-right-toggle">
+			<div class="skill-level">
+		    <p>HTML5</p>
+		    <span class="stars">
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#EDEDED" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+		    </span>
+		    <div class="clear"></div>
+		</div>
+		<div class="skill-level">
+		    <p>CSS3</p>
+		    <span class="stars">
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#EDEDED" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+		    </span>
+		    <div class="clear"></div>
+		</div>
+
+		<div class="skill-level">
+		    <p>JavaScript</p>
+		    <span class="stars">
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#EDEDED" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+		    </span>
+		    <div class="clear"></div>
+		</div>
+	<div class="skill-level">
+		    <p>Node</p>
+		    <span class="stars">
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#EDEDED" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+		    </span>
+		    <div class="clear"></div>
+		</div>
+
+	    </div>
+	    <div class="clear"></div>
+
+	    <hr />
+	    <h2>Languages</h2>
+
+	    <div class="skills-left-column float-left-toggle">
+		<div class="skill-level">
+		    <p>Portuguese</p>
+		    <span class="stars">
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+		    </span>
+		    <div class="clear"></div>
+		</div>
+
+		<div class="skill-level">
+		    <p>English</p>
+		    <span class="stars">
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+		    </span>
+		    <div class="clear"></div>
+		</div>
+	    </div>
+
+	    <div class="skills-right-column float-right-toggle">
+		<div class="skill-level">
+		    <p>French</p>
+		    <span class="stars">
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#EDEDED" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#EDEDED" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#EDEDED" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+		    </span>
+		    <div class="clear"></div>
+		</div>
+
+		<div class="skill-level">
+		    <p>Spanish</p>
+		    <span class="stars">
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#01BD53" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#EDEDED" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#EDEDED" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+    <polygon fill="#EDEDED" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" points="47.7,12.8 59,36.7 85.2,40.1 66,58.2 70.9,84.2 47.7,71.6 24.5,84.2 29.3,58.2 10.1,40.1 36.3,36.7 "/>
+    </svg>
+		    </span>
+		    <div class="clear"></div>
+		</div>
+	    </div>
+	    <div class="clear"></div>
+	</div>
+<!-- END: SKILLS ------------------------------------------------------------------------------>
+
+<!-- PROJECTS --------------------------------------------------------------------------------->
+    <div id="toProjects" class="background-beige">
+	<div class = "content">
+		<h1>Projects</h1>
+		<h3>&quot;Choose a job you love, and you will never have to work a day in your life.&quot;</h3>
+	    <h3>Confucius</h3>
+	    <hr />
+
+	    <a target="_blank" href="https://github.com/Salompas/jump-regression">
+	    <div class="project project-jumpreg">
+	    <div class="effect">
+	    </div>
+	    <div class="text-position">
+		<h3>Jump Regressions</h3>
+	    </div>
+	    <div class="text-effect-slide">
+		<p>Replication of Econometrica Paper: Jump Regressions (2017)</p><br>
+		<p><strong>Keywords:</strong><br>Econometrics, Finance, Matlab</p>
+	    </div>
+	    </div>
+	    </a><br><br>
+
+	    <a target="_blank" href="http://epricing.com.br/">
+	    <div class="project project-epricing">
+	    <div class="effect">
+	    </div>
+	    <div class="text-position">
+		<h3>ePricing.com.br</h3>
+	    </div>
+	    <div class="text-effect-slide">
+		<p>Website that Calculates and Displays Financial Indices for Brazil</p><br>
+		<p><strong>Keywords:</strong><br>Design, HTML5, CSS3, jQuery, D3</p>
+	    </div>
+	    </div>
+	    </a><br><br>
+
+	    <a target="_blank" href="http://www.guilhermesalome.com">
+	    <div class="project project-resume">
+	    <div class="effect" style="opacity:0.6">
+	    </div>
+	    <div class="text-position">
+		<h3>GuilhermeSalome.com</h3>
+	    </div>
+	    <div class="text-effect-slide">
+		<p>Interactive Resume website</p><br>
+		<p><strong>Keywords:</strong><br>Design, HTML5, CSS3, jQuery</p>
+	    </div>
+	    </div>
+	    </a><br>
+
+	</div>
+    </div>
+<!-- END: PROJECTS ---------------------------------------------------------------------------->
+
+<!-- CONTACT ---------------------------------------------------------------------------------->
+    <div id="toContact" class="background-dark">
+	<div class = "content">
+		<h1>Contact</h1>
+	    <h3>&quot;Fish meat is practically a vegetable.&quot;</h3>
+	    <h3>Ron Swanson</h3>
+	    <hr />
+
+	    <div id="icons">
+
+			<a target="_blank" href="https://twitter.com/guilhermesalome">
+		<div class="adjustWidth">
+					<svg class="small" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		     viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+		<path class="social-icon" fill="#01BD53" d="M40.5,14.1c0-2.8-2.2-5-5-5H14.3c-2.8,0-5,2.2-5,5v21.3c0,2.8,2.3,5,5,5h21.3c2.8,0,5-2.3,5-5V14.1z M34,24.9
+		    c-0.4,1.7-1.4,3.3-2.7,4.5c-2.5,2.3-6.1,3.4-9.5,3.2c-3.3-0.2-6.5-1.8-8.4-4.5c0.2,0.1,0.3,0.2,0.5,0.4c1.5,1.1,3.5,1.4,5.3,0.9
+		    c1.1-0.3,2.1-0.9,2.9-1.7c-0.5,0-1.1-0.1-1.4-0.4c-0.2-0.2-0.3-0.6-0.2-0.9c0.2-0.4,0.5-0.6,0.9-0.7c-1.1,0.2-2.4-0.4-2.9-1.4
+		    c0.4-0.5,1-0.6,1.6-0.6c-0.7-0.2-1.4-0.4-1.9-0.9c-0.4-0.4-0.7-0.9-0.7-1.4c0.5-0.1,0.9-0.2,1.4-0.2c-1.1-0.6-2.1-1.6-2-3
+		    c2.1,0.8,4.1,1.6,6,2.6c0.7,0.4,1.3,0.9,1.8,1.4c0.5-1.4,1.1-2.8,2-4c0.5-0.6,1-1.3,1.7-1.7c0,0.2-0.1,0.4-0.2,0.6
+		    c0.5-0.4,1.1-0.7,1.7-0.8c-0.1,0.4-0.5,0.6-0.8,0.8c0.5-0.1,0.9-0.4,1.4-0.4c0.1,0,0.3,0,0.4,0.2c0.1,0.2-0.1,0.4-0.3,0.4
+		    c-0.5,0.3-1.2,0.3-1.7,0.6c1.1-0.1,2.3,0.3,3.2,1.1c1,0.9,1.7,2.1,2,3.4c0.9,0.3,1.9,0.1,2.8-0.3c-0.4,1-1.5,1.4-2.5,1.5
+		    c0.8,0.3,1.7,0.4,2.6,0.3C36.1,24.7,35,25,34,24.9z"/>
+		    </svg>
+		    <h3>https://twitter.com/guilhermesalome</h3>
+		</div>
+		</a>
+
+		<a target="_blank" href="https://www.facebook.com/guilhermesalome">
+		<div class="adjustWidth">
+					<svg class="small" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		     viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+		<path class="social-icon" fill="#01BD53" d="M35.7,9H14.3c-2.8,0-5.2,2-5.2,4.8v21.4c0,2.8,2.4,5.3,5.2,5.3h13.2c0-4.1,0-8.7,0-12.7
+		    c-0.9,0-1.7-0.1-2.5-0.1c0-1.4,0-2.9,0-4.2c0.9,0,1.7,0,2.5,0c0-1.4,0-2.7,0-4.1c0.1-1.1,0.5-2.2,1.3-2.9c1-0.9,2.4-1.2,3.7-1.3
+		    c1.4,0,2.8,0,4.2,0c0,1.5,0,2.9,0,4.4c-0.9,0-1.8,0-2.7,0c-0.6,0-1.1,0.4-1.3,1c0,1,0,2,0,3c1.3,0,2.6,0,4,0
+		    c-0.1,1.4-0.3,2.8-0.5,4.2c-1.2,0-2.3,0.1-3.5,0.1c0,4,0,8.6,0,12.7h2.9c2.8,0,4.8-2.5,4.8-5.3V13.8C40.6,11,38.5,9,35.7,9z"/>
+		</svg>
+			<h3>https://www.facebook.com/guilhermesalome</h3>
+		</div>
+		</a>
+
+		<a target="_blank" href="https://github.com/Salompas">
+		  <div class="adjustWidth">
+		    <svg class="small" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+		      <path class="social-icon" fill="#01BD53" d="M35.6,9.1H14.3c-2.8,0-5,2.2-5,5v21.3c0,2.8,2.3,5,5,5h7.4v-0.6c0-0.1,0-0.1,0-0.2c0-0.4,0-1.6,0-3
+	c-4.5,1-5.4-1.9-5.4-1.9c-0.7-1.9-1.8-2.3-1.8-2.3c-1.5-1,0.1-1,0.1-1c1.6,0.1,2.5,1.6,2.5,1.6c1.4,2.4,3.8,1.7,4.7,1.3
+	c0.1-1,0.6-1.7,1-2.1c-3.6-0.4-7.3-1.8-7.3-7.9c0-1.7,0.6-3.2,1.6-4.3c-0.2-0.4-0.7-2,0.2-4.2c0,0,1.3-0.4,4.4,1.6
+	c1.3-0.4,2.7-0.5,4-0.5c1.4,0,2.7,0.2,4,0.5c3.1-2.1,4.4-1.6,4.4-1.6c0.9,2.2,0.3,3.8,0.2,4.2c1,1.1,1.6,2.6,1.6,4.3
+	c0,6.2-3.7,7.5-7.3,7.9c0.6,0.5,1.1,1.5,1.1,3c0,2.1,0,3.9,0,4.4c0,0.1,0,0.2,0,0.2v0.6h5.9c2.8,0,5-2.3,5-5V14.1
+	C40.6,11.3,38.4,9.1,35.6,9.1z"/>
+		    </svg>
+			<h3>https://www.github.com/Salompas</h3>
+		</div>
+		</a>
+
+		<a target="_blank" href="sms:guilhermesalome@gmail.com">
+		<div class="adjustWidth">
+					<svg class="small" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		     viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+		<g>
+		    <g>
+			<path class="social-icon" fill="#01BD53" d="M35.2,8.6H13.8c-2.8,0-5,2.2-5,5V35c0,2.8,2.2,5,5,5h21.4c2.8,0,5-2.2,5-5V13.6C40.2,10.8,38,8.6,35.2,8.6
+			    z M25.9,14.8c0.8-0.9,2.2-1.7,3.3-1.7c0.1,1.3-0.4,2.6-1.2,3.6c-0.8,0.9-2.1,1.7-3.3,1.6C24.5,16.9,25.2,15.6,25.9,14.8z
+			     M32.3,32.7c-0.9,1.4-1.9,2.7-3.4,2.8c-1.5,0-2-0.9-3.7-0.9c-1.7,0-2.3,0.9-3.7,0.9C20,35.5,18.9,34,18,32.6
+			    c-1.9-2.8-3.4-7.9-1.4-11.3c1-1.7,2.7-2.8,4.6-2.8c1.4,0,2.8,1,3.7,1c0.9,0,2.5-1.2,4.3-1c0.7,0,2.8,0.3,4.1,2.2
+			    c-0.1,0.1-2.4,1.4-2.4,4.3c0,3.4,3,4.5,3,4.5C33.8,29.6,33.4,31.1,32.3,32.7z"/>
+		    </g>
+		</g>
+	    </svg>
+			<h3>guilhermesalome@gmail.com</h3>
+		</div>
+		</a>
+
+		<a target="_blank" href="mailto:guilhermesalome@gmail.com">
+		<div class="adjustWidth">
+					<svg class="small" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		     viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+		<g>
+		    <g>
+			<path class="social-icon" fill="#01BD53" d="M35.4,9H13.7C11.1,9,9,11.1,9,13.8v21.3c0,2.6,2.1,4.8,4.8,4.8h21.7c2.6,0,4.8-2.1,4.8-4.8V13.8
+			    C40.2,11.1,38.1,9,35.4,9z M14.9,17h19.3c0.3,0,0.5,0.1,0.8,0.1l0,0L24.4,26l-10.3-8.8C14.3,17.1,14.6,17,14.9,17z M12.8,29.8
+			    V19.1c0-0.5,0.1-0.9,0.4-1.2l0,0l7.4,6.3L13,30.7C12.9,30.4,12.8,30.1,12.8,29.8z M34.2,31.9H14.9c-0.5,0-0.9-0.1-1.2-0.4l7.7-6.6
+			    l2.6,2.2l0.3,0.3l0.3-0.3l0,0l2.8-2.3l8,6.7C35.1,31.7,34.7,31.9,34.2,31.9z M36.3,29.8c0,0.3-0.1,0.6-0.2,0.9l0,0l-7.8-6.5
+			    l7.6-6.3c0.3,0.4,0.5,0.8,0.5,1.3V29.8z"/>
+		    </g>
+		</g>
+		</svg>
+			<h3>guilhermesalome@gmail.com</h3>
+		</div>
+		</a>
+
+			</div>
+
+	    <hr /><br>
+	</div>
+    </div>
+<!-- END: CONTACT ----------------------------------------------------------------------------->
+
+    <script type="text/javascript">
+
+
+		function getScreenSize()
+		{
+			return [$(window).width(),$(window).height()];
+		}
+
+		function getImgSize(screenWidth,screenHeight,imageWidth,imageHeight)
+		{
+			//Returns
+			var ratio = imageWidth/imageHeight;
+			//Try to resize to full width (width = screenWidth)
+			var height = screenWidth/ratio;
+			if (height >= screenHeight) {return [screenWidth,height];}
+			//Resize to full height instead
+			return [screenHeight * ratio,screenHeight];
+		}
+
+		function bImgFillScreen(box,imageWidth,imageHeight)
+		{
+			//Get the screen size
+			var size = getScreenSize();
+			//Fit box to the screen size
+			box.style.width = size[0] + "px";
+			box.style.height = size[1] + "px";
+			//Resize the image maintaining aspect ratio
+			var resize = getImgSize(size[0],size[1],imageWidth,imageHeight);
+			box.style.backgroundSize = resize[0] + "px " + resize[1] + "px";
+			//Show the center of the image
+			position = "-" + (resize[0]-size[0])/2 + "px";
+			position += " -" + (resize[1]-size[1])/2 + "px";
+			box.style.backgroundPosition = position;
+		}
+
+		//Initialize and repeat whenever the screen is resized
+
+		function toDebug(myString) {
+			document.getElementById("debug").innerHTML = myString;
+		}
+
+		var contentPosition;
+		function getContentPosition()
+		{
+			//The offsets will be wrong if we don't wait the website load entirely
+			setTimeout(function()
+			{
+				contentPosition = [$("#toProfile").offset().top, $("#toExperiences").offset().top, $("#toSkills").offset().top, $("#toProjects").offset().top, $("#toContact").offset().top];
+			},100);
+		}
+
+		function changeBC(idToChange) {
+			$("#profileLink").css('background-color','#222222');
+			$("#experiencesLink").css('background-color','#222222');
+			$("#skillsLink").css('background-color','#222222');
+			$("#projectsLink").css('background-color','#222222');
+			$("#contactLink").css('background-color','#222222');
+			$(idToChange).css('background-color','#01BD53');
+		}
+
+		function checkScrollPlace(scrollPos) {
+			//scrollPos += 5;
+			if (scrollPos >= contentPosition[0] && scrollPos < contentPosition[1])
+			{changeBC("#profileLink");}
+			else if (scrollPos >= contentPosition[1] && scrollPos < contentPosition[2])
+			{changeBC("#experiencesLink");}
+			else if (scrollPos >= contentPosition[2] && scrollPos < contentPosition[3])
+			{changeBC("#skillsLink");}
+			else if (scrollPos >= contentPosition[3] && scrollPos < contentPosition[4])
+			{changeBC("#projectsLink");}
+			else if (scrollPos >= contentPosition[4])
+			{changeBC("#contactLink");}
+			else
+			{changeBC("");}
+		}
+
+		$(window).scroll(function(e) {
+			var scrollPos = $(document).scrollTop();
+	    if(scrollPos >= contentPosition[0])
+			{
+				$("#menu").css({
+					position:'fixed',
+					top:'0%'
+				});
+			}
+			else
+			{
+				$("#menu").css({
+					position:'absolute',
+					top:'100%'
+				});
+			}
+
+			checkScrollPlace(scrollPos);
+	});
+
+		$(document).ready(function(e) {
+			cssWhenSmall();
+			bImgFillScreen(document.getElementById("logo"),6000,4000);
+			fitLogo();
+			fitBackgorundImg(".project-resume",1902,1080);
+			fitBackgorundImg(".project-jumpreg",876,676);
+			fitBackgorundImg(".project-epricing",2344,1352);
+			//fitBackgorundImg(".project-icecream",4896,3264);
+			//fitBackgorundImg(".project-cupcakes",5760,3840);
+			getContentPosition();
+
+	    setTimeout(function() {
+				if($(document).scrollTop() >= contentPosition[0])
+				{
+					$("#menu").css({
+						position:'fixed',
+						top:'0%'
+					});
+				}
+				else
+				{
+					$("#menu").css({
+						position:'absolute',
+						top:'100%'
+					});
+				}
+			},110);
+
+			setTimeout(function(){checkScrollPlace($(document).scrollTop());},120);
+		});
+
+		$("#logo a").click(function(e) {
+			e.preventDefault();
+
+			var pageRef = $(this).attr("href");
+			var pageRefPosition = $(pageRef).offset().top;
+
+			$("html,body").animate({
+				scrollTop:pageRefPosition
+			},400);
+	});
+
+		$("#menu a").click(function(e) {
+			e.preventDefault();
+
+			var pageRef = $(this).attr("href");
+			var pageRefPosition = $(pageRef).offset().top;
+			//alert(pageRefPosition);
+			$("html,body").animate({
+				scrollTop:pageRefPosition
+			},400);
+	});
+		//alert($("#toProfile").offset().top);
+
+/*
+		$(".project").hover(
+			function(e)
+			{
+				$(".effect").animate({
+					opacity:0.6
+				},250);
+				$(".text-position").animate({
+					opacity:1,
+					width:"80%"
+				},250);
+				$(".text-effect-slide").animate({
+					left:"10%",
+					opacity:1
+				},250);
+				$(".text-effect-slide").toggle();
+			},
+			function(e)
+			{
+				$(".effect").animate({
+					opacity:0
+				},200);
+				$(".text-position").animate({
+					opacity:0,
+					width:"175px"
+				},250);
+				$(".text-effect-slide").animate({
+					left:"100%",
+					opacity:0
+				},200);
+				$(".text-effect-slide").toggle();
+			});
+*/
+		$(window).resize(function(e) {
+			bImgFillScreen(document.getElementById("logo"),6000,4000);
+			fitLogo();
+			cssWhenSmall();
+			fitBackgorundImg(".project-resume",1902,1080);
+			fitBackgorundImg(".project-jumpreg",876,676);
+			fitBackgorundImg(".project-epricing",2344,1352);
+			//fitBackgorundImg(".project-icecream",4896,3264);
+			//fitBackgorundImg(".project-cupcakes",5760,3840);
+			getContentPosition();
+		});
+
+		function cssWhenSmall(){
+			bImgFillScreen(document.getElementById("logo"),6000,4000);
+			fitLogo();
+
+			if (isWindowSmall(400))
+			{
+				$("#text h1").css("font-size","60px"); //To fit on smaller phones
+				$(".align").css("text-align","center"); //Change position of text to look better
+			}
+			else
+			{
+				$("#text h1").css("font-size","63px");
+				$(".align").css("text-align","left");
+			}
+
+			if (isWindowSmall(830))
+			{
+				$(".left-column").css("float","none");
+				$(".right-column").css("float","none");
+			}
+			else
+			{
+				$(".left-column").css("float","left");
+				$(".right-column").css("float","right");
+			}
+
+			if (isWindowSmall(1000))
+			{
+				$(".float-left-toggle").removeClass("skills-left-column");
+				$(".float-right-toggle").removeClass("skills-right-column");
+			}
+			else
+			{
+				$(".float-left-toggle").addClass("skills-left-column");
+				$(".float-right-toggle").addClass("skills-right-column");
+			}
+
+			if (isWindowSmall(600))
+			{
+				//$("#menu").toggle(false);
+				$("#menu").css({
+					width:$(".content").width() + "px",
+					minWidth:'0px',
+					left:(($(window).width() - $(".content").width())/2) + "px"
+				});
+				toDebug($(window).width() + " " + $("#menu").width() + " " + $(".content").width());
+
+				$("#menu li").css({
+					float:'left',
+					width:($(".content").width()/5) + "px",
+				});
+
+				$("#menu a").css({
+					padding:'0px 10px'
+				})
+
+				$("#menu-arrow-box").css('min-width','0px');
+
+				$("#experiencesLink .changeMe").html('Exp.');
+				$("#projectsLink .changeMe").html('Proj.');
+				$("#contactLink .changeMe").html('Cont.');
+
+			}
+			else
+			{
+				//$("#menu").toggle(true);
+
+				$("#menu").css({
+					left:'85%',
+					width:'10%',
+					minWidth:'90px',
+				});
+
+				$("#menu li").css({
+					float:'none',
+					width:'auto',
+				});
+
+				$("#menu a").css({
+					padding:'0px 0px'
+				})
+
+				$("#menu-arrow-box").css('min-width','90px');
+
+				$("#experiencesLink .changeMe").html('Experiences');
+				$("#projectsLink .changeMe").html('Projects');
+				$("#contactLink .changeMe").html('Contact');
+			}
+		}
+
+		function getImgSize(screenWidth,screenHeight,imageWidth,imageHeight)
+		{
+			var ratio = imageWidth/imageHeight;
+			//Try to resize to full width (width = screenWidth)
+			var height = screenWidth/ratio;
+			if (height >= screenHeight) {return [screenWidth,height];}
+			//Resize to full height instead
+			return [screenHeight * ratio,screenHeight];
+		}
+
+		function fitBackgorundImg(backgroundImageContainer,imageWidth,imageHeight)
+		{
+			var boxWidth = $(".project").width();
+			var boxHeight = $(".project").height();
+
+			var newSize = getImgSize(boxWidth,boxHeight,imageWidth,imageHeight);
+			$(backgroundImageContainer).css("background-size",newSize[0] + "px " + newSize[1] + "px");
+
+			var position = "-" + (newSize[0]-boxWidth)/2 + "px";
+			position += " -" + (newSize[1]-boxHeight)/2 + "px";
+			$(backgroundImageContainer).css("background-position",position);
+		}
+
+		function fitLogo()
+		{
+			var textHeight = $(window).height()/2 - $('#text').height()/2;
+			$("#text").css('top',textHeight + "px");
+		}
+
+		function isWindowSmall(size) {
+			if($(window).width() < size) {return true;}
+			else {return false;}
+		}
+
+		$(".skill-level").hover(
+			function(e)
+				{
+					$(this,"svg").animate({
+						paddingRight: "7px"
+					},'fast');
+					$(this).css('background-color','#EDEDED');
+				},
+			function(e)
+				{
+					$(this,"svg").animate({
+						paddingRight: "0px"
+					},'fast');
+					$(this).css('background-color','white');
+				}
+		);
+	</script>
+
+
+
+</body>
+</html>
