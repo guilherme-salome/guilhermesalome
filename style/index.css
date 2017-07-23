@@ -1,0 +1,103 @@
+body {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ===================================== BOXES ===================================== */
+#main-container {
+    box-sizing: border-box;
+    width: 1100px;
+    height: 600px;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#hello {
+    width: 700px;
+    height: 600px;
+    box-sizing: border-box;
+    border: 1px solid grey;
+    border-radius: 20px 0px 0px 20px;
+}
+
+#resume {
+    width: 400px;
+    height: 300px;
+    position: relative;
+    left: 700px;
+    top: -600px;
+    box-sizing: border-box;
+    border: 1px solid red;
+    border-radius: 0px 20px 0px 0px;
+}
+
+#blog {
+    box-sizing: border-box;
+    border: 1px solid blue;
+    border-radius: 0px 0px 20px 0px;
+    width: 400px;
+    height: 300px;
+    position: relative;
+    left: 700px;
+    top: -600px;
+}
+/* ================================================================================= */
+
+
+/* IMAGES AND COLORS */
+#hello {
+    background-color: grey;
+}
+
+#resume {
+    background-color:red;
+}
+
+#blog {
+    background-color: blue;
+}
+
+/* TEXT */
+
+#hello-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 10px;
+    color: rgb(245,245,245);
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    top: 70%;
+    left: 5%
+}
+
+#resume-text {
+    font-family: 'Lato', sans-serif;
+    line-height: 0px;
+    position: relative;
+    padding-top: 20px;
+    padding-left: 30px;
+
+}
+
+#blog-text {
+    font-family: 'Lato', sans-serif;
+    line-height: 0px;
+    position: relative;
+    padding-top: 20px;
+    padding-left: 30px;
+
+}
+
+.small {
+    font-size: 24px;
+}
+
+.bigger {
+    font-size: 36px;
+}
