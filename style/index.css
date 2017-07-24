@@ -2,7 +2,7 @@ body {
     background-color: white;
     width: 100%;
     height: 100%;
-}
+ }
 
 
 /* ===================================== BOXES ===================================== */
@@ -14,13 +14,14 @@ body {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+    box-shadow: 5px 5px 6px rgba(67,66,66,1);
+    border-radius: 20px 20px 20px 20px;
 }
 
 #hello {
     width: 700px;
     height: 600px;
     box-sizing: border-box;
-    border: 1px solid grey;
     border-radius: 20px 0px 0px 20px;
 }
 
@@ -31,13 +32,11 @@ body {
     left: 700px;
     top: -600px;
     box-sizing: border-box;
-    border: 1px solid red;
     border-radius: 0px 20px 0px 0px;
 }
 
 #blog {
     box-sizing: border-box;
-    border: 1px solid blue;
     border-radius: 0px 0px 20px 0px;
     width: 400px;
     height: 300px;
@@ -48,21 +47,24 @@ body {
 /* ================================================================================= */
 
 
-/* IMAGES AND COLORS */
+/* ============================= IMAGES AND COLORS ==================================*/
 #hello {
-    background-color: grey;
+    background-image: linear-gradient(rgba(67,66,66,0.8),rgba(67,66,66,0.8)),url(http://guilhermesalome.com/images/sky.jpg);
+    background-size: cover;
 }
 
 #resume {
-    background-color:red;
+    background-image: linear-gradient(rgba(29,187,88,0.8),rgba(29,187,88,0.5)),url(http://guilhermesalome.com/images/resume.jpg);
+    background-size: cover;
 }
 
 #blog {
-    background-color: blue;
+    background-image: linear-gradient(rgba(243,239,226,0.6),rgba(243,239,226,0.8)),url(http://guilhermesalome.com/images/blog3.jpg);
+    background-size: cover;
 }
+/* ================================================================================= */
 
-/* TEXT */
-
+/* ===================================== TEXT =======================================*/
 #hello-text {
     font-family: 'Lato', sans-serif;
     font-size: 48px;
@@ -72,7 +74,7 @@ body {
     margin: 0px;
     padding: 0px;
     position: relative;
-    top: 70%;
+    top: 80%;
     left: 5%
 }
 
@@ -82,7 +84,6 @@ body {
     position: relative;
     padding-top: 20px;
     padding-left: 30px;
-
 }
 
 #blog-text {
@@ -91,7 +92,6 @@ body {
     position: relative;
     padding-top: 20px;
     padding-left: 30px;
-
 }
 
 .small {
@@ -101,3 +101,45 @@ body {
 .bigger {
     font-size: 36px;
 }
+
+.lighter {
+    color: rgba(240,240,240,0.8);
+}
+
+.darker {
+    color: rgba(67,66,66,0.9);
+}
+/* ================================================================================= */
+
+
+
+/* ============================ ANIMATIONS ========================================= */
+.animate {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 15px black;
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: 1;
+}
+
+.animate:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.radius-top {
+    border-radius: 0px 20px 0px 0px;
+}
+
+.radius-bottom {
+    border-radius: 0px 0px 20px 0px;
+}
+
+.radius-left {
+    border-radius: 20px 0px 0px 20px;
+}
+
+/* ================================================================================= */
