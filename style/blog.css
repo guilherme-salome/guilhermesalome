@@ -1,6 +1,9 @@
 body {
     color: rgb(67,66,66);
     background-color: rgb(243,239,225);
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
 }
 
 #content-container {
@@ -12,7 +15,7 @@ body {
 /* ===================================== INTRO ===================================== */
 #intro-container {
     margin: 40px 0px 20px 0px;
-    padding: 20px 0 40px 0;
+    padding: 20px 0px 40px 0px;
     width: 100%;
     background-color: rgb(67,66,66);
 }
