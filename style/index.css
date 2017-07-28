@@ -50,7 +50,7 @@ body {
 /* ============================= IMAGES AND COLORS ==================================*/
 #hello {
     background-image: linear-gradient(rgba(67,66,66,0.8),rgba(67,66,66,0.8)),url(http://guilhermesalome.com/images/sky.jpg);
-    background-size: cover;
+    background-size: calc(130%);
 }
 
 #resume {
