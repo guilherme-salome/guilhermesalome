@@ -5,3 +5,9 @@ window.onload = function() {
     return false;
   })
 }
+
+$(document).ready(function() {
+  $(window).resize(function() {
+    $("#debug").text($(window).width());
+  })
+})
