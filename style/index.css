@@ -32,7 +32,7 @@ body {
 
 #resume {
     width: 400px;
-    height: 300px;
+    height: 200px;
     position: relative;
     left: 700px;
     top: -600px;
@@ -40,11 +40,20 @@ body {
     border-radius: 0px 20px 0px 0px;
 }
 
+#teaching {
+    box-sizing: border-box;
+    width: 400px;
+    height: 200px;
+    position: relative;
+    left: 700px;
+    top: -600px;
+}
+
 #blog {
     box-sizing: border-box;
     border-radius: 0px 0px 20px 0px;
     width: 400px;
-    height: 300px;
+    height: 200px;
     position: relative;
     left: 700px;
     top: -600px;
@@ -63,6 +72,10 @@ body {
     background-size: cover;
 }
 
+#teaching {
+    background-image: linear-gradient(rgba(110,136,152,0.9),rgba(110,136,152,0.8)),url(http://guilhermesalome.com/images/teaching.jpg);
+    background-size: cover;
+}
 #blog {
     background-image: linear-gradient(rgba(243,239,226,0.6),rgba(243,239,226,0.8)),url(http://guilhermesalome.com/images/blog3.jpg);
     background-size: cover;
@@ -84,6 +97,14 @@ body {
 }
 
 #resume-text {
+    font-family: 'Lato', sans-serif;
+    line-height: 0px;
+    position: relative;
+    padding-top: 20px;
+    padding-left: 30px;
+}
+
+#teaching-text {
     font-family: 'Lato', sans-serif;
     line-height: 0px;
     position: relative;
@@ -169,13 +190,22 @@ body {
 	left: 0px;
 	top: -300px;
 	border-radius: 0px 0px 0px 20px;
-	width: 350px;
+	width: 233px;
+	height: 300px;
+    }
+
+    #teaching {
+	width: 234px;
+	height: 300px;
+	left: 233px;
     }
 
     #blog {
-	left: 350px;
-	width: 350px;
+	top: -900px;
+	left: 467px;
+	width: 233px;
 	border-radius: 0px 0px 20px 0px;
+	height: 300px;
     }
 
     .radius-top {
@@ -200,15 +230,43 @@ body {
     }
 
     #resume {
-	width: 240px;
+	width: 480px;
+	height: 100px;
+	border-radius: 0px;
+    }
+
+    #teaching {
+	width: 480px;
+	height: 100px;
+	position: relative;
+	top: -300px;
+	left: 0px;
     }
 
     #blog {
-	left: 240px;
-	width: 240px;
+	width: 480px;
+	height: 100px;
+	position: relative;
+	left: 0px;
+	top: -300px;
+	border-radius: 0px 0px 20px 20px;
     }
+
+    .radius-top {
+	border-radius: 0px;
+    }
+
+    .radius-bottom {
+	border-radius: 0px 0px 20px 20px;
+    }
+
+    #resume-text, #teaching-text, #blog-text {
+	top: -10px;
+    }
+
 }
 
+/* Old Iphone Super Small Screen */
 @media (max-width: 500px) {
     #hello-text {
 	font-size: 42px;
@@ -227,7 +285,7 @@ body {
 
     #main-container {
 	width: 300px;
-	height: 500px;
+	height: 600px;
     }
 
     #hello {
@@ -242,6 +300,13 @@ body {
 	height: 100px;
 	top: 0px;
 	border-radius: 0px 0px 0px 0px;
+    }
+
+    #teaching {
+	width: 300px;
+	height: 100px;
+	top: 0px;
+	left: 0px;
     }
 
     #blog {
@@ -269,4 +334,16 @@ body {
 	top: -10px;
     }
 }
+
+/* Iphone SE */
+@media (max-height: 580px) {
+    #main-container {
+	height: 540px;
+    }
+
+    #hello {
+	height: 240px;
+    }
+}
+
 /* ================================================================================= */
