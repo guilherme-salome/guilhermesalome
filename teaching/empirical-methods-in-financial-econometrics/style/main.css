@@ -97,7 +97,7 @@ body {
 }
 
 .year {
-    font-family: 'Unica One', cursive;
+    font-family: 'Unica One', sans-serif, cursive;
     font-size: 20px;
     font-weight: 700;
     margin-top: -10px;

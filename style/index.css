@@ -10,6 +10,14 @@ body {
     height: 100%;
 }
 
+#debug {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    visibility: hidden;
+}
+
 /* ===================================== BOXES ===================================== */
 #main-container {
     box-sizing: border-box;
@@ -338,16 +346,103 @@ body {
 	top: -10px;
     }
 }
-
-/* Iphone SE */
-@media (max-height: 580px) {
+/* Tall Iphones */
+@media(max-height: 700px) {
     #main-container {
-	height: 540px;
+	height: 530px;
+    }
+
+    #hello-text {
+	font-size: 42px;
+	position: relative;
+	left: 5%;
+	top: 14%;
+    }
+
+    #i-am-text {
+	position: relative;
+	top: 30px;
     }
 
     #hello {
-	height: 240px;
+	height: 230px;
     }
+
+    #resume {
+	width: 300px;
+	height: 100px;
+	top: 0px;
+	border-radius: 0px 0px 0px 0px;
+    }
+
+    #teaching {
+	width: 300px;
+	height: 100px;
+	top: 0px;
+	left: 0px;
+    }
+
+    #blog {
+	width: 300px;
+	height: 100px;
+	top: 0px;
+	left: 0px;
+	border-radius: 0px 0px 20px 20px;
+    }
+}
+
+/* Iphone SE */
+@media (max-width: 340px) {
+    #main-container {
+	height: 440px;
+    }
+
+    #hello {
+	height: 200px;
+    }
+
+    #i-am-text {
+	position: relative;
+	top: 0px;
+    }
+
+    #hello-text {
+	font-size: 42px;
+	position: relative;
+	left: 5%;
+	top: 14%;
+    }
+
+    #first-name-text {
+	position: relative;
+    }
+
+    #resume {
+	width: 300px;
+	height: 80px;
+	top: 0px;
+	border-radius: 0px 0px 0px 0px;
+    }
+
+    #teaching {
+	width: 300px;
+	height: 80px;
+	top: 0px;
+	left: 0px;
+    }
+
+    #blog {
+	width: 300px;
+	height: 80px;
+	top: 0px;
+	left: 0px;
+	border-radius: 0px 0px 20px 20px;
+    }
+
+    #resume-text, #teaching-text, #blog-text {
+	top: -15px;
+    }
+
 }
 
 /* ================================================================================= */

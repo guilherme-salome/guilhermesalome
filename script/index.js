@@ -17,5 +17,6 @@ $(document).ready(function() {
     var newvalueY = height * pageY;
     $('#hello').css("background-position", newvalueX+"px     "+newvalueY+"px");
   });
+  $("#debug").text($(window).width());
 
 });
