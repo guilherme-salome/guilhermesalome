@@ -36,7 +36,6 @@ h4 {
     font-size: 18px;
 }
 
-
 .src {
     width: 100%;
     margin: 0px;
@@ -45,6 +44,9 @@ h4 {
     background-color: rgb(250,250,250);
 }
 
+pre {
+    white-space: pre-line;
+}
 
 a {
     text-decoration: none;
