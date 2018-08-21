@@ -75,21 +75,21 @@ body {
 
 /* ============================= IMAGES AND COLORS ==================================*/
 #hello {
-    background-image: linear-gradient(rgba(67,66,66,0.8),rgba(67,66,66,0.8)),url(http://guilhermesalome.com/images/sky.jpg);
+    background-image: linear-gradient(rgba(67,66,66,0.8),rgba(67,66,66,0.8)),url(https://guilhermesalome.com/images/sky.jpg);
     background-size: calc(130%);
 }
 
 #resume {
-    background-image: linear-gradient(rgba(29,187,88,0.8),rgba(29,187,88,0.5)),url(http://guilhermesalome.com/images/resume.jpg);
+    background-image: linear-gradient(rgba(29,187,88,0.8),rgba(29,187,88,0.5)),url(https://guilhermesalome.com/images/resume.jpg);
     background-size: cover;
 }
 
 #teaching {
-    background-image: linear-gradient(rgba(110,136,152,0.9),rgba(110,136,152,0.8)),url(http://guilhermesalome.com/images/teaching.jpg);
+    background-image: linear-gradient(rgba(110,136,152,0.9),rgba(110,136,152,0.8)),url(https://guilhermesalome.com/images/teaching.jpg);
     background-size: cover;
 }
 #blog {
-    background-image: linear-gradient(rgba(243,239,226,0.6),rgba(243,239,226,0.8)),url(http://guilhermesalome.com/images/blog3.jpg);
+    background-image: linear-gradient(rgba(243,239,226,0.6),rgba(243,239,226,0.8)),url(https://guilhermesalome.com/images/blog3.jpg);
     background-size: cover;
 }
 /* ================================================================================= */
