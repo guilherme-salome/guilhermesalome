@@ -15,9 +15,10 @@ body {
 /* ===================================== INTRO ===================================== */
 #intro-container {
     margin: 40px 0px 20px 0px;
-    padding: 20px 0px 40px 0px;
+    padding: 20px 0px 10px 0px;
     width: 100%;
     background-color: rgb(67,66,66);
+    position: relative;
 }
 
 .intro {
@@ -30,7 +31,7 @@ body {
 #hi-message {
     font-family: 'Open Sans', monospace;
     font-size: 62px;
-    font-weight: lighter;
+    font-weight: 300;
     margin: 0px;
     color: rgb(29,187,88);
 }
@@ -38,12 +39,44 @@ body {
 #blog-description {
     font-family: 'Open Sans', 'Cousine', sans-serif;
     font-size: 16px;
-    font-weight: lighter;
+    font-weight: 300;
     margin: 0px;
     padding-left: 5px;
     padding-top: 10px;
     padding-bottom: 10px;
     color: rgba(235,235,235,0.7);
+}
+
+#nav-button-container {
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 48px;
+}
+
+.nav-button {
+    font-family: 'Open Sans', sans-seriff;
+    box-sizing: border-box;
+    width: 50%;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    font-weight: 300;
+    font-size: 16px;
+    color: rgba(235,235,235,0.7);
+    margin: 0px;
+    padding: 0px;
+}
+
+#home-button {
+}
+
+#back-button {
+    position: relative;
+    top: -48px;
+    left: 50%;
 }
 /* ================================================================================= */
 
@@ -88,6 +121,7 @@ body {
 .year {
     font-family: 'Unica One', cursive;
     font-size: 32px;
+    font-weight: 400;
     padding-top: 0px;
 }
 
@@ -101,7 +135,7 @@ body {
     align-items: center;
     font-family: 'Open Sans', sans-serif;
     font-size: 36px;
-    font-weight: lighter;
+    font-weight: 300;
     box-sizing: border-box;
     padding-left: 10px;
     padding-bottom: 0px;
@@ -123,6 +157,11 @@ body {
 .blog-post:hover {
     cursor: pointer;
     box-shadow: 5px 5px 6px rgb(67,66,66);
+}
+
+.nav-button:hover {
+    cursor: pointer;
+    color: rgba(235,235,235,1);
 }
 /*================================================================================== */
 
