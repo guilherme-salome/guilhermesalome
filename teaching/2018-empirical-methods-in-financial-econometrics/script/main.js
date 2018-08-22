@@ -1,14 +1,8 @@
 window.onload = function() {
     $(".blog-post").click(function(e) {
-	console.log($(this));
-	var year = $(this).find(".year").html();
-	var postLink = $(this).find(".title").html().split(' ').join('-').toLowerCase();
-	if (year==="2017") {
-	    window.location.href = '/teaching/' + postLink + '/main.html';
-	} else {
-	    window.location.href = '/teaching/' + year + '-' + postLink + '/main.html';
-	}
-
+	var postName = $(this).find(".title").html().split(' ').join('-').toLowerCase();
+	// var isPDF = $(this).hasClass("pdf");
+	window.location.href = './posts/' + postName + '.html';
 	return false;
     });
     // when nav-button is clicked go home, or go back a page
@@ -17,10 +11,9 @@ window.onload = function() {
 	if (id==='home-button') {
 	    window.location.href = '/index.html';
 	} else if (id==='back-button') {
-	    address = window.location.href;
-	    idToSlice = address.lastIndexOf('/');
-	    window.location.href = address.slice(0, idToSlice);
+	    window.location.href = '/teaching.html'
 	}
+	return false;
     }
     buttons = document.getElementsByClassName("nav-button");
     buttons[0].addEventListener('click', navigate);
