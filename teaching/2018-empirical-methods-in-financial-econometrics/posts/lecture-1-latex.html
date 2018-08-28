@@ -1,0 +1,769 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2018-08-28 Tue 15:29 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Introduction to Latex</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Guilherme Salomé" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+	     margin-bottom: .2em; }
+  .subtitle { text-align: center;
+	      font-size: medium;
+	      font-weight: bold;
+	      margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+	    padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link href="https://fonts.googleapis.com/css?family=Cousine|Open+Sans:300,400|Unica+One" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="../style/post.css">
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Introduction to Latex</h1>
+<div class="date-box">
+  <div class="date">
+    <div class="month">AUG</div>
+    <div class="year">2 0 1 8</div>
+  </div>
+</div>
+<div id="endhr"></div>
+<div id="outline-container-org2fd60f5" class="outline-2">
+<h2 id="org2fd60f5">What is Latex and Why Bother?</h2>
+<div class="outline-text-2" id="text-org2fd60f5">
+<p>
+Latex is a document preparation system that can create complex <code>.pdf</code> files that look great. A few examples of documents created with latex are all of the most recent papers published in economics.
+</p>
+
+<p>
+In this class, we will solve various projects and write reports on the results.
+These reports will involve graphics, equations and Matlab code.
+There is no easy way of creating a good report using a regular text editor, like Word. Instead, we must use something more powerful, that allows us to easily type math equations, include and manipulate graphics and code, and that generates a report that looks good and is easy to read.
+This is why we will use Latex.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf867bfb" class="outline-2">
+<h2 id="orgf867bfb">Installing Latex</h2>
+<div class="outline-text-2" id="text-orgf867bfb">
+<p>
+Installing Latex is very easy, if done right. We will install Latex using a self-contained package. This package has all the binaries that are required to generate basic and complex <code>.pdf</code> files, a package manager (used to update packages), and a text editor that can compile latex files.
+</p>
+
+<p>
+This package is very useful, since you can start using latex right away after the installation. The only downside is that it occupies a decent space in the hard drive (around 4gb). Keep in mind that the package takes a few minutes to download. Because the download size is also big, sometimes the installation files can get corrupted. If that happens, you will most likely get a mysterious error during install. In that case, just download the package again.
+</p>
+</div>
+
+<div id="outline-container-org62fc72f" class="outline-3">
+<h3 id="org62fc72f">Mac</h3>
+<div class="outline-text-3" id="text-org62fc72f">
+<p>
+On a Mac, you should install the <a href="https://www.tug.org/mactex/mactex-download.html">MacTex Distribution</a>. Follow the link, and download the file MacTeX.pkg. The download size is approximately 3gb, so download it on a stable connection. After the download is complete, double-click the package file and follow the instructions.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org26702e5" class="outline-3">
+<h3 id="org26702e5">Windows</h3>
+<div class="outline-text-3" id="text-org26702e5">
+<p>
+On Windows, you should install the <a href="http://mirror.ctan.org/systems/texlive/tlnet/install-tl-windows.exe">TexLive Distribution</a>. Follow the link, which will download an executable file to your machine, and install it. If you need more instructions you can find them <a href="https://www.tug.org/texlive/acquire-netinstall.html">here</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdbb4aa3" class="outline-3">
+<h3 id="orgdbb4aa3">Online</h3>
+<div class="outline-text-3" id="text-orgdbb4aa3">
+<p>
+Nowadays you can also use Latex online. A good options is <a href="https://www.sharelatex.com">ShareLaTeX</a>, which is fast and free.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd7ad8d8" class="outline-2">
+<h2 id="orgd7ad8d8">Text Editors</h2>
+<div class="outline-text-2" id="text-orgd7ad8d8">
+<p>
+All the Latex distributions mentioned before come with a text editor. For example, the Mac distribution comes with an editor called TeXShop, while the Windows distribution comes with TexWork. These editors are simple, but provide a powerful starting platform. They have a clean interface, with a simple to use typeset button (that transforms latex into pdf), and some form of error reporting in case something goes wrong (which will happen).
+</p>
+
+<p>
+After you get used to writing latex documents using the basic text editor, you can look for other editors that might suit you better. However, the most important thing right now is to get good at working with the basic text editor. Nevertheless, here is a list of good editors that you might want to look at (in the future!):
+</p>
+<ul class="org-ul">
+<li><a href="http://www.xm1math.net/texmaker/">TexMaker</a> (multi-platform, powerful and easy to use)</li>
+<li><a href="https://www.lyx.org">LyX</a> (multi-platform, powerful)</li>
+<li><a href="https://www.sublimetext.com/3">Sublime Text 3</a> (multi-platform, paid, harder to use)</li>
+<li><a href="https://www.texpad.com">texpad</a> (mac-os, iOS, paid, powerful, easy to use)</li>
+<li><a href="http://spacemacs.org">Emacs for Mac</a> or <a href="https://www.gnu.org/software/emacs/download.html">Emacs for Windows</a> (multi-platform, extremely powerful, very steep learning curve)</li>
+</ul>
+<p>
+Again, first learn how to use Latex with the basic text editor.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6a2a27d" class="outline-2">
+<h2 id="org6a2a27d">Hello World!</h2>
+<div class="outline-text-2" id="text-org6a2a27d">
+<p>
+Let's create our first document! To do so, open your Latex editor that came pre-installed with the package you just downloaded. Open a new file, and type the following:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-latex"><span style="color: #51afef;">\documentclass</span>{<span style="color: #c678dd;">article</span>}
+
+<span style="color: #51afef;">\begin</span>{<span style="color: #c678dd;">document</span>}
+Hello world!
+<span style="color: #51afef;">\end</span>{<span style="color: #c678dd;">document</span>}
+</pre>
+</div>
+
+<p>
+Save the file (.tex), and click on the "Typeset" button (or in the green play button). This will typeset your document, and generate a pdf file, which should open automatically. Congratulations, you have created your first pdf with latex!
+</p>
+
+<p>
+The first line of the "code" says that the document we will generate is an article. Articles are used for scientific journals, presentations and short reports. This is the only document class we will work with. There are other document classes for slides, books and letters. More information on document classes can be found <a href="https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Document_classes">here</a>.
+</p>
+
+<p>
+The second line says that we are beginning our document. Everything that comes below this line is the content of our document, like the phrase "Hello world!". The last line says that we are ending the document.
+</p>
+
+<p>
+This structure is the bare bones of any latex file. It states the type of file (article) and where the content is. Next, we will learn how to start organizing our file.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org598ca05" class="outline-2">
+<h2 id="org598ca05">Sections</h2>
+<div class="outline-text-2" id="text-org598ca05">
+<p>
+Now that we have our first document, we can add more text to it and organize it in sections and subsections. Type the following in your .tex file:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-latex"><span style="color: #51afef;">\documentclass</span>{<span style="color: #c678dd;">article</span>}
+
+<span style="color: #51afef;">\begin</span>{<span style="color: #c678dd;">document</span>}
+Hello world!
+<span style="color: #51afef;">\section</span>{<span style="color: #a9a1e1;">My first section</span>}
+Some text. More text.
+
+A new paragraph.
+<span style="color: #51afef;">\section</span>{<span style="color: #a9a1e1;">My second section</span>}
+Now subsections!
+<span style="color: #51afef;">\subsection</span>{<span style="color: #85c7f3;">My first subsection</span>}
+Important text here.
+<span style="color: #51afef;">\subsection</span>{<span style="color: #85c7f3;">My second subsection</span>}
+Nobel prize winning argument goes here.
+<span style="color: #51afef;">\subsubsection</span>{<span style="color: #d7a0e7;">Wow, a sub subsection!</span>}
+Some text.
+<span style="color: #51afef;">\section</span>{<span style="color: #a9a1e1;">My last section</span>}
+Conclusion goes here.
+<span style="color: #51afef;">\end</span>{<span style="color: #c678dd;">document</span>}
+</pre>
+</div>
+
+<p>
+The command <code>\section{Section Name}</code> creates a numbered section named "Section Name". When we typeset the file, the name of the section will automatically appear in a bold font and with a bigger font size. The section will also be automatically numbered, and everything that is typed below the section command is the content of that section. Creating a new section just require another <code>\section{New Section}</code> command. And to create a new subsection we use <code>\subsection{New Subsection}</code>. If we want to go a level deeper and create a sub-subsection, we just use the command <code>\subsubsection{New Sub-Subsection}</code>.
+</p>
+
+<p>
+Now, we can type text, organize it in sections and subsection, and generate a good looking pdf. Next, we will learn how to type math!
+</p>
+</div>
+</div>
+
+<div id="outline-container-org89b8186" class="outline-2">
+<h2 id="org89b8186">Typing Math</h2>
+<div class="outline-text-2" id="text-org89b8186">
+<p>
+Typing math in Latex is very natural. There are two types of equations that we can use in latex: in-line equations and "block" equations. The first type are equations that appear in the middle of lines, like this <code>$f(x)=x$</code>.
+We use dollar signs to indicate that what is in between them is a math equation. The second type of equations, are equations that are separate from the text, like in a paragraph by themselves. Let's see them in action:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-latex"><span style="color: #51afef;">\documentclass</span>{<span style="color: #c678dd;">article</span>}
+
+<span style="color: #51afef;">\begin</span>{<span style="color: #c678dd;">document</span>}
+<span style="color: #51afef;">\section</span>{<span style="color: #a9a1e1;">Inline Math</span>}
+An inline equation appears between dollar signs, like this <span style="color: #51afef;">$f(x)=x$</span>.
+<span style="color: #51afef;">\end</span>{<span style="color: #c678dd;">document</span>}
+</pre>
+</div>
+
+<p>
+Now, save the file and typeset it. You will see that the content between $ and $ was interpreted as a math equation, and displayed in an appropriate font and style.
+</p>
+
+<p>
+The basic principle for typing math in latex is the following: type an equation as if you were reading it out loud.
+If you encounter a subscript, use <code>_</code> before it, and for superscripts use <code>^</code> instead.
+If you want to use a special symbol, like the symbol for an integral or for the square root, then type a backslash <code>\</code> and then the name of the symbol, like <code>int</code> for integrals.
+For example, to type <code>the integral from 0 to infinity of x squared</code> we would write <code>$\int_0^\infty x^2dx$</code>.
+The first piece is <code>\int_0^\infty</code>, which reads as the integral subscript 0 superscript infinity symbol.
+The second piece is <code>$x^2dx$</code>, which reads as x superscript 2 dx.
+Let's type that in the .tex file:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-latex"><span style="color: #51afef;">\documentclass</span>{<span style="color: #c678dd;">article</span>}
+
+<span style="color: #51afef;">\begin</span>{<span style="color: #c678dd;">document</span>}
+<span style="color: #51afef;">\section</span>{<span style="color: #a9a1e1;">Math Symbols</span>}
+Inline integral: <span style="color: #51afef;">$</span><span style="color: #51afef;">\int</span><span style="color: #2257A0;">_0^\infty</span><span style="color: #51afef;"> x</span><span style="color: #2257A0;">^2</span><span style="color: #51afef;">dx$</span>.
+Now, with a square-root: <span style="color: #51afef;">$</span><span style="color: #51afef;">\int</span><span style="color: #2257A0;">_{-\infty}^\infty</span><span style="color: #51afef;">\sqrt</span><span style="color: #51afef;">{x}dx$</span>.
+<span style="color: #51afef;">\end</span>{<span style="color: #c678dd;">document</span>}
+</pre>
+</div>
+
+<p>
+Save the file and typeset it. Notice that we used brackets for the <code>-\infty</code> subscript. We have to use brackets for subscripts and superscripts whenever there are more than one symbol that we want to put in the subscript or in the superscript. In the case of <code>-\infty</code> there are two symbols: the negative sign and the inifinity symbol. Also notice that the square-root used brackets to identify <code>x</code> as the argument.
+</p>
+
+<p>
+Now, let's take a look at the second type of math equation:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-latex"><span style="color: #51afef;">\documentclass</span>{<span style="color: #c678dd;">article</span>}
+<span style="color: #51afef;">\usepackage</span>{<span style="color: #c678dd;">mathtools</span>}
+
+<span style="color: #51afef;">\begin</span>{<span style="color: #c678dd;">document</span>}
+<span style="color: #51afef;">\section</span>{<span style="color: #a9a1e1;">Block Equations</span>}
+We have some text here, and then an equation:
+<span style="color: #51afef;">\begin</span>{<span style="color: #c678dd;">align</span>}
+<span style="color: #51afef;">\int</span><span style="color: #2257A0;">_{-\infty}^{+\infty}</span><span style="color: #51afef;">\phi</span><span style="color: #51afef;">(x)dx=1</span>
+<span style="color: #51afef;">\end</span>{<span style="color: #c678dd;">align</span>}
+And more text down here.
+<span style="color: #51afef;">\end</span>{<span style="color: #c678dd;">document</span>}
+</pre>
+</div>
+
+<p>
+Save it and typeset the document. Notice that now we have an equation that takes an entire line, and it is also numbered. To create this type of equation we had to use two things: a package (called mathtools) and an environment (called align).
+The package <code>mathtools</code> defines how latex should display the math equations inside the <code>align</code> environment. In this case, instead of using dollar signs, we use the <code>\begin{align}</code> and <code>\end{align}</code> commands to tell latex what is math.
+</p>
+
+<p>
+Now, we know how to type and organize text, how to type inline equations, and how to type equations that appear separate from text. Next, we will learn how to add images to our files.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgca871e9" class="outline-2">
+<h2 id="orgca871e9">Adding Images</h2>
+<div class="outline-text-2" id="text-orgca871e9">
+<p>
+Now, we learn how to import figures we generate in Matlab to our latex file. Suppose we create a graph in Matlab and save it as <code>.png</code> image. For this example, you should download <a href="http://guilhermesalome.com/duke/figname.png">this .png image</a>. In order to add it to our file, we type:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-latex"><span style="color: #51afef;">\documentclass</span>{<span style="color: #c678dd;">article</span>}
+<span style="color: #51afef;">\usepackage</span>{<span style="color: #c678dd;">mathtools</span>}
+
+<span style="color: #51afef;">\begin</span>{<span style="color: #c678dd;">document</span>}
+<span style="color: #51afef;">\section</span>{<span style="color: #a9a1e1;">Adding a Picture</span>}
+My figure:
+<span style="color: #51afef;">\begin</span>{<span style="color: #c678dd;">figure</span>}
+    <span style="color: #d3d3d3;">\includegraphics</span>{figname}
+<span style="color: #51afef;">\end</span>{<span style="color: #c678dd;">figure</span>}
+<span style="color: #51afef;">\end</span>{<span style="color: #c678dd;">document</span>}
+</pre>
+</div>
+
+<p>
+Save your file and typeset it. Now, you can see that the image was added to the pdf. Notice that we are still using the package <code>mathtools</code>, since it provides the functionality to add images to our latex file. There is a slight problem, the image is too big! To fix that, we tell latex that the figure should fit the width of the file:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-latex"><span style="color: #51afef;">\documentclass</span>{<span style="color: #c678dd;">article</span>}
+<span style="color: #51afef;">\usepackage</span>{<span style="color: #c678dd;">mathtools</span>}
+
+<span style="color: #51afef;">\begin</span>{<span style="color: #c678dd;">document</span>}
+<span style="color: #51afef;">\section</span>{<span style="color: #a9a1e1;">Fixing Figure Width</span>}
+My figure:
+<span style="color: #51afef;">\begin</span>{<span style="color: #c678dd;">figure</span>}
+    <span style="color: #d3d3d3;">\includegraphics</span>[width=<span style="color: #d3d3d3;">\textwidth</span>]{figname}
+<span style="color: #51afef;">\end</span>{<span style="color: #c678dd;">figure</span>}
+<span style="color: #51afef;">\end</span>{<span style="color: #c678dd;">document</span>}
+</pre>
+</div>
+
+<p>
+Save your file and typeset it again. Now, the image occupies the entire width of the pdf.
+</p>
+
+<p>
+If the image resolution is low, we might want to make the image smaller than the width of the pdf. To do so, just "multiply" the <code>\textwidth</code> by a number smaller than 1:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-latex"><span style="color: #51afef;">\documentclass</span>{<span style="color: #c678dd;">article</span>}
+<span style="color: #51afef;">\usepackage</span>{<span style="color: #c678dd;">mathtools</span>}
+
+<span style="color: #51afef;">\begin</span>{<span style="color: #c678dd;">document</span>}
+<span style="color: #51afef;">\section</span>{<span style="color: #a9a1e1;">Smaller Figure</span>}
+My figure:
+<span style="color: #51afef;">\begin</span>{<span style="color: #c678dd;">figure</span>}
+    <span style="color: #d3d3d3;">\includegraphics</span>[width=0.8<span style="color: #d3d3d3;">\textwidth</span>]{figname}
+<span style="color: #51afef;">\end</span>{<span style="color: #c678dd;">figure</span>}
+<span style="color: #51afef;">\end</span>{<span style="color: #c678dd;">document</span>}
+</pre>
+</div>
+
+<p>
+The image is now smaller. However, it is not centered anymore. But that is easy to fix, just tell latex to center it:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-latex"><span style="color: #51afef;">\documentclass</span>{<span style="color: #c678dd;">article</span>}
+<span style="color: #51afef;">\usepackage</span>{<span style="color: #c678dd;">mathtools</span>}
+
+<span style="color: #51afef;">\begin</span>{<span style="color: #c678dd;">document</span>}
+<span style="color: #51afef;">\section</span>{<span style="color: #a9a1e1;">Center Figure</span>}
+My figure:
+<span style="color: #51afef;">\begin</span>{<span style="color: #c678dd;">figure</span>}
+    <span style="color: #51afef;">\centering</span>
+    <span style="color: #d3d3d3;">\includegraphics</span>[width=0.8<span style="color: #d3d3d3;">\textwidth</span>]{figname}
+<span style="color: #51afef;">\end</span>{<span style="color: #c678dd;">figure</span>}
+<span style="color: #51afef;">\end</span>{<span style="color: #c678dd;">document</span>}
+</pre>
+</div>
+
+<p>
+To add a caption to your image:
+</p>
+<div class="org-src-container">
+<pre class="src src-latex"><span style="color: #51afef;">\documentclass</span>{<span style="color: #c678dd;">article</span>}
+<span style="color: #51afef;">\usepackage</span>{<span style="color: #c678dd;">mathtools</span>}
+
+<span style="color: #51afef;">\begin</span>{<span style="color: #c678dd;">document</span>}
+<span style="color: #51afef;">\section</span>{<span style="color: #a9a1e1;">Add Caption</span>}
+My figure:
+<span style="color: #51afef;">\begin</span>{<span style="color: #c678dd;">figure</span>}
+    <span style="color: #51afef;">\centering</span>
+    <span style="color: #d3d3d3;">\includegraphics</span>[width=0.8<span style="color: #d3d3d3;">\textwidth</span>]{figname}
+    <span style="color: #51afef;">\caption</span>{<span style="color: #ECBE7B;">5-minute prices of Morgan Stanley (MS) stock and the S\&amp;P500 exchange-traded fund (SPY).</span>}
+<span style="color: #51afef;">\end</span>{<span style="color: #c678dd;">figure</span>}
+<span style="color: #51afef;">\end</span>{<span style="color: #c678dd;">document</span>}
+</pre>
+</div>
+
+<p>
+Now the figure will have a caption that identifies the number of the figure and what the figure represents. Notice that the figure is actually appearing before the text "My figure:". This happens because figures "float", and latex treat them as if they were not part of the text, displaying them whenever "it is possible". To avoid this behavior and make figures appear exactly where we expect them to appear, we use a package called <code>float</code> and tell latex that the figure should appear here <code>[H]</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-latex"><span style="color: #51afef;">\documentclass</span>{<span style="color: #c678dd;">article</span>}
+<span style="color: #51afef;">\usepackage</span>{<span style="color: #c678dd;">mathtools</span>}
+<span style="color: #51afef;">\usepackage</span>{<span style="color: #c678dd;">float</span>}
+
+<span style="color: #51afef;">\begin</span>{<span style="color: #c678dd;">document</span>}
+<span style="color: #51afef;">\section</span>{<span style="color: #a9a1e1;">Fix Figure Position</span>}
+My figure:
+<span style="color: #51afef;">\begin</span>{<span style="color: #c678dd;">figure</span>}[H]
+    <span style="color: #51afef;">\centering</span>
+    <span style="color: #d3d3d3;">\includegraphics</span>[width=0.8<span style="color: #d3d3d3;">\textwidth</span>]{figname}
+    <span style="color: #51afef;">\caption</span>{<span style="color: #ECBE7B;">5-minute prices of Morgan Stanley (MS) stock and the S\&amp;P500 exchange-traded fund.</span>}
+<span style="color: #51afef;">\end</span>{<span style="color: #c678dd;">figure</span>}
+<span style="color: #51afef;">\end</span>{<span style="color: #c678dd;">document</span>}
+</pre>
+</div>
+
+<p>
+And we get the final pdf, with figure centered, appearing in the correct place, and with a caption. Next, we learn how to add Matlab code to our file.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org61c35bc" class="outline-2">
+<h2 id="org61c35bc">Adding Matlab Code</h2>
+<div class="outline-text-2" id="text-org61c35bc">
+<p>
+Suppose you have a Matlab script that you want to add to your report. In this example, we will use <a href="http://guilhermesalome.com/duke/clearWorkspace.m">this script</a>. To make latex understand that your code is a code, and is specifically a Matlab code, we use the packages: filecontents and matlab-prettifier.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-latex"><span style="color: #51afef;">\documentclass</span>{<span style="color: #c678dd;">article</span>}
+<span style="color: #51afef;">\usepackage</span>{<span style="color: #c678dd;">mathtools</span>}
+<span style="color: #51afef;">\usepackage</span>{<span style="color: #c678dd;">float</span>}
+<span style="color: #51afef;">\usepackage</span>{<span style="color: #c678dd;">filecontents</span>}
+<span style="color: #51afef;">\usepackage</span>[<span style="color: #dcaeea;">numbered,framed</span>]{<span style="color: #c678dd;">matlab-prettifier</span>}
+
+<span style="color: #51afef;">\begin</span>{<span style="color: #c678dd;">document</span>}
+My code for cleaning Matlab's workspace and creating a figures folder:
+<span style="color: #d3d3d3;">\lstinputlisting</span>[style=Matlab-editor,caption={clearWorkspace.m clears the workspace and create a figures folder}]{clearWorkspace.m}
+<span style="color: #51afef;">\end</span>{<span style="color: #c678dd;">document</span>}
+</pre>
+</div>
+
+<p>
+The command <code>\lstinputlisting</code> takes a <code>style</code> argument, a <code>caption</code> argument, and the name of the Matlab script that you want to display. The <code>style</code> argument is always <code>Matlab-editor</code>, since we are only dealing with Matlab code. The <code>caption</code> argument is the caption that you want to add to your code, and it goes inside the curly brackets.
+</p>
+
+<p>
+Save your file and typeset it. You will get a pdf that will display the code in the script you just downloaded, and it will also use the correct color for certain keywords, comments and functions.
+</p>
+
+<p>
+Now, we know how to type and organize text, how to type and organize math equations, how to add figures with captions and that are centered, and how to add Matlab code to our latex files. We have all the tools that we need to write the reports for this class.
+</p>
+
+<p>
+Next, we will put the pieces together and create a template for the reports.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org45bd922" class="outline-2">
+<h2 id="org45bd922">A Template for Reports</h2>
+<div class="outline-text-2" id="text-org45bd922">
+<p>
+Since we will be creating reports for every project, it makes sense to create a template file that we can reuse. This template will include all packages that we have used so far,
+</p>
+
+<p>
+Create a new <code>.tex</code> file, name it <code>preamble.tex</code> and write the following:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-latex"><span style="color: #5B6268;">% </span><span style="color: #5B6268;">PACKAGES</span>
+<span style="color: #51afef;">\usepackage</span>[<span style="color: #dcaeea;">utf8</span>]{<span style="color: #c678dd;">inputenc</span>}
+<span style="color: #51afef;">\usepackage</span>{<span style="color: #c678dd;">mathtools</span>} <span style="color: #5B6268;">% math and figures</span>
+<span style="color: #51afef;">\usepackage</span>{<span style="color: #c678dd;">float</span>} <span style="color: #5B6268;">% make figure appear where we want with [H]</span>
+<span style="color: #51afef;">\usepackage</span>{<span style="color: #c678dd;">filecontents</span>}
+<span style="color: #51afef;">\usepackage</span>[<span style="color: #dcaeea;">numbered,framed</span>]{<span style="color: #c678dd;">matlab-prettifier</span>}
+<span style="color: #5B6268;">% </span><span style="color: #5B6268;">these packages include more math symbols you might use</span>
+<span style="color: #51afef;">\usepackage</span>{<span style="color: #c678dd;">amsmath,amsfonts,amsthm,amssymb</span>}
+
+
+<span style="color: #5B6268;">% </span><span style="color: #5B6268;">PROJECT Specific Information to Fill Out</span>
+<span style="color: #51afef;">\newcommand</span>{<span style="color: #c678dd;">\LectureTitle</span>}{<span style="color: #c678dd;">High-Frequency Financial Econometrics</span>}
+<span style="color: #51afef;">\newcommand</span>{<span style="color: #c678dd;">\LectureDate</span>}{<span style="color: #c678dd;">\today</span>}
+<span style="color: #51afef;">\newcommand</span>{<span style="color: #c678dd;">\LectureClassName</span>}{<span style="color: #c678dd;">Project</span>}
+<span style="color: #51afef;">\newcommand</span>{<span style="color: #c678dd;">\LatexerName</span>}{<span style="color: #c678dd;">First and Last Name</span>}
+<span style="color: #51afef;">\author</span>{<span style="color: #ECBE7B;">\LatexerName</span>}
+
+
+<span style="color: #5B6268;">% </span><span style="color: #5B6268;">CONFIGURATIONS to make the report look better</span>
+<span style="color: #51afef;">\usepackage</span>{<span style="color: #c678dd;">setspace</span>}
+<span style="color: #51afef;">\usepackage</span>{<span style="color: #c678dd;">Tabbing</span>}
+<span style="color: #51afef;">\usepackage</span>{<span style="color: #c678dd;">fancyhdr</span>}
+<span style="color: #51afef;">\usepackage</span>{<span style="color: #c678dd;">lastpage</span>}
+<span style="color: #51afef;">\usepackage</span>{<span style="color: #c678dd;">extramarks</span>}
+<span style="color: #51afef;">\usepackage</span>{<span style="color: #c678dd;">afterpage</span>}
+<span style="color: #51afef;">\usepackage</span>{<span style="color: #c678dd;">abstract</span>}
+
+<span style="color: #5B6268;">% </span><span style="color: #5B6268;">In case you need to adjust margins:</span>
+<span style="color: #d3d3d3;">\topmargin=-0</span>.45in
+<span style="color: #d3d3d3;">\evensidemargin=0in</span>
+<span style="color: #d3d3d3;">\oddsidemargin=0in</span>
+<span style="color: #d3d3d3;">\textwidth=6</span>.5in
+<span style="color: #d3d3d3;">\textheight=9</span>.0in
+<span style="color: #d3d3d3;">\headsep=0</span>.25in
+
+<span style="color: #5B6268;">% </span><span style="color: #5B6268;">Setup the header and footer</span>
+<span style="color: #51afef;">\pagestyle</span>{<span style="color: #c678dd;">fancy</span>}
+<span style="color: #d3d3d3;">\lhead</span>{<span style="color: #d3d3d3;">\LatexerName</span>}
+<span style="color: #d3d3d3;">\chead</span>{<span style="color: #d3d3d3;">\LectureClassName</span>: <span style="color: #d3d3d3;">\LectureTitle</span>}
+<span style="color: #d3d3d3;">\rhead</span>{<span style="color: #d3d3d3;">\LectureDate</span>}
+<span style="color: #d3d3d3;">\lfoot</span>{<span style="color: #d3d3d3;">\lastxmark</span>}
+<span style="color: #d3d3d3;">\cfoot</span>{}
+<span style="color: #d3d3d3;">\rfoot</span>{Page\ <span style="color: #d3d3d3;">\thepage</span>\ of\ <span style="color: #51afef;">\pageref</span>{<span style="color: #a9a1e1;">LastPage</span>}}
+<span style="color: #51afef;">\renewcommand</span><span style="color: #c678dd;">\headrulewidth</span>{<span style="color: #c678dd;">0.4pt</span>}
+<span style="color: #51afef;">\renewcommand</span><span style="color: #c678dd;">\footrulewidth</span>{<span style="color: #c678dd;">0.4pt</span>}
+</pre>
+</div>
+
+<p>
+The first part (PACKAGES) is what we have used so far, it contains the packages for typing math and include figures and Matlab code.
+The second part (PROJECT) contains information that we should fill in.
+It has a field for the class name and for your name.
+Go ahead and change the <code>First and Last Name</code> to your first and last name.
+This information will appear in the <code>.pdf</code> file when we typeset our latex file.
+And the third part (CONFIGURATIONS) contains configurations that make the report look better, and that we should not alter.
+</p>
+
+<p>
+This file contains all the configurations that we will use to generate the reports. We created it so that we don't have to retype all the <code>\usepackage</code>'s every time we want to create a new latex file.
+To actually use this file, we have to include it in the file that will hold our project report.
+For example, create a file named <code>report.tex</code>, and type the following:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-latex"><span style="color: #51afef;">\documentclass</span>{<span style="color: #c678dd;">report</span>}
+<span style="color: #ECBE7B;">\include</span>{<span style="color: #a9a1e1;">preamble</span>}
+
+<span style="color: #51afef;">\title</span>{<span style="color: #ECBE7B;">\LectureTitle</span><span style="color: #ECBE7B;">: Project 1</span>}
+
+<span style="color: #51afef;">\begin</span>{<span style="color: #c678dd;">document</span>}
+<span style="color: #d3d3d3;">\maketitle</span>
+<span style="color: #ECBE7B;">\newpage</span>
+
+Content.
+
+<span style="color: #51afef;">\end</span>{<span style="color: #c678dd;">document</span>}
+</pre>
+</div>
+
+<p>
+Let's go line by line. The first line is like always, with the difference that instead of having an <code>article</code> we have a <code>report</code>. Try switching from one to the other and typesetting the file to see what changes (not much).
+</p>
+
+<p>
+The second line includes the <code>preamble.tex</code> we just created.
+It basically imports all the configurations and packages into our new file, so that we do not have to retype everything again.
+</p>
+
+<p>
+The third line is used to create a title page for your report.
+</p>
+
+<p>
+The fifth line begins the document, telling latex where the content is.
+The sixth and seventh line create the actual title page.
+</p>
+
+<p>
+You are now ready to write reports using latex!
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf20b153" class="outline-2">
+<h2 id="orgf20b153">But I Don't Know How to &#x2026;</h2>
+<div class="outline-text-2" id="text-orgf20b153">
+<p>
+That's alright. Just google it. Seriously, you are not the first latex user, and your question has most likely already been asked and answered by other people. Besides Google, another website that you can use to look for help is the <a href="https://tex.stackexchange.com">TEX StackExchange</a>. There you can searh for answered questions, and you can also ask questions to people that use latex everyday.
+</p>
+</div>
+</div>
+<div id="outline-container-org17c4ec0" class="outline-2">
+<h2 id="org17c4ec0">Conclusion</h2>
+<div class="outline-text-2" id="text-org17c4ec0">
+<p>
+In this quick introduction to Latex we learned how to install latex, create files, add text and organize paragraphs into sections and subsections. We also learned how to type math, both inline and in "blocks", and also how to add figures to our reports. We also learned how to add Matlab code to our files, and we created a template for our projects.</p>
+</div>
+</div>
+</div>
+</body>
+</html>
