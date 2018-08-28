@@ -1,8 +1,13 @@
 window.onload = function() {
     $(".blog-post").click(function(e) {
-	var postName = $(this).find(".title").html().split(' ').join('-').toLowerCase();
-	// var isPDF = $(this).hasClass("pdf");
-	window.location.href = './posts/' + postName + '.html';
+	var postName = $(this).find(".title").html().replace(/-/,"").split(/\s+/).join('-').toLowerCase();
+	var isPDF = $(this).hasClass("pdf");
+	if (isPDF) {
+	    window.location.href = './posts/' + postName + '.pdf';
+	}
+	else {
+	    window.location.href = './posts/' + postName + '.html';
+	}
 	return false;
     });
     // when nav-button is clicked go home, or go back a page
