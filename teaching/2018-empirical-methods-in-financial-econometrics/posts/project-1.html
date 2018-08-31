@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2018-08-31 Fri 15:07 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Instructions</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Guilherme Salomé" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+	     margin-bottom: .2em; }
+  .subtitle { text-align: center;
+	      font-size: medium;
+	      font-weight: bold;
+	      margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+	    padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link href="https://fonts.googleapis.com/css?family=Cousine|Open+Sans:300,400|Unica+One" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="../style/post.css">
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Instructions</h1>
+<div class="date-box">
+  <div class="date">
+    <div class="month">AUG</div>
+    <div class="year">2 0 1 8</div>
+  </div>
+</div>
+<div id="endhr"></div>
+<p>
+This page will guide you on how to use Git and GitHub to clone the project repository to your computer.
+The repository you will clone has a skeleton of how the project should be structured.
+This structure is also discussed below.
+</p>
+<div id="outline-container-orgecb0593" class="outline-2">
+<h2 id="orgecb0593">Install Git</h2>
+<div class="outline-text-2" id="text-orgecb0593">
+<p>
+First, you need to download and install Git. Follow the instructions below depending on your operating system.
+</p>
+<ul class="org-ul">
+<li>Mac/Linux distributions:
+<ul class="org-ul">
+<li>Download the <a href="https://git-scm.com/downloads">Git</a> software and install it.</li>
+<li>You can access it via your <span class="underline">terminal</span> application.</li>
+</ul></li>
+<li>Windows:
+<ul class="org-ul">
+<li>The easiest way to get it installed is via <a href="https://gitforwindows.org">Git for Windows</a>.</li>
+<li>Download it and install it. The default configurations should be fine (you may want to change the editor to nano).</li>
+<li>You should now have a <span class="underline">git bash</span> application that is very similar to a Mac <span class="underline">terminal</span>.</li>
+</ul></li>
+</ul>
+<p>
+If you have never used Git before do not worry.
+The <a href="https://www.guilhermesalome.com/teaching/2018-empirical-methods-in-financial-econometrics/posts/lecture-1-git.html">Lecture 1 - Git</a> has everything you need to know for our usage of Git and Github.
+</p>
+</div>
+</div>
+<div id="outline-container-orgeb6af4e" class="outline-2">
+<h2 id="orgeb6af4e">Create a Folder for Projects and Data</h2>
+<div class="outline-text-2" id="text-orgeb6af4e">
+<p>
+Now that you have download and installed Git, open your terminal application (or git bash) and <a href="https://ss64.com/nt/cd.html">change directory (cd)</a> to your home folder.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #c678dd;">cd</span> ~/
+</pre>
+</div>
+<p>
+The <code>~</code> at the beginning is interpreted by the terminal as the path to your home folder.
+In my case, this is the same as typing <code>/Users/guilhermesalome</code>.
+(If you type <code>echo $HOME</code> you should get back the path to your home folder.)
+</p>
+
+<p>
+Now, <a href="https://ss64.com/bash/mkdir.html">make a new directory (mkdir)</a> to hold the solution to the projects:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">mkdir Projects
+</pre>
+</div>
+
+<p>
+Move inside this folder and create a new folder that will hold all the data you will use in the projects.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #c678dd;">cd</span> ~/Projects/
+mkdir Data
+</pre>
+</div>
+<p>
+You should save the data you were <a href="https://www.guilhermesalome.com/teaching/2018-empirical-methods-in-financial-econometrics/posts/data.html">assigned to</a> inside the <code>Data/</code> folder.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga572414" class="outline-2">
+<h2 id="orga572414">Getting the Repository for Project 1</h2>
+<div class="outline-text-2" id="text-orga572414">
+<p>
+Follow the next steps to get the repository for Project 1.
+Read <span class="underline">all</span> of the steps before beginning.
+</p>
+<ol class="org-ol">
+<li>Go to <a href="https://github.com/join">GitHub</a> and create a new account if you do not already have one.</li>
+<li>Follow <a href="https://classroom.github.com/a/crR4hQp7">this link</a> to get the repository for Project 1.
+<ol class="org-ol">
+<li>When you click on the link, you will be asked to login with your GitHub account.</li>
+<li>You will then see a page with a list of names (Last Name, First Name). Click only on yours. This will link your account to your name.</li>
+<li>Then you will be asked to accept the assignment. When you do, GitHub will start cloning the project repository to your account.</li>
+<li>After the cloning is finished, you will get a link to your assignment. Follow that link.</li>
+<li>Lastly, click on the green button <code>Clone or download</code> and copy the URL to the repository.</li>
+</ol></li>
+<li>Use the URL to clone the repository to your computer:</li>
+</ol>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #c678dd;">cd</span> ~/Projects/
+git clone URL
+</pre>
+</div>
+<p>
+This tells git to go to the Project1 page, and clone (copy) all its contents to your folder.
+It will create a new folder with the project name, in this case Project1, and download all the files to that folder.
+</p>
+
+<p>
+Now, if you <a href="https://ss64.com/bash/ls.html">list files (ls)</a> in your directory:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">ls
+</pre>
+</div>
+<p>
+You should see a new folder for Project 1. Change the directory to that folder:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #c678dd;">cd</span> Project1Folder/
+</pre>
+</div>
+<p>
+The Project1 folder contains the project <code>.pdf</code> file with the questions to be answered by you, and it also contains a skeleton of how you should organize the solution of your project.
+Let's discuss the folder structure of Project1.
+</p>
+</div>
+</div>
+<div id="outline-container-org9cc7eaf" class="outline-2">
+<h2 id="org9cc7eaf">Folder Structure</h2>
+<div class="outline-text-2" id="text-org9cc7eaf">
+<p>
+The folder you just cloned has the following structure:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">Project1/
+|
+|-- main.m
+|-- report.tex
+|-- preamble.tex
+|-- README.md
+|-- functions/
+|   |-- simDiffusionConstantCoeff.m
+|   |-- simDiffusionStochasticVariance.m
+|   |-- simJumpDiffusionConstantCoeff.m
+|   |-- simJumpDiffusionStochasticVariance.m
+|   |-- simJumpProcess.m
+|   |-- simStochasticVariance.m
+|-- scripts/
+|   |-- plotDefaults.m
+|   |-- plot1A.m
+|   |-- plot1B.m
+|   |-- plot1C.m
+|   |-- plot1D.m
+|   |-- plot2A.m
+|   |-- plot2B.m
+|   |-- plot2C.m
+|-- figures/
+    |-- 1A.png
+    |-- 1B.png
+    |-- 1C.png
+    |-- 1D.png
+    |-- 2A.png
+    |-- 2B.png
+    |-- 2C.png
+</pre>
+</div>
+<p>
+Let's go over each item:
+</p>
+<ul class="org-ul">
+<li><code>main.m</code>: this file is your main Matlab script. Running it should solve all of the problems for this project and create all necessary plots.</li>
+<li><code>report.tex</code>: this file is where you will write your report in the LaTeX format. When you finish your project, compile this file to generate a pdf with the report.</li>
+<li><code>preamble.tex</code>: this file contains the LaTeX settings that are included in your <code>report.tex</code> file.</li>
+<li><code>README.md</code>: this file contains is displayed at the GitHub page for the project.</li>
+<li><code>functions/</code>: this folder should contain your Matlab <code>.m</code> files that define new functions. These functions are used to break the exercises into smaller pieces, simplifying your <code>main.m</code> file and making it more readable/easier to debug. I created many files inside this folder. Each file holds the structure of one of the functions that solves one of the items in the project. You should complete these files to obtain the soutions.</li>
+<li><code>scripts/</code>: this folder contains scripts that, like functions, should help with keeping <code>main.m</code> readable and easy to debug. During most projects this folder will usually contain scripts that generate plots/figures. The code to generate plots in Matlab can easily become big and repetitive. The idea is to move that code into scripts, say <code>plot1A.m</code>, so that we can simply call this script in the right place of <code>main.m</code> and have the plot be created. This also helps separating the computational part of the project from the plotting part. Inside this folder there is also a file called <code>plotDefaults.m</code>, it modifies some of the behavior of default plots in Matlab.</li>
+<li><code>figures/</code>: this folder should contain the figures you were asked to create in this project. These figures will be used to construct your report, and this folder provides a clean way to keep them separate from everything else. I created an empty file named <code>1A.png</code> as an example. In this project you will fill that file with an actual plot.</li>
+</ul>
+
+<p>
+You should now be able to understand how to organize your project.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3e49ad1" class="outline-2">
+<h2 id="org3e49ad1">On Making Mistakes and Debugging</h2>
+<div class="outline-text-2" id="text-org3e49ad1">
+<p>
+The lectures are responsible for discussing the theory.
+The projects are meant for you to implement that theory and see it in practice.
+Implementing the theory means creating software to compute the estimates we are interested in, and then analyzing the results.
+</p>
+
+<p>
+The process of writing the software can be divided in two stages:
+</p>
+<ul class="org-ul">
+<li>Knowing what we want the computer to do</li>
+<li>Telling the computer what to do</li>
+</ul>
+<p>
+The first stage is knowing what to compute, which is given by the theory we have been studying.
+The second stage is about transforming that theory into computer instructions.
+It is in this step that mistakes occur, and we <span class="underline">always</span> make mistakes when programming.
+</p>
+<blockquote>
+<p>
+If debugging is the process of removing software bugs, then programming must be the process of putting them in. &#x2013; <a href="https://en.wikipedia.org/wiki/Edsger_W._Dijkstra">E. W. Dijkstra</a>
+</p>
+</blockquote>
+<p>
+The easiest mistakes to spot are syntax mistakes.
+They are easy to spot because you will get an error when you run your code, and so are also easy to fix.
+</p>
+
+<p>
+The hardest mistakes to identify are logical mistakes.
+These happen when you think your code is doing something, but you instructed it to do something else.
+This will results in computing wrong values, and, because there is no easy way to identify these mistakes, you will spend <span class="underline">most of your time</span> fixing this kind of error.
+</p>
+
+<p>
+Your job is to find your own logical mistakes and fix them.
+Do not worry if you do not succeed at first, it is normal to make mistakes when coding.
+Look at your code and understand what is actually doing, and then fix it and try again.</p>
+</div>
+</div>
+</div>
+</body>
+</html>
