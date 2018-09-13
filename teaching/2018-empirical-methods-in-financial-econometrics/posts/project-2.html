@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-09-07 Fri 10:55 -->
+<!-- 2018-09-07 Fri 11:24 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Data</title>
+<title>Instructions</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="Guilherme Salomé" />
 <style type="text/css">
@@ -231,7 +231,7 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Data</h1>
+<h1 class="title">Instructions</h1>
 <div class="date-box">
   <div class="date">
     <div class="month">AUG</div>
@@ -239,178 +239,58 @@ for the JavaScript code in this tag.
   </div>
 </div>
 <div id="endhr"></div>
-<div id="outline-container-org0db8d1f" class="outline-2">
-<h2 id="org0db8d1f">Description</h2>
-<div class="outline-text-2" id="text-org0db8d1f">
 <p>
-In this course we will study the behavior of returns under a very general setting and apply the tools developed to compute prices of options, forecast volatility and estimate the Value at Risk.
+This page will guide you on how to use Git and GitHub to clone the project repository to your computer.
+The repository you will clone has a skeleton of how the project should be structured.
+This structure is also discussed below.
 </p>
-
+<div id="outline-container-org06dde1f" class="outline-2">
+<h2 id="org06dde1f">Getting the Repository for Project 2</h2>
+<div class="outline-text-2" id="text-org06dde1f">
 <p>
-The theory we will study requires the use of high-frequency data.
-Below you can download high-frequency data for various stocks and at different sampling frequencies.
-For the projects, each of you will be assigned 2 stocks to work with.
+Follow the next steps to get the repository for Project 2.
+Read <span class="underline">all</span> of the steps before beginning.
 </p>
+<ol class="org-ol">
+<li>Follow <a href="https://classroom.github.com/a/vsdirDmN">this link</a> to get the repository for Project 2.
+<ol class="org-ol">
+<li>When you click on the link, you will be asked to login with your GitHub account.</li>
+<li>Then you will be asked to accept the assignment. When you do, GitHub will start cloning the project repository to your account.</li>
+<li>After the cloning is finished, you will get a link to your assignment. Follow that link.</li>
+<li>Lastly, click on the green button <code>Clone or download</code> and <span class="underline">copy the URL to the repository</span>.</li>
+</ol></li>
+<li>Use the URL to clone the repository to your computer:</li>
+</ol>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #c678dd;">cd</span> ~/Projects/
+git clone URL
+</pre>
 </div>
-</div>
-<div id="outline-container-orge16c09a" class="outline-2">
-<h2 id="orge16c09a">Stock Assignments</h2>
-<div class="outline-text-2" id="text-orge16c09a">
 <p>
-The projects will require you to work with data on 2 different stocks.
-For most of the assignments all you need is data at the <span class="underline">5-minute</span> sampling frequency.
-However, some assignments may require extra data, and, when they do, refer back to this page to find out what you should download.
+This tells git to go to the Project2 page, and clone (copy) all its contents to your folder.
+It will create a new folder with the project name, in this case Project2, and download all the files to that folder.
 </p>
 
 <p>
-Use the table below to find out what stocks and extra data you should download.
-The table uses the last two digits of your unique Duke ID number (back of your Duke card) to assign your data.
-For example, if my Duke unique ID is XXXXX81, then I would download the data for IBM and WMT (5-Min and 1-Min frequency), and for BAC2008 (5-Sec data).
+Now, if you <a href="https://ss64.com/bash/ls.html">list files (ls)</a> in your directory:
 </p>
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="org-left" />
-
-<col  class="org-left" />
-
-<col  class="org-left" />
-
-<col  class="org-left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-left">Last Two Digits</th>
-<th scope="col" class="org-left">1st Stock</th>
-<th scope="col" class="org-left">2nd Stock</th>
-<th scope="col" class="org-left">Ultra HF Data</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-left">00 to 06</td>
-<td class="org-left">SPY</td>
-<td class="org-left">JPM</td>
-<td class="org-left">GOOG-2016</td>
-</tr>
-
-<tr>
-<td class="org-left">07 to 13</td>
-<td class="org-left">AAPL</td>
-<td class="org-left">KO</td>
-<td class="org-left">BAC-2010</td>
-</tr>
-
-<tr>
-<td class="org-left">14 to 20</td>
-<td class="org-left">AXP</td>
-<td class="org-left">MCD</td>
-<td class="org-left">BAC-2011</td>
-</tr>
-
-<tr>
-<td class="org-left">21 to 26</td>
-<td class="org-left">BA</td>
-<td class="org-left">MMM</td>
-<td class="org-left">IBM-2017</td>
-</tr>
-
-<tr>
-<td class="org-left">27 to 33</td>
-<td class="org-left">BAC</td>
-<td class="org-left">MRK</td>
-<td class="org-left">TSLA-2014</td>
-</tr>
-
-<tr>
-<td class="org-left">34 to 40</td>
-<td class="org-left">CAT</td>
-<td class="org-left">MSFT</td>
-<td class="org-left">BAC-2013</td>
-</tr>
-
-<tr>
-<td class="org-left">41 to 46</td>
-<td class="org-left">CSCO</td>
-<td class="org-left">NKE</td>
-<td class="org-left">GOOG-2017</td>
-</tr>
-
-<tr>
-<td class="org-left">47 to 53</td>
-<td class="org-left">CVX</td>
-<td class="org-left">PFE</td>
-<td class="org-left">IBM-2009</td>
-</tr>
-
-<tr>
-<td class="org-left">54 to 60</td>
-<td class="org-left">DIS</td>
-<td class="org-left">PG</td>
-<td class="org-left">BAC-2015</td>
-</tr>
-
-<tr>
-<td class="org-left">61 to 66</td>
-<td class="org-left">GE</td>
-<td class="org-left">UNH</td>
-<td class="org-left">BAC-2012</td>
-</tr>
-
-<tr>
-<td class="org-left">67 to 73</td>
-<td class="org-left">GS</td>
-<td class="org-left">UTX</td>
-<td class="org-left">BAC-2014</td>
-</tr>
-
-<tr>
-<td class="org-left">74 to 80</td>
-<td class="org-left">HD</td>
-<td class="org-left">VZ</td>
-<td class="org-left">TSLA-2016</td>
-</tr>
-
-<tr>
-<td class="org-left">81 to 86</td>
-<td class="org-left">IBM</td>
-<td class="org-left">WMT</td>
-<td class="org-left">BAC-2016</td>
-</tr>
-
-<tr>
-<td class="org-left">87 to 93</td>
-<td class="org-left">INTC</td>
-<td class="org-left">XOM</td>
-<td class="org-left">BAC-2017</td>
-</tr>
-
-<tr>
-<td class="org-left">94 to 100</td>
-<td class="org-left">JNJ</td>
-<td class="org-left">SPY</td>
-<td class="org-left">IBM-2014</td>
-</tr>
-</tbody>
-</table>
+<div class="org-src-container">
+<pre class="src src-bash">ls
+</pre>
 </div>
-</div>
-
-<div id="outline-container-org8509fc8" class="outline-2">
-<h2 id="org8509fc8">Stocks</h2>
-<div class="outline-text-2" id="text-org8509fc8">
 <p>
-The data can be obtained <a href="https://sakai.duke.edu/portal/site/dc498730-957a-42f5-a3c1-df8b1778c02c/tool/4ae88df8-6b08-4ce0-a313-b7a06b23d1c1?panel=Main">here</a> (requires Duke login).
-It is divided in 3 folders:
+You should see a new folder for Project 2. Change the directory to that folder:
 </p>
-<ul class="org-ul">
-<li>Stocks1Min: contains data on stocks sampled every 1 minute of the day.</li>
-<li>Stocks5Min: contains data on stocks sampled every 5 minutes of the day. For most projects you will use data from this folder.</li>
-<li>Stocks5Sec: contains data on stocks sampled every 5 seconds of the day.</li>
-</ul>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #c678dd;">cd</span> Project2Folder/
+</pre>
+</div>
 <p>
-Go ahead and download the data for your stocks and any extra data you may need.</p>
+The Project2 folder contains the project <code>.pdf</code> file with the questions to be answered by you, and it also contains a skeleton of how you should organize the solution of your project.
+</p>
+
+<p>
+After you complete the project remember to push your commits back to your remote repository.</p>
 </div>
 </div>
 </div>
