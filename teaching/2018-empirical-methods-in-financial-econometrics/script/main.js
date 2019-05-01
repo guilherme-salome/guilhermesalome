@@ -2,11 +2,19 @@ window.onload = function() {
     $(".blog-post").click(function(e) {
 	var postName = $(this).find(".title").html().replace(/-/,"").split(/\s+/).join('-').toLowerCase();
 	var isPDF = $(this).hasClass("pdf");
+	var isJupyterNotebook = $(this).hasClass("ipynb")
+	var isZip = $(this).hasClass("zip")
 	if (isPDF) {
 	    window.location.href = './posts/' + postName + '.pdf';
 	}
+	else if (isJupyterNotebook) {
+	    window.location.href = './posts/' + postName + '.ipynb';
+	}
+	else if (isZip) {
+	    window.location.href = './posts/' + postName + '.zip';
+	}
 	else {
-	    window.location.href = './posts/' + postName + '.html';
+	    window.location.href = './posts/' + postName + '.html'
 	}
 	return false;
     });

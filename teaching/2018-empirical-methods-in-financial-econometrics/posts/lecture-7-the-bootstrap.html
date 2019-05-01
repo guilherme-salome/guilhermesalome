@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2018-09-19 Wed 20:39 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Bootstrap</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Guilherme Salomé" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+	     margin-bottom: .2em; }
+  .subtitle { text-align: center;
+	      font-size: medium;
+	      font-weight: bold;
+	      margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+	    padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link href="https://fonts.googleapis.com/css?family=Cousine|Open+Sans:300,400|Unica+One" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="../style/post.css">
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+	displayAlign: "center",
+	displayIndent: "0em",
+
+	"HTML-CSS": { scale: 100,
+			linebreaks: { automatic: "false" },
+			webFont: "TeX"
+		       },
+	SVG: {scale: 100,
+	      linebreaks: { automatic: "false" },
+	      font: "TeX"},
+	NativeMML: {scale: 100},
+	TeX: { equationNumbers: {autoNumber: "AMS"},
+	       MultLineWidth: "85%",
+	       TagSide: "right",
+	       TagIndent: ".8em"
+	     }
+});
+</script>
+<script type="text/javascript"
+	src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">The Bootstrap</h1>
+<div class="date-box">
+  <div class="date">
+    <div class="month">SEP</div>
+    <div class="year">2 0 1 8</div>
+  </div>
+</div>
+<div id="endhr"></div>
+<p>
+Our goal is to do inference on a parameter of interest \(\theta\), like the integrated volatility. That is, we want to build a confidence interval for \(\theta\), by using an estimator \(\widehat{\theta}\), like the realized volatility. There are three ways to do it: finite sample theory, asymptotic distribution theory and bootstrap theory.
+</p>
+
+<p>
+In finite sample theory we assume that we know the true distribution of the data, and then we can find the exact finite sample distribution of \(\widehat{\theta}\), say:
+</p>
+\begin{align*}
+\widehat{\theta}\sim\text{N}\left(\theta,\frac{\sigma^2}{n}\right)
+\end{align*}
+<p>
+The problem is that this is not always possible to do, the theory can get very complicated quickly, and it usually requires very strong assumptions.
+</p>
+
+<p>
+In asymptotic distribution theory we use asymptotic arguments (\(n\to\infty\)) to get an <b><b>approximation</b></b> to the exact finite sample distribution of \(\widehat{\theta}\). Specifically, from the central limit theorem (CLT), we get:
+</p>
+\begin{align*}
+\sqrt{n}(\widehat{\theta}-\theta)\overset{d}{\to}\text{N}(0,\sigma^2)
+\end{align*}
+<p>
+And if \(n\) is big enough, we have that \(\widehat{\theta}\) is approximately distributed as \(\text{N}(\theta,\frac{\sigma^2}{n})\).
+</p>
+
+<p>
+In bootstrap theory we also want to obtain the finite sample distribution of \(\widehat{\theta}\).
+Imagine we could somehow obtain new samples of the data.
+Then, for each new sample, we could compute a new \(\widehat{\theta}\), and after repeating this process many times, we would have an idea of the exact finite sample distribution of \(\widehat{\theta}\).
+</p>
+
+<p>
+Question: What is the problem with this procedure?
+</p>
+
+<p>
+We cannot get new samples from the data.
+We will always only have one sample of the data.
+In other words, we cannot go to the stock exchange, and resample new prices for a day in the past.
+We have what we have, a single sample from the price process.
+</p>
+
+<p>
+The insight in bootstrap is that, even though we only have one sample from the data, we can use it to generate new samples.
+That is, from this one sample, we can apply the procedure suggested above.
+We can do so by resampling the data we have with replacement, effectively generating a new data sample.
+</p>
+
+<p>
+If the data is \((X_1,X_2,\cdots,X_n)\), we can resample with replacement from it a new data set of size \(n\).
+Using this new data set, we can compute \(\widehat{\theta}^*\).
+Then we resample with replacement again, and compute a new \(\widehat{\theta}^*\), and so on. After computing a large number of \(\widehat{\theta}^*\)'s, we get an approximation of the exact finite sample distribution of \(\widehat{\theta}\), and can compute the confidence intervals for \(\theta\).
+</p>
+
+<div id="outline-container-org4b9d96a" class="outline-2">
+<h2 id="org4b9d96a">Implementing the Bootstrap in Matlab</h2>
+<div class="outline-text-2" id="text-org4b9d96a">
+<p>
+Now, we will go over how to build the basis of the bootstrap in Matlab. Bootstrapping has two main steps: resampling the data, and computing \(\widehat{\theta}^*\). The second part, computing \(\widehat{\theta}^*\), is what changes from one bootstrap to another, say from bootstrapping the realized volatility to bootstrapping the truncated volatility.
+However, the first part (resampling the data) does not change from one problem to the other.
+We always need to resample the data with replacement.
+The only thing that changes is the data, but the resampling procedure is always the same.
+The idea is to break the bootstrap in two steps: the first is resampling the data, and the second is computing \(\widehat{\theta}^*\).
+</p>
+
+<p>
+At the end of these lecture notes, we will have a function that will do the first step, resample the data with replacement.
+This greatly simplifies the bootstrapping procedure, and all that will be left to do is compute \(\widehat{\theta}^*\).
+</p>
+</div>
+
+<div id="outline-container-orgf7e9468" class="outline-3">
+<h3 id="orgf7e9468">Implementing the Base Case</h3>
+<div class="outline-text-3" id="text-orgf7e9468">
+<p>
+What is easier than obtaining the bootstrap samples for 250 days? Obtaining the bootstrap samples for 1 day. What is easier than obtaining \(J\) bootstrap samples? Obtaining 1 bootstrap sample. So, we will start with a simple case.
+Assume we have the continuous returns for a single day, and that we want to obtain one bootstramp sample by resampling with replacement from the continuous returns.
+</p>
+
+<p>
+Let the continuous return be stored in vector form:
+</p>
+\begin{align*}
+r^c = \begin{pmatrix}
+      r^c_1\\
+      r^c_2\\
+      \vdots\\
+      r^c_n
+      \end{pmatrix}
+\end{align*}
+
+<p>
+We want to bootstrap the sample stored in \(r^c\). Let's create a function for that:
+</p>
+<div class="org-src-container">
+<pre class="src src-octave"><span style="color: #51afef;">function</span> bsample <span style="color: #c678dd;">=</span> <span style="color: #c678dd;">getBSample</span>(<span style="color: #c678dd;">...</span>)
+</pre>
+</div>
+
+<p>
+Question: What do we need to feed this function?
+</p>
+
+<p>
+It needs the data that we want to bootstrap, and since we are bootstrapping returns, it also needs how many subintervals to break the returns into. It might also be useful to feed how big the data is.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-octave"><span style="color: #51afef;">function</span> bsample <span style="color: #c678dd;">=</span> <span style="color: #c678dd;">getBSample</span>(rc<span style="color: #c678dd;">,</span>n<span style="color: #c678dd;">,</span>kn)
+</pre>
+</div>
+
+<p>
+Here \(rc\) represents the vector of continuous returns, \(n\) how may returns we have in a day, and \(kn\) is the size of the subintervals for the returns. Now, we need to break the vector \(r^c\) into \(M\equiv\left\lfloor{\frac{n}{k_n}}\right\rfloor\) subintervals:
+</p>
+\begin{align*}
+r^c = \begin{pmatrix}
+      r^c_1\\
+      \vdots\\
+      r^c_{k_n}\\
+      r^c_{k_n+1}\\
+      \vdots\\
+      r^c_{2k_n}\\
+      \vdots\\
+      r^c_{(n-1)k_n+1}\\
+      \vdots\\
+      r^c_{nk_n}
+      \end{pmatrix}
+\end{align*}
+<p>
+From the 1st subinterval, we redraw with replacement \(k_n\) returns. From the 2nd subinterval, we redraw with replacement \(k_n\) returns. And so on. Let's do that in Matlab:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-octave"><span style="color: #51afef;">function</span> bsample <span style="color: #c678dd;">=</span> <span style="color: #c678dd;">getBSample</span>(rc<span style="color: #c678dd;">,</span>n<span style="color: #c678dd;">,</span>kn)
+    bsample <span style="color: #c678dd;">=</span> zeros(n<span style="color: #c678dd;">,</span>1)<span style="color: #c678dd;">;</span> <span style="color: #5B6268;">% to store the bootstrap sample</span>
+    M <span style="color: #c678dd;">=</span> floor(n<span style="color: #c678dd;">/</span>kn)<span style="color: #c678dd;">;</span> <span style="color: #5B6268;">% number of subintervals</span>
+    <span style="color: #51afef;">for</span> s <span style="color: #c678dd;">=</span> 1<span style="color: #c678dd;">:</span>M
+	id_sub <span style="color: #c678dd;">=</span> ((s<span style="color: #c678dd;">-</span>1)<span style="color: #c678dd;">*</span>kn<span style="color: #c678dd;">+</span>1<span style="color: #c678dd;">:</span>s<span style="color: #c678dd;">*</span>kn)<span style="color: #c678dd;">';</span>
+	bsample(id_sub) <span style="color: #c678dd;">=</span> <span style="color: #5B6268;">% redraw with replacement from rc</span>
+    <span style="color: #51afef;">end</span>
+<span style="color: #51afef;">end</span>
+</pre>
+</div>
+
+<p>
+In the code above, we declare <code>bsample</code> to store the bootstrap sample, we then compute the number <code>M</code> of subintervals. Then, for each subinterval, we redraw with replacement from <code>rc</code> and store the new sample. We are missing this last piece.
+</p>
+
+<p>
+To redraw with replacement, we need to draw with replacement \(k_n\) random numbers from the uniform (discrete) distribution.
+If we are in the first subinterval, then we need \(k_n\) random numbers from \(1,2,\cdots,k_n\).
+To do so, we can use the matlab function <code>unidrnd</code>.
+This function returns random numbers from \(1\) to some number \(K\). \(K\) is the first parameter of <code>unidrnd</code>. The next two parameters are how many numbers you need to be returned. For example, if we call <code>unidrnd(11,5,2)</code>, we will get back a \(5\times 2\) matrix of random numbers between 1 and 11.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-octave"><span style="color: #51afef;">function</span> bsample <span style="color: #c678dd;">=</span> <span style="color: #c678dd;">getBSample</span>(rc<span style="color: #c678dd;">,</span>n<span style="color: #c678dd;">,</span>kn)
+    bsample <span style="color: #c678dd;">=</span> zeros(n<span style="color: #c678dd;">,</span>1)<span style="color: #c678dd;">;</span> <span style="color: #5B6268;">% to store the bootstrap sample</span>
+    M <span style="color: #c678dd;">=</span> floor(n<span style="color: #c678dd;">/</span>kn)<span style="color: #c678dd;">;</span> <span style="color: #5B6268;">% number of subintervals</span>
+    <span style="color: #51afef;">for</span> s <span style="color: #c678dd;">=</span> 1<span style="color: #c678dd;">:</span>M
+	id_sub <span style="color: #c678dd;">=</span> ((s<span style="color: #c678dd;">-</span>1)<span style="color: #c678dd;">*</span>kn<span style="color: #c678dd;">+</span>1<span style="color: #c678dd;">:</span>s<span style="color: #c678dd;">*</span>kn)<span style="color: #c678dd;">';</span>
+	id_rc <span style="color: #c678dd;">=</span> unidrnd(kn<span style="color: #c678dd;">,</span>kn<span style="color: #c678dd;">,</span>1)<span style="color: #c678dd;">;</span> <span style="color: #5B6268;">% resample with replacement</span>
+	bsample(id_sub) <span style="color: #c678dd;">=</span> rc(id_rc)<span style="color: #c678dd;">;</span>
+    <span style="color: #51afef;">end</span>
+<span style="color: #51afef;">end</span>
+</pre>
+</div>
+
+<p>
+We save the random draw from the discrete uniform in <code>id_rc</code>, and then obtain the random sample by calling <code>rc(id_rc)</code>. This random sample for the first subinterval is stored in <code>bsample</code> at the correct location.
+</p>
+
+<p>
+Question: We are almost done, but there is a logical mistake in the code above. What is it?
+</p>
+
+<p>
+When we move to the 2nd subinterval, the next <code>id_rc</code> will give us a new sample from the 1st subinterval, not from the 2nd subinterval. Fortunatelly, that is easy to fix.
+We just need to move the random numbers from somewhere between \(\{1,\cdots,k_n\}\) to somewhere beteween \(\{1,\cdots,k_n\}+k_n\). So that we get the numbers for the 2nd subinterval. To get the numbers for the 3rd subinterval, we need to add \(2k_n\), and so on. Making this little adjustment:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-octave"><span style="color: #51afef;">function</span> bsample <span style="color: #c678dd;">=</span> <span style="color: #c678dd;">getBSample</span>(rc<span style="color: #c678dd;">,</span>n<span style="color: #c678dd;">,</span>kn)
+    bsample <span style="color: #c678dd;">=</span> zeros(n<span style="color: #c678dd;">,</span>1)<span style="color: #c678dd;">;</span> <span style="color: #5B6268;">% to store the bootstrap sample</span>
+    M <span style="color: #c678dd;">=</span> floor(n<span style="color: #c678dd;">/</span>kn)<span style="color: #c678dd;">;</span> <span style="color: #5B6268;">% number of subintervals</span>
+    <span style="color: #51afef;">for</span> s <span style="color: #c678dd;">=</span> 1<span style="color: #c678dd;">:</span>M
+	id_sub <span style="color: #c678dd;">=</span> ((s<span style="color: #c678dd;">-</span>1)<span style="color: #c678dd;">*</span>kn<span style="color: #c678dd;">+</span>1<span style="color: #c678dd;">:</span>s<span style="color: #c678dd;">*</span>kn)<span style="color: #c678dd;">';</span>
+	id_rc <span style="color: #c678dd;">=</span> unidrnd(kn<span style="color: #c678dd;">,</span>kn<span style="color: #c678dd;">,</span>1) <span style="color: #c678dd;">+</span> (s<span style="color: #c678dd;">-</span>1)<span style="color: #c678dd;">*</span>kn<span style="color: #c678dd;">;</span> <span style="color: #5B6268;">% resample with replacement</span>
+	bsample(id_sub) <span style="color: #c678dd;">=</span> rc(id_rc)<span style="color: #c678dd;">;</span>
+    <span style="color: #51afef;">end</span>
+<span style="color: #51afef;">end</span>
+</pre>
+</div>
+
+<p>
+Now, if we give this function our vector of diffusive returns for 1 day, we will get back a new vector of diffusive returns for 1 day, resampled with replacement from \(M\) subintervals.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3b29c78" class="outline-3">
+<h3 id="org3b29c78">Extending for Multiple Assets</h3>
+<div class="outline-text-3" id="text-org3b29c78">
+<p>
+Now we can obtain a bootstrap sample for a single day, for a single continuous return. What if we have more than one continuous return? Assume we have two continnuous returns for a single day: \(r^c_1\) and \(r^c_2\). Also, let's assume they are stored in vector form as before, and let's define \(r^c\) as the horizontal-join of \(r^c_1\) and \(r^c_2\):
+</p>
+\begin{align*}
+r^c &= \begin{pmatrix} r^c_1 & r^c_2\end{pmatrix}\\
+    &=\begin{pmatrix}
+      r^c_{1,1} & r^c_{2,1}\\
+      r^c_{1,2} & r^c_{2,2}\\
+      \vdots & \vdots\\
+      r^c_{1,n} & r^c_{2,n}
+      \end{pmatrix}
+\end{align*}
+
+<p>
+Let's extend the function <code>getBSample</code> to deal with an <code>rc</code> as above (a \(n\times 2\) matrix). In this case, it is important to resample with replacement both stocks at the same time.
+If we resample them separately, we will destroy the correlation between the assets.
+</p>
+
+<p>
+We need to add a new input to the function: how many assets we have in <code>rc</code>. Denote this number by <code>a</code>. Additionaly, we then need to adjust <code>bsample</code> so that it can hold a matrix instead of a vector. Lastly, we need to add <code>:</code> when calling <code>rc</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-octave"><span style="color: #51afef;">function</span> bsample <span style="color: #c678dd;">=</span> <span style="color: #c678dd;">getBSample</span>(rc<span style="color: #c678dd;">,</span>n<span style="color: #c678dd;">,</span>a<span style="color: #c678dd;">,</span>kn)
+    bsample <span style="color: #c678dd;">=</span> zeros(n<span style="color: #c678dd;">,</span>a)<span style="color: #c678dd;">;</span> <span style="color: #5B6268;">% to store the bootstrap sample</span>
+    M <span style="color: #c678dd;">=</span> floor(n<span style="color: #c678dd;">/</span>kn)<span style="color: #c678dd;">;</span> <span style="color: #5B6268;">% number of subintervals</span>
+    <span style="color: #51afef;">for</span> s <span style="color: #c678dd;">=</span> 1<span style="color: #c678dd;">:</span>M
+	id_sub <span style="color: #c678dd;">=</span> ((s<span style="color: #c678dd;">-</span>1)<span style="color: #c678dd;">*</span>kn<span style="color: #c678dd;">+</span>1<span style="color: #c678dd;">:</span>s<span style="color: #c678dd;">*</span>kn)<span style="color: #c678dd;">';</span>
+	id_rc <span style="color: #c678dd;">=</span> unidrnd(kn<span style="color: #c678dd;">,</span>kn<span style="color: #c678dd;">,</span>1) <span style="color: #c678dd;">+</span> (s<span style="color: #c678dd;">-</span>1)<span style="color: #c678dd;">*</span>kn<span style="color: #c678dd;">;</span> <span style="color: #5B6268;">% resample with replacement</span>
+	bsample(id_sub<span style="color: #c678dd;">,:</span>) <span style="color: #c678dd;">=</span> rc(id_rc<span style="color: #c678dd;">,:</span>)<span style="color: #c678dd;">;</span>
+    <span style="color: #51afef;">end</span>
+<span style="color: #51afef;">end</span>
+</pre>
+</div>
+
+<p>
+We can now deal with the case where we need a bootstrap sample for a single day for multiple assets at the same time.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org117b55c" class="outline-3">
+<h3 id="org117b55c">Putting the getBSample Function In Use</h3>
+<div class="outline-text-3" id="text-org117b55c">
+<p>
+Next, we are going to actually use this function to solve the case where we have multiple assets, multiple days, and need multiple bootstrap samples.
+</p>
+
+<p>
+Assume we have two different assets, and a market index, and that we have computed their continuous returns. Assume these continuous returns are stored in three different vectors: \(r^c_1\), \(r^c_2\) and \(r^c_m\). These vectors are of the size \(n\times T\), since we now have \(T\) days of data. We can then build \(r^c\) as before:
+</p>
+\begin{align*}
+r^c \equiv \begin{pmatrix}  r^c_1 & r^c_2 & r^c_m \end{pmatrix}
+\end{align*}
+
+<p>
+Assume we need \(J\) bootstrap repetitions, then we can write our main script as:
+</p>
+<div class="org-src-container">
+<pre class="src src-octave">theta_hat <span style="color: #c678dd;">=</span> zeros(J)<span style="color: #c678dd;">;</span> <span style="color: #5B6268;">% save the estimated values for each boostrap repetition</span>
+
+<span style="color: #5B6268;">% </span><span style="color: #5B6268;">for each bootstrap repetition</span>
+<span style="color: #51afef;">for</span> j <span style="color: #c678dd;">=</span> 1<span style="color: #c678dd;">:</span>J
+    bsample <span style="color: #c678dd;">=</span> zeros(n<span style="color: #c678dd;">*</span>T<span style="color: #c678dd;">,</span>a)<span style="color: #c678dd;">;</span> <span style="color: #5B6268;">% to store the bootstrap sample</span>
+			    <span style="color: #5B6268;">% n*T returns for a assets</span>
+    <span style="color: #5B6268;">% for each day</span>
+    <span style="color: #51afef;">for</span> t <span style="color: #c678dd;">=</span> 1<span style="color: #c678dd;">:</span>T
+	id_bsample <span style="color: #c678dd;">=</span> (1<span style="color: #c678dd;">:</span>n)<span style="color: #c678dd;">'</span> <span style="color: #c678dd;">+</span> (t<span style="color: #c678dd;">-</span>1)<span style="color: #c678dd;">*</span>n<span style="color: #c678dd;">;</span>
+	<span style="color: #5B6268;">% get the bsample for this day</span>
+	bsample(id_bsample) <span style="color: #c678dd;">=</span> getBSample(rc(id_bsample)<span style="color: #c678dd;">,</span>n<span style="color: #c678dd;">,</span>a<span style="color: #c678dd;">,</span>kn)<span style="color: #c678dd;">;</span>
+    <span style="color: #51afef;">end</span>
+
+    <span style="color: #5B6268;">% compute theta hat</span>
+    theta_hat(j) <span style="color: #c678dd;">=</span> <span style="color: #5B6268;">% whatever you need to compute, like RV or TV</span>
+<span style="color: #51afef;">end</span>
+
+<span style="color: #5B6268;">% </span><span style="color: #5B6268;">compute the quantiles of theta_hat to find the confidence interval for theta</span>
+CI_low <span style="color: #c678dd;">=</span> quantile(theta_hat<span style="color: #c678dd;">,</span> 0.025)<span style="color: #c678dd;">;</span>
+CI_up <span style="color: #c678dd;">=</span> qunatile(theta_hat<span style="color: #c678dd;">,</span> 0.975)<span style="color: #c678dd;">;</span>
+</pre>
+</div>
+
+<p>
+The script above uses the function we created to simplify the bootstrap procedure. Because we built <code>getBSample</code> with care, the only thing that is left to do in the bootstrap is to compute \(\widehat{\theta}^*\). It is usually a good idea to also have a function for that, simplifying even further the bootstrap.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org663c441" class="outline-3">
+<h3 id="org663c441">Extending for Multiple Days</h3>
+<div class="outline-text-3" id="text-org663c441">
+<p>
+The sampling part of the bootstrap can be simplified even further, if we extend <code>getBSample</code> to work even when <code>rc</code> contains data on more than a single day. To do so, we need to add a new input: the number of days of data stored in <code>rc</code>. Denote this number by \(T\).
+</p>
+
+<p>
+To extend <code>getBSample</code> we need to adjust <code>bsample</code>, and include a new for-loop for each day. To do so, let's create a new function called <code>getTBSample</code>, and use <code>getBSample</code> to build it!
+</p>
+
+<div class="org-src-container">
+<pre class="src src-octave"><span style="color: #51afef;">function</span> bsample <span style="color: #c678dd;">=</span> <span style="color: #c678dd;">getTBSample</span>(rc<span style="color: #c678dd;">,</span>n<span style="color: #c678dd;">,</span>a<span style="color: #c678dd;">,</span>T<span style="color: #c678dd;">,</span>kn)
+    bsample <span style="color: #c678dd;">=</span> zeros(n<span style="color: #c678dd;">*</span>T<span style="color: #c678dd;">,</span>a)<span style="color: #c678dd;">;</span> <span style="color: #5B6268;">% to store the bootstrap sample</span>
+    M <span style="color: #c678dd;">=</span> floor(n<span style="color: #c678dd;">/</span>kn)<span style="color: #c678dd;">;</span> <span style="color: #5B6268;">% number of subintervals</span>
+    <span style="color: #51afef;">for</span> t <span style="color: #c678dd;">=</span> 1<span style="color: #c678dd;">:</span>T
+	<span style="color: #5B6268;">% get returns matrix for day t</span>
+	id_day <span style="color: #c678dd;">=</span> (1<span style="color: #c678dd;">:</span>n)<span style="color: #c678dd;">'</span> <span style="color: #c678dd;">+</span> (t<span style="color: #c678dd;">-</span>1)<span style="color: #c678dd;">*</span>n<span style="color: #c678dd;">;</span>
+	bsample(id_day<span style="color: #c678dd;">,:</span>) <span style="color: #c678dd;">=</span> getBSample(rc(id_day<span style="color: #c678dd;">,:</span>)<span style="color: #c678dd;">,</span>n<span style="color: #c678dd;">,</span>a<span style="color: #c678dd;">,</span>kn)<span style="color: #c678dd;">;</span>
+    <span style="color: #51afef;">end</span>
+<span style="color: #51afef;">end</span>
+</pre>
+</div>
+
+<p>
+We increased the size of <code>bsample</code> to hold the data for multiple days, and a for-loop to resample at each day. At each day, we obtain the return data for that day via <code>id_day</code>, and call <code>getBSample</code> to get a bootstrap sample for that single day. We then save this new sample in <code>bsample</code> and repeat the procedure for the next day.
+</p>
+
+<p>
+Using this new function, we can revisit the script from the previous section:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-octave">theta_hat <span style="color: #c678dd;">=</span> zeros(J)<span style="color: #c678dd;">;</span> <span style="color: #5B6268;">% save the estimated values for each boostrap repetition</span>
+<span style="color: #5B6268;">% </span><span style="color: #5B6268;">for each bootstrap repetition</span>
+<span style="color: #51afef;">for</span> j <span style="color: #c678dd;">=</span> 1<span style="color: #c678dd;">:</span>J
+    <span style="color: #5B6268;">% obtain a bootstrap sample</span>
+    bsample <span style="color: #c678dd;">=</span> getTBSample(rc<span style="color: #c678dd;">,</span>n<span style="color: #c678dd;">,</span>a<span style="color: #c678dd;">,</span>T<span style="color: #c678dd;">,</span>kn)<span style="color: #c678dd;">;</span>
+    <span style="color: #5B6268;">% compute theta hat</span>
+    theta_hat(j) <span style="color: #c678dd;">=</span> <span style="color: #5B6268;">% whatever you need to compute, like RV or RB or Rrho</span>
+<span style="color: #51afef;">end</span>
+<span style="color: #5B6268;">% </span><span style="color: #5B6268;">compute the quantiles of theta_hat to find the confidence interval for theta</span>
+CI_low <span style="color: #c678dd;">=</span> quantile(theta_hat<span style="color: #c678dd;">,</span> 0.025)<span style="color: #c678dd;">;</span>
+CI_up <span style="color: #c678dd;">=</span> qunatile(theta_hat<span style="color: #c678dd;">,</span> 0.975)<span style="color: #c678dd;">;</span>
+</pre>
+</div>
+
+<p>
+By using functions to build smaller blocks of computation, we can create powerful and readable scripts, that are much easier to understand and debug. And when you come back to them a couple of months from now, or even years, you will be able to understand what is happening much quicker.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org60bd3db" class="outline-3">
+<h3 id="org60bd3db">Challenge: 3-lines Bootstrap Sampling Function</h3>
+<div class="outline-text-3" id="text-org60bd3db">
+<p>
+If you made it this far, congratulations! You now know how to create a neat bootstrap script!
+</p>
+
+<p>
+Here is a challenge for you.
+The bootstrap script we created above is not the fastest script out there.
+And there are multiple ways to improve it.
+If you spend some time thinking about how to get bootstrap samples efficiently, you will notice that finding the random indices does not depend on the number of assets we have.
+That is, even if we have more than one asset (<code>rc</code> is a matrix), it makes no difference when finding <code>id_rc</code>.
+You will also notice that you can get <code>id_rc</code> for all subintervals \(M\) at the same time. It is also possible to get <code>id_rc</code> for all days \(T\) at the same time. And believe it or not, it is also possible to get <code>id_rc</code> for all bootstrap repetitions \(J\) at the same time.
+</p>
+
+<p>
+<b><b>The 3-Lines Bootstrap Sampling Function Challenge:</b></b> create the 3-lines function <code>getJTBSample</code> (as below) that computes the indices <code>id_rc</code> that recover the bootstrap samples from <code>rc</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-octave"><span style="color: #51afef;">function</span> id_rc <span style="color: #c678dd;">=</span> <span style="color: #c678dd;">getJTBSample</span>(n<span style="color: #c678dd;">,</span>kn<span style="color: #c678dd;">,</span>T<span style="color: #c678dd;">,</span>J)
+    M <span style="color: #c678dd;">=</span> floor(n<span style="color: #c678dd;">/</span>kn)<span style="color: #c678dd;">;</span>    <span style="color: #5B6268;">% this is the first line, so you only need 2 more! :D</span>
+    offset <span style="color: #c678dd;">=</span> ?<span style="color: #c678dd;">;</span>         <span style="color: #5B6268;">% hint: this is a M*kn*T x 1 vector</span>
+    id_rc <span style="color: #c678dd;">=</span> ? <span style="color: #c678dd;">+</span> offset<span style="color: #c678dd;">;</span> <span style="color: #5B6268;">% hint: this is a M*kn*T x 1 x J matrix (3-dimensional)</span>
+<span style="color: #51afef;">end</span>
+</pre>
+</div>
+
+<p>
+To help you solve this very hard challenge, here are some step-by-step suggestions:
+</p>
+<ol class="org-ol">
+<li>Extend the <code>getTBSample</code> to return multiple bootstrap samples at the same time.
+<ul class="org-ul">
+<li>Hint: Initialize <code>bsample</code> as <code>zeros(n*T,a,J)</code> (a \(3\) dimensional matrix).</li>
+</ul></li>
+<li>Substitute the for-loop for the subintervals for a Kronecker product.
+<ul class="org-ul">
+<li>Hint: first find the indices for all subintervals using a big <code>unidrnd</code>, notice that for the 2nd subinterval forward the indices will not be right, you need to make an adjustment as we did in the <b><b>Base Case</b></b>. Call this adjustment an <code>offset</code> and use a kronecker product to find the correct offset so that the <code>unidrnd</code> values are right for each subinterval.</li>
+</ul></li>
+<li>Substitute the for-loop for the days for a Kronecker product.
+<ul class="org-ul">
+<li>Hint: now  <code>unidrnd</code> also has to generate numbers for all subintervals and all days; make sure to adjust the <code>offset</code> so that you correct the indices for days and subinterval.</li>
+</ul></li>
+<li>Substitute the for-loop for the boostrap samples for a Kronecker product.
+<ul class="org-ul">
+<li>Hint: now <code>unidrnd</code> has to generate numbers for all subintervals, all days and all bootstrap samples, so make it a multidimensional matrix, like <code>unidrnd(kn,x,y,z)</code>.</li>
+</ul></li>
+<li>Create the function <code>getJTBSample</code> that returns a 3-dimensional matrix <code>id_rc</code> containing the indices that give us \(J\) bootstrap samples for all days, resampling with replacement from \(M\) subinterval for each day.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

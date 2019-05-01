@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-script-type" content="text/javascript">
+    <meta http-equiv="content-style-type" content="text/css">
+    <meta http-equiv="content-language" content="nl">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="Guilherme Salomé">
+    <meta name="description" content="I'm Guilherme Salomé, an economist working at a PhD at Duke University. This is my personal webpage, it contains my resume, teaching, and blog.">
+    <meta name="keywords" content="Guilherme Salomé, Resume, Teaching, Blog, Economics, Finance, Econometrics, Emacs, Math">
+    <meta name="robots" content="index, follow">
+    <meta name="revisit-after" content="14 days">
+
+    <title>Guilherme Salomé - Economist</title>
+
+    <!-- GOOGLE FONTS: OPEN SANS, UNICA ONE AND COUSINE -->
+    <link href="https://fonts.googleapis.com/css?family=Cousine|Open+Sans|Unica+One|Cutive+Mono" rel="stylesheet">
+    <!-- BLOG CSS -->
+    <link rel="stylesheet" type="text/css" href="style/main.css">
+
+    <!-- JQUERY AND BLOG JS -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+    <script type="text/javascript" src="script/main.js"></script>
+
+    <!-- FOR IMPATIENT MODE REFRESH -->
+    <script src="http://localhost:8080/skewer"></script>
+
+  </head>
+  <body>
+
+    <div id="intro-container">
+      <div class="intro">
+	<p id="hi-message">Empirical Methods in Financial Econometrics</p>
+      </div>
+    </div>
+
+    <div id="content-container">
+      <div class="blog-post">
+	<div class="date-box">
+	  <div class="date">
+	    <div class="month">AUG</div>
+	    <div class="year">2 0 1 7</div>
+	  </div>
+	</div>
+	<div class="title">Introduction to Latex</div>
+      </div>
+    </div>
+
+    <div id="content-container">
+      <div class="blog-post pdf">
+	<div class="date-box">
+	  <div class="date">
+	    <div class="month">AUG</div>
+	    <div class="year">2 0 1 7</div>
+	  </div>
+	</div>
+	<div class="title">Notes on Algorithm Efficiency</div>
+      </div>
+    </div>
+
+    <div id="content-container">
+      <div class="blog-post">
+	<div class="date-box">
+	  <div class="date">
+	    <div class="month">NOV</div>
+	    <div class="year">2 0 1 7</div>
+	  </div>
+	</div>
+	<div class="title">Bootstrapping in Matlab</div>
+      </div>
+    </div>
+
+  </body>
+</html>

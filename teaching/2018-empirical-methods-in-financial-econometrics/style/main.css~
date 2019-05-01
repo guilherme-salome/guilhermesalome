@@ -1,0 +1,181 @@
+body {
+    color: rgb(67,66,66);
+    background-color: rgb(243,239,225);
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+#content-container {
+    width: 600px;
+    height: 100px;
+    margin: 0 auto 0 auto;
+}
+
+/* ===================================== INTRO ===================================== */
+#intro-container {
+    margin: 40px 0px 20px 0px;
+    padding: 20px 0px 30px 0px;
+    width: 100%;
+    background-color: rgb(67,66,66);
+}
+
+.intro {
+    width: 600px;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+#hi-message {
+    font-family: 'Open Sans', monospace;
+    font-size: 44px;
+    font-weight: lighter;
+    margin: 0px;
+    color: rgb(29,187,88);
+}
+
+#blog-description {
+    font-family: 'Open Sans', 'Cousine', sans-serif;
+    font-size: 16px;
+    font-weight: lighter;
+    margin: 0px;
+    padding-left: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: rgba(235,235,235,0.7);
+}
+/* ================================================================================= */
+
+
+
+/* =============================== CENTERING CONTENT =============================== */
+.blog-post {
+    margin: 0 auto 0 auto;
+}
+
+.intro {
+    margin: 0 auto 0 auto;
+}
+/* ================================================================================= */
+
+
+
+/* ============================ BLOG POST AND ANIMATIONS =========================== */
+.blog-post {
+    width: 100%;
+    height: 80px;
+    margin-bottom: 10px;
+    border: 0.5px solid rgb(67,66,66);
+}
+
+.date-box {
+    width: 15%;
+    height: 100%;
+    background-color: rgb(67,66,66);
+    color: rgb(230,230,230);
+    text-align: center;
+}
+
+.date {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+}
+
+.month {
+    font-family: 'Cousine', monospace;
+    font-size: 36px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.aug {
+    font-size: 34px;
+}
+
+.year {
+    font-family: 'Unica One', sans-serif, cursive;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: -10px;
+    padding-top: 0px;
+    width: 100%;
+}
+
+.title {
+    width: 85%;
+    height: 100%;
+    position: relative;
+    top: -100%;
+    left: 15%;
+    display: flex;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 36px;
+    font-weight: lighter;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-bottom: 0px;
+    background-color: ;
+    border-bottom: ;
+}
+
+.title-long {
+    font-size: 24px;
+}
+
+/* ================================================================================= */
+
+/* =============================== ANIMATIONS ====================================== */
+.blog-post {
+    transition: box-shadow 0.5s;
+}
+
+.blog-post:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 6px rgb(67,66,66);
+}
+/*================================================================================== */
+
+/* =============================== VIEWPORTS ======================================= */
+@media (max-width: 629px) {
+    #hi-message {
+	font-size:
+    }
+
+    #intro-container {
+	min-width: 320px;
+	padding-left: 20px;
+    }
+
+    .intro {
+	width: 320px;
+    }
+
+    #content-container {
+	width: 320px;
+    }
+
+    .blog-post {
+	width: 300px;
+    }
+
+    .date-box {
+	width: 80px;
+    }
+
+    .title {
+	width: 220px;
+	font-size: 20px;
+	left: 90px;
+	padding: 0px;
+    }
+
+    .title-long {
+	font-size: 14px;
+    }
+}
+/*================================================================================== */
