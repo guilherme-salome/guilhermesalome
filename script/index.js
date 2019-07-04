@@ -1,9 +1,13 @@
 window.onload = function() {
-  $(".animate").click(function(e) {
-    var goToPage = $(this).parent().attr('id');
-    window.location.href = goToPage + ".html";
-    return false;
-  })
+    $(".animate").click(function(e) {
+	var goToPage = $(this).parent().attr('id');
+	if (goToPage == 'resume') {
+	    window.location.href = './documents/resume.pdf';
+	} else {
+	    window.location.href = goToPage + ".html";
+	}
+	return false;
+    })
 }
 
 $(document).ready(function() {

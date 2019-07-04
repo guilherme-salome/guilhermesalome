@@ -61,7 +61,7 @@ body {
     top: -600px;
 }
 
-#blog {
+#research {
     box-sizing: border-box;
     border-radius: 0px 0px 20px 0px;
     width: 400px;
@@ -88,7 +88,7 @@ body {
     background-image: linear-gradient(rgba(110,136,152,0.9),rgba(110,136,152,0.8)),url(https://guilhermesalome.com/images/teaching.jpg);
     background-size: cover;
 }
-#blog {
+#research {
     background-image: linear-gradient(rgba(243,239,226,0.6),rgba(243,239,226,0.8)),url(https://guilhermesalome.com/images/blog3.jpg);
     background-size: cover;
 }
@@ -212,7 +212,7 @@ body {
 	left: 233px;
     }
 
-    #blog {
+    #research {
 	top: -900px;
 	left: 467px;
 	width: 233px;
@@ -255,7 +255,7 @@ body {
 	left: 0px;
     }
 
-    #blog {
+    #research {
 	width: 480px;
 	height: 100px;
 	position: relative;
@@ -321,7 +321,7 @@ body {
 	left: 0px;
     }
 
-    #blog {
+    #research {
 	width: 300px;
 	height: 100px;
 	top: 0px;
@@ -346,50 +346,52 @@ body {
 	top: -10px;
     }
 }
-/* Tall Iphones */
-@media(max-height: 700px) {
-    #main-container {
-	height: 530px;
-    }
 
-    #hello-text {
-	font-size: 42px;
-	position: relative;
-	left: 5%;
-	top: 14%;
-    }
+/* I commented this out because it was leading to bugs when changing the height of the page */
+/* /\* Tall Iphones *\/ */
+/* @media(max-height: 700px) { */
+/*     #main-container { */
+/*	height: 530px; */
+/*     } */
 
-    #i-am-text {
-	position: relative;
-	top: 30px;
-    }
+/*     #hello-text { */
+/*	font-size: 42px; */
+/*	position: relative; */
+/*	left: 5%; */
+/*	top: 14%; */
+/*     } */
 
-    #hello {
-	height: 230px;
-    }
+/*     #i-am-text { */
+/*	position: relative; */
+/*	top: 30px; */
+/*     } */
 
-    #resume {
-	width: 300px;
-	height: 100px;
-	top: 0px;
-	border-radius: 0px 0px 0px 0px;
-    }
+/*     #hello { */
+/*	height: 230px; */
+/*     } */
 
-    #teaching {
-	width: 300px;
-	height: 100px;
-	top: 0px;
-	left: 0px;
-    }
+/*     #resume { */
+/*	width: 300px; */
+/*	height: 100px; */
+/*	top: 0px; */
+/*	border-radius: 0px 0px 0px 0px; */
+/*     } */
 
-    #blog {
-	width: 300px;
-	height: 100px;
-	top: 0px;
-	left: 0px;
-	border-radius: 0px 0px 20px 20px;
-    }
-}
+/*     #teaching { */
+/*	width: 300px; */
+/*	height: 100px; */
+/*	top: 0px; */
+/*	left: 0px; */
+/*     } */
+
+/*     #blog { */
+/*	width: 300px; */
+/*	height: 100px; */
+/*	top: 0px; */
+/*	left: 0px; */
+/*	border-radius: 0px 0px 20px 20px; */
+/*     } */
+/* } */
 
 /* Iphone SE */
 @media (max-width: 340px) {
@@ -431,7 +433,7 @@ body {
 	left: 0px;
     }
 
-    #blog {
+    #research {
 	width: 300px;
 	height: 80px;
 	top: 0px;
@@ -444,5 +446,4 @@ body {
     }
 
 }
-
 /* ================================================================================= */
