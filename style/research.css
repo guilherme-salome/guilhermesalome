@@ -29,6 +29,7 @@ body {
     width: 100%;
     padding: 8px 0px 8px 14px;
     margin: 12px 0px 0px 0px;
+    cursor: pointer;
 }
 
 .paper-title {
@@ -36,6 +37,7 @@ body {
     font-size: 18px;
     font-weight: 300;
     color: #434242;
+    cursor: pointer;
 }
 
 /* ===================================== INTRO ===================================== */
@@ -97,9 +99,11 @@ body {
 }
 
 #home-button {
+    cursor: pointer;
 }
 
 #back-button {
+    cursor: pointer;
     position: relative;
     top: -48px;
     left: 50%;
@@ -114,6 +118,10 @@ body {
 }
 
 .intro {
+    margin: 0 auto 0 auto;
+}
+
+#working-papers {
     margin: 0 auto 0 auto;
 }
 /* ================================================================================= */
@@ -178,11 +186,16 @@ body {
 /* =============================== ANIMATIONS ====================================== */
 .paper {
     transition: box-shadow 0.5s;
+    cursor: pointer;
 }
 
 .paper:hover {
     cursor: pointer;
     box-shadow: 5px 5px 6px rgb(67,66,66);
+}
+
+.nav-button {
+    cursor: pointer;
 }
 
 .nav-button:hover {
@@ -197,7 +210,7 @@ body {
 @media (max-width: 629px) {
     #intro-container {
 	min-width: 320px;
-	padding-left: 20px;
+
     }
 
     .intro {
@@ -208,6 +221,9 @@ body {
 	width: 320px;
     }
 
+    #working-papers {
+	width: 100%;
+    }
     .blog-post {
 	width: 300px;
     }
