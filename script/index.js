@@ -11,7 +11,7 @@ window.onload = function() {
 }
 
 $(document).ready(function() {
-  var movementStrength = 20;
+  var movementStrength = 5;
   var height = movementStrength / $(window).height();
   var width = movementStrength / $(window).width();
   $("#hello").mousemove(function(e){
@@ -24,3 +24,15 @@ $(document).ready(function() {
   $("#debug").text($(window).width());
 
 });
+
+// // Show the width and height of viewport
+// // when page loads and when page is resized
+// function show_size() {
+//     var w = window.innerWidth.toString();
+//     var h = window.innerHeight.toString();
+//     document.getElementById('i-am-text').innerText = `${w}, ${h}`;
+// }
+// window.onresize = show_size;
+// document.addEventListener("DOMContentLoaded", function(){
+//     show_size();
+// });

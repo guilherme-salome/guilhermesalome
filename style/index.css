@@ -347,52 +347,6 @@ body {
     }
 }
 
-/* I commented this out because it was leading to bugs when changing the height of the page */
-/* /\* Tall Iphones *\/ */
-/* @media(max-height: 700px) { */
-/*     #main-container { */
-/*	height: 530px; */
-/*     } */
-
-/*     #hello-text { */
-/*	font-size: 42px; */
-/*	position: relative; */
-/*	left: 5%; */
-/*	top: 14%; */
-/*     } */
-
-/*     #i-am-text { */
-/*	position: relative; */
-/*	top: 30px; */
-/*     } */
-
-/*     #hello { */
-/*	height: 230px; */
-/*     } */
-
-/*     #resume { */
-/*	width: 300px; */
-/*	height: 100px; */
-/*	top: 0px; */
-/*	border-radius: 0px 0px 0px 0px; */
-/*     } */
-
-/*     #teaching { */
-/*	width: 300px; */
-/*	height: 100px; */
-/*	top: 0px; */
-/*	left: 0px; */
-/*     } */
-
-/*     #blog { */
-/*	width: 300px; */
-/*	height: 100px; */
-/*	top: 0px; */
-/*	left: 0px; */
-/*	border-radius: 0px 0px 20px 20px; */
-/*     } */
-/* } */
-
 /* Iphone SE */
 @media (max-width: 340px) {
     #main-container {
@@ -446,4 +400,62 @@ body {
     }
 
 }
+
+
+/* Small Heights */
+@media (max-height: 620px) {
+    body {
+	transform: scale(0.95);
+    }
+}
+
+@media (max-height: 580px) {
+    body {
+	transform: scale(0.85);
+    }
+}
+
+@media (max-height: 520px) {
+    body {
+	transform: scale(0.8);
+    }
+}
+
+@media (max-height: 490px) {
+    body {
+	transform: scale(0.75);
+    }
+}
+
+@media (max-height: 460px) {
+    body {
+	transform: scale(0.7);
+    }
+}
+
+@media (max-height: 460px) {
+    body {
+	transform: scale(0.65);
+    }
+}
+
+@media (max-height: 400px) {
+    body {
+	transform: scale(0.6);
+    }
+}
+
+@media (max-height: 370px) {
+    body {
+	transform: scale(0.55);
+    }
+}
+
+@media (max-height: 340px) {
+    body {
+	transform: scale(0.5);
+    }
+}
+
+/* 1200 767 500 340 */
 /* ================================================================================= */

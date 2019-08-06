@@ -1,0 +1,1156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2019-08-02 Fri 13:09 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Git</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+	     margin-bottom: .2em; }
+  .subtitle { text-align: center;
+	      font-size: medium;
+	      font-weight: bold;
+	      margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+	    padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<!-- Global site tag (gtag.js) - Google Analytics --> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113871253-1"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-113871253-1'); </script>
+<link href="https://fonts.googleapis.com/css?family=Cousine|Open+Sans:300,400|Unica+One" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="../style/post.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+	displayAlign: "center",
+	displayIndent: "0em",
+
+	"HTML-CSS": { scale: 100,
+			linebreaks: { automatic: "false" },
+			webFont: "TeX"
+		       },
+	SVG: {scale: 100,
+	      linebreaks: { automatic: "false" },
+	      font: "TeX"},
+	NativeMML: {scale: 100},
+	TeX: { equationNumbers: {autoNumber: "AMS"},
+	       MultLineWidth: "85%",
+	       TagSide: "right",
+	       TagIndent: ".8em"
+	     }
+});
+</script>
+<script type="text/javascript"
+	src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Git</h1>
+<div class="date-box">
+  <div class="date">
+    <div class="month">AUG</div>
+    <div class="year">2 0 1 9</div>
+  </div>
+</div>
+<div id="endhr"></div>
+<div id="outline-container-org095bcfc" class="outline-2">
+<h2 id="org095bcfc">What is Git and why bother?</h2>
+<div class="outline-text-2" id="text-org095bcfc">
+<p>
+Git is a version control system (VCS).
+A VCS tracks a project and all of its files.
+Meaningful changes to a project's files are recorded by the VCS, and its users can switch between all of the recorded versions.
+Using a VCS is all about making continuous and small improvements to our projects, while knowing we can go back to previous versions if we do not like the changes.
+VCS's also allow for multiple people to collaborate on the same project, facilitating the distribution and maintenance of all files related to the project.
+</p>
+
+<p>
+In this class, we will use a specific VCS: <a href="https://git-scm.com">Git</a>.
+You will use Git to track and submit your projects, and, in the process, you will learn an important tool that allows for multiple people across the world to work on the same projects at the same time (for example, see <a href="https://github.com/torvalds/linux">Linux</a>, which has thousands of contributors, both individuals and companies).
+</p>
+</div>
+</div>
+<div id="outline-container-orge9fcaac" class="outline-2">
+<h2 id="orge9fcaac">Basics of a Git Repository</h2>
+<div class="outline-text-2" id="text-orge9fcaac">
+<p>
+A Git <span class="underline">repository</span> is a collection of all the versions of your project.
+Each of these versions is called a <span class="underline">commit</span>.
+A commit is a snapshot of your entire project at a point in time, and the repository collects these commits through time.
+</p>
+
+<p>
+Even though Git stores a history of all commits of your project, it is very efficient in doing so and can be used both with small and large projects (the linux project is an example of a project with a huge history and a few gigabytes of size).
+If you have a Git repository for a project, you have all versions of this project available to you, and you can move back and forth between versions at any time.
+</p>
+
+<p>
+All commits (snapshots) belong to a <span class="underline">branch</span>.
+A branch is an independent line of development of the project.
+The default line is called a <code>master</code> branch, and it is always available.
+New branches are created to work on different parts of the project.
+In this course, you will most of the time work on the <code>master</code> branch, since the project exercises are dependent on each other.
+However, you could, for example, open a new branch to work on an exercise that is independent from the others.
+</p>
+
+<p>
+When you finish the work you set out to do on a branch, you can <span class="underline">merge</span> that branch back to the <code>master</code> branch.
+To do so, you create a <span class="underline">pull request</span>.
+A pull request is a request to have your branch merged with the master branch.
+In a team setting, a pull request would involve discussions with the rest of your team and having your teammates testing what you did.
+</p>
+
+<p>
+Git has a command line interface, but graphical user interfaces (GUI) are also available (like <a href="https://desktop.github.com">GitHub Desktop</a> and <a href="https://www.sourcetreeapp.com">Sourcetree</a>).
+However, we will use the command line interface.
+The reasons are:
+</p>
+<ul class="org-ul">
+<li>If you say you know Git it is assumed that you have the command line skills</li>
+<li>Git commands via the command line can be automated</li>
+<li>Fast and easy</li>
+</ul>
+<p>
+The GUI for Git can be useful at times.
+They provide a good visual representation of the branches of a repository and some interactive commands can be easier to use with a GUI.
+Remember to choose the right tool for the right task.
+</p>
+
+<p>
+To understand how Git works you must know the 4 locations Git uses:
+</p>
+<ol class="org-ol">
+<li>Working Tree: this is the main directory of your project. It starts out empty or with the files of a commit (snapshot). You can modify the files in the working tree.</li>
+<li>Staging Area (Index): this place stores the files that you plan on including in your next commit (meaningful snapshot of project).</li>
+<li>Local Repository: it is a hidden directory (<code>.git/</code>) inside your main folder, it contains the history of all commits.</li>
+<li>Remote Repository: contains the commits of the project; usually the source of truth of the project.</li>
+</ol>
+
+<p>
+The basic Git workflow goes through all of the 4 locations above. You start by working on the files in your working tree until you have a meaningful change to the project. Then you stage the files that are related to the change in the project, and you create a commit of the project, which is stored in your local repository along with a history of all your commits. You then synchronize the changes with a remote repository, so that your project is available to others.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-center" />
+
+<col  class="org-center" />
+
+<col  class="org-center" />
+
+<col  class="org-center" />
+
+<col  class="org-center" />
+
+<col  class="org-center" />
+
+<col  class="org-center" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-center">Working Tree</td>
+<td class="org-center">\(\rightarrow\)</td>
+<td class="org-center">Staging Area</td>
+<td class="org-center">\(\rightarrow\)</td>
+<td class="org-center">Local Repository</td>
+<td class="org-center">\(\leftrightarrow\)</td>
+<td class="org-center">Remote Repository</td>
+</tr>
+
+<tr>
+<td class="org-center"><i class="fas fa-sitemap fa-lg"></i></td>
+<td class="org-center"><code>git add</code></td>
+<td class="org-center"><i class="fas fa-box-open fa-lg"></i></td>
+<td class="org-center"><code>git commit</code></td>
+<td class="org-center"><i class="fas fa-archive fa-lg"></i> \(\rightarrow\) <i class="fas fa-database fa-lg"></i></td>
+<td class="org-center"><code>git push</code></td>
+<td class="org-center"><i class="fas fa-cloud fa-lg"></i></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org4fa7444" class="outline-2">
+<h2 id="org4fa7444">Syntax for Git commands</h2>
+<div class="outline-text-2" id="text-org4fa7444">
+<p>
+The syntax for all Git commands follows:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">  git [command] [--flags] [arguments]
+</pre>
+</div>
+<p>
+You can find the documentation for Git and for specific commands via:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">  git help [command]            <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">full documentation</span>
+  git [command] -h              <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">concise help</span>
+</pre>
+</div>
+<p>
+If you never used a command before it is helpful to use <code>git help [command]</code> and read the description of the command.
+</p>
+</div>
+</div>
+<div id="outline-container-org8c22d11" class="outline-2">
+<h2 id="org8c22d11">First-Time Git Setup</h2>
+<div class="outline-text-2" id="text-org8c22d11">
+<p>
+The first command we will use is <code>config</code>.
+It is used to setup certain variables that customize how Git behaves.
+The basic syntax for this command is as follows:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">  git config [--local|--global|--system] &lt;key&gt; [&lt;value&gt;]
+  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">--system: applies to every repository and all users of computer</span>
+  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">--global: applies to every repository for your current user</span>
+  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">--local: applies only to the current repository and current user</span>
+</pre>
+</div>
+<p>
+Let's start by adding your username and email:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">  git config --global user.name <span style="color: #2aa198;">"Guilherme"</span>
+  git config --global user.email <span style="color: #2aa198;">"gfs8@duke.edu"</span>
+  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">setup an editor to edit messages</span>
+</pre>
+</div>
+<p>
+This allows Git to store your information when creating commits.
+When you create commits of your project, Git will ask you to enter a message explaining what is being committed and why.
+This message is created in a text editor, and we can define which editor to use by default:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">  git config --global core.editor nano
+  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">other options: emacs, vim</span>
+  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">can also specify full path to editor</span>
+  git config --global core.editor <span style="color: #2aa198;">"'C:/Program Files (x86)/Notepad++/notepad++.exe' -nosession"</span>
+</pre>
+</div>
+<p>
+You can check the current value of the configuration variables with:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">  git config user.name          <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">value of a single variable</span>
+  git config --list
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org8855cf9" class="outline-2">
+<h2 id="org8855cf9">Creating a Repository</h2>
+<div class="outline-text-2" id="text-org8855cf9">
+<p>
+The first project will cover step by step how to set up the repository for the projects, but here we discuss how to set up repositories in general.
+There are two ways to create a repository:
+</p>
+<ol class="org-ol">
+<li>Start one from scratch in a directory</li>
+<li>Clone an existing repository</li>
+</ol>
+</div>
+<div id="outline-container-org8b87035" class="outline-3">
+<h3 id="org8b87035">From Scratch</h3>
+<div class="outline-text-3" id="text-org8b87035">
+<p>
+To start a repository from scratch, go to the terminal and either create a new folder for your repository, or move to an existing folder where you would like to start a repository:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">  mkdir ~/Repositories          <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">~/ represents the user folder</span>
+  <span style="color: #d33682; font-style: italic;">cd</span> ~/Repositories             <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">move to Repositories folder</span>
+  mkdir TestRepo                        <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">create a folder called TestRepo</span>
+  <span style="color: #d33682; font-style: italic;">cd</span> TestRepo                   <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">move into the folder</span>
+  git init                      <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">initialize a git repository</span>
+</pre>
+</div>
+<p>
+The last command creates a new Git repository that will be responsible for storing the history of your project.
+The repository is kept on a hidden folder named <code>.git</code>.
+You can verify the creation of this folder by listing the directory contents:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">  ls -a                         <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">-a to show names beginning with a dot</span>
+  info ls                               <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">to get description of the ls command</span>
+</pre>
+</div>
+<p>
+You can now add files to the working tree, and then stage and commit those files.
+For example:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">  touch README.md                       <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">creates a markdown file</span>
+  git add README.md             <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">adds the file to the staging area</span>
+  git commit -m <span style="color: #2aa198;">"Initial commit."</span>       <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">creates a commit</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf844892" class="outline-3">
+<h3 id="orgf844892">From an existing remote repository</h3>
+<div class="outline-text-3" id="text-orgf844892">
+<p>
+To start a repository based on a repository that already exists (remote repository) we use the <code>git clone</code> command, which clones a remote repository to our computer.
+Remote repositories are usually hosted on a website, like <a href="https://github.com">GitHub</a> and <a href="https://bitbucket.org">Bitbucket</a>, and can be private or public.
+In a corporate environment repositories can be hosted on-premise (usually with <a href="https://enterprise.github.com/home">GitHub enterprise</a>, <a href="https://www.atlassian.com/software/bitbucket/server">Bitbucket Server</a>, <a href="https://gogs.io">Gogs</a>, <a href="https://about.gitlab.com">Gitlab</a> or <a href="https://www.slant.co/topics/1440/~best-self-hosted-web-based-git-repository-managers">others</a>).
+</p>
+
+<p>
+In this course, projects will be hosted on <a href="https://github.com">GitHub</a> (you will receive an email with an invitation link soon).
+Remote repositories have an address given by a URL.
+For example, consider <a href="https://github.com/Salompas/test">this test repository</a>.
+If you go to the link above, you will see a green button saying <code>Clone or download</code>.
+Clicking on that button reveals the URL to the repository.
+Notice that the name of the repository ends with <code>.git</code>.
+We can use that URL to make a clone of the repository.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">  <span style="color: #d33682; font-style: italic;">cd</span> ~/Repositories
+  git clone &lt;url/to/projectname.git&gt; [localprojectname]
+  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">if no [localprojectname], then git creates a project with name projectname</span>
+  git clone https://github.com/Salompas/test.git
+</pre>
+</div>
+<p>
+This will create a folder with the name <code>test</code> and copy the contents of the repository to your computer.
+This clone contains all history of the project.
+</p>
+
+<p>
+Next, let's discuss in detail how to use the Working Tree and the Staging Area.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc780f4a" class="outline-2">
+<h2 id="orgc780f4a">The Working Tree and the Staging Area</h2>
+<div class="outline-text-2" id="text-orgc780f4a">
+<p>
+The working tree is the main directory of your repository.
+Let's create a new repository and a couple of files in the working tree:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">  <span style="color: #d33682; font-style: italic;">cd</span> ~/Repositories
+  mkdir StagingAreaBasics               <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">create a folder for our new repo</span>
+  <span style="color: #d33682; font-style: italic;">cd</span> StagingAreaBasics/
+  touch README.md                       <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">add a README file for the repository</span>
+  touch python.py                       <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">add a Python file</span>
+  touch report.tex              <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">add a LaTeX file</span>
+  git init                      <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">initialize the repository</span>
+</pre>
+</div>
+<p>
+When we initialize the repository in this folder, Git will create the <code>.git</code> folder, but it will not have any commits yet.
+The working directory, <code>StagingAreaBasics/</code> contains our files and the repository folder.
+</p>
+
+<p>
+In a typical workflow you would start editing your files until you have created a meaningful addition to your project.
+In the case of our projects, you would edit the files until you made all the computations required for an exercise, for example.
+Let's assume we have made those changes.
+At this point we would like to commit the state of our project.
+Right now, the files are in the Working Tree, and we need to let Git know what files we want to include in the next commit, that is what the Staging Area is for.
+</p>
+
+<p>
+We first use the <code>git status</code> command to see the status of the files in the Working Tree from the point of view of the Git repository:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">  &gt; git status                  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">show the working tree status</span>
+  On branch master
+
+  No commits yet
+
+  Untracked files:
+    (use <span style="color: #2aa198;">"git add &lt;file&gt;..."</span> to include<span style="color: #859900;"> in</span> what will be committed)
+
+	  README.md
+	  main.m
+	  report.tex
+
+  nothing added to commit but untracked files present (use <span style="color: #2aa198;">"git add"</span> to track)
+  &gt; git status -s                       <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">-s for concise status information</span>
+  ?? README.md
+  ?? main.m
+  ?? report.tex
+</pre>
+</div>
+<p>
+The first line shows that we are on the branch <code>master</code>.
+Remember that we can create branches to work on independent parts of the projects, and the default branch is called <code>master</code>.
+The second line shows that there are no commits stored in the repository yet.
+The third line says we have <span class="underline">untracked files</span>.
+Files in a Working Tree can have 4 states:
+</p>
+<ol class="org-ol">
+<li>Untracked: these are files that the Git repository is not tracking, either because we haven't told it to track these files yet, or just because we do not want them tracked.</li>
+<li>Unmodified: these are files that are being tracked, but have not been modified yet.</li>
+<li>Modified: these are files that are being tracked and that have been modified.</li>
+<li>Staged: these are files that we put on the Staging Area and that we plan to use for our next commit (snapshot).</li>
+</ol>
+<p>
+Notice that the more concise <code>git status -s</code> indicates untracked files with a preceding <code>??</code>.
+</p>
+
+<p>
+Let's tell Git to track the <code>README.md</code> file.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">  &gt; git add README.md
+  &gt; git status
+  On branch master
+
+  No commits yet
+
+  Changes to be committed:
+    (use <span style="color: #2aa198;">"git rm --cached &lt;file&gt;..."</span> to unstage)
+
+	  new file:   README.md
+
+  Untracked files:
+    (use <span style="color: #2aa198;">"git add &lt;file&gt;..."</span> to include<span style="color: #859900;"> in</span> what will be committed)
+
+	  main.m
+	  report.tex
+
+  &gt; git status -s
+  A  README.md
+  ?? main.m
+  ?? report.tex
+</pre>
+</div>
+<p>
+Git has added the <code>README.md</code> file to the Staging Area, indicating that we plan on including this file to our next commit (snapshot) of the project.
+This information is displayed under <code>Changes to be committed:</code>, or by the preceding <code>A</code> in the concise status display.
+</p>
+
+<p>
+The <code>README.md</code> file contains information about the repository, and usually it explains what is the purpose of the repository.
+This file is automatically displayed on GitHub as the front page of the repository.
+So, let's modify this file to make it more meaningful.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">  &gt; emacs README.md     <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">add some text to the file</span>
+</pre>
+</div>
+<p>
+When we move a file to the Staging Area, Git saves the state of the file at the time we ran the <code>git add</code> command.
+If we then update the file, Git will not have the updated version in the Staging Area, but only the version we added.
+We can verify that this is the case by getting the status of the files in our Working Tree:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">  &gt; git status
+  On branch master
+
+  No commits yet
+
+  Changes to be committed:
+    (use <span style="color: #2aa198;">"git rm --cached &lt;file&gt;..."</span> to unstage)
+
+	  new file:   README.md
+
+  Changes not staged for commit:
+    (use <span style="color: #2aa198;">"git add &lt;file&gt;..."</span> to update what will be committed)
+    (use <span style="color: #2aa198;">"git checkout -- &lt;file&gt;..."</span> to discard changes<span style="color: #859900;"> in</span> working directory)
+
+	  modified:   README.md
+
+  Untracked files:
+    (use <span style="color: #2aa198;">"git add &lt;file&gt;..."</span> to include<span style="color: #859900;"> in</span> what will be committed)
+
+	  <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">README.md#</span>
+	  main.m
+	  report.tex
+
+  &gt; git status -s
+  AM README.md
+  ?? <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">README.md#</span>
+  ?? main.m
+  ?? report.tex
+</pre>
+</div>
+<p>
+Notice that we have <code>README.md</code> under <code>Changes to be committed</code>, but it also shows up under <code>Changes not staged for commit</code>.
+In the concise status this is shown by a preceding <code>M</code>.
+We can update the version of <code>README.md</code> in the staging area by running <code>git add README.md</code> again:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">  &gt; git add README.md
+  &gt; git status
+  On branch master
+
+  No commits yet
+
+  Changes to be committed:
+    (use <span style="color: #2aa198;">"git rm --cached &lt;file&gt;..."</span> to unstage)
+
+	  new file:   README.md
+
+  Untracked files:
+    (use <span style="color: #2aa198;">"git add &lt;file&gt;..."</span> to include<span style="color: #859900;"> in</span> what will be committed)
+
+	  <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">README.md#</span>
+	  main.m
+	  report.tex
+</pre>
+</div>
+<p>
+Remember, the Staging Area is like a box where we put copies of the files relevant for the modifications we plan on saving.
+When we commit, it is like closing that box and storing it in a shelf.
+</p>
+
+<p>
+To commit, we use the <code>git commit</code> command:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">  &gt; git commit                  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">will open the editor to add a commit message</span>
+  &gt; git commit -m <span style="color: #2aa198;">"Commit message."</span>     <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">pass message as argument (only for short messages)</span>
+  [master (root-commit) 8b8c33f] Initial commit.
+   1 file changed, 2 insertions(+)
+   create mode 100644 README.md
+</pre>
+</div>
+<p>
+Git has now stored the commit (snapshot) of the project on the database.
+</p>
+
+<p>
+Let's look at the status of the working tree again:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">  &gt; git status
+  On branch master
+  Untracked files:
+    (use <span style="color: #2aa198;">"git add &lt;file&gt;..."</span> to include<span style="color: #859900;"> in</span> what will be committed)
+
+	  <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">README.md#</span>
+	  main.m
+	  report.tex
+</pre>
+</div>
+<p>
+Notice that the file <code>README.md</code> is not under <code>Untracked files</code> anymore, nor it is under <code>Changes to be committed</code>, since it already has been committed.
+The <code>README.md</code> file is now a tracked and unmodified file, and will not show up under <code>git status</code> until we modify it again.
+</p>
+
+<p>
+Notice that a new file (<code>#README.md#</code>) showed up.
+This is a backup file that emacs automatically generated when we were editing the original file. It has nothing to do with Git.
+For Git it is an untracked file, so it shows up in the status of the Working Tree.
+We will see how to tell Git to ignore these files later on.
+</p>
+
+<p>
+Now, suppose we made progress on the project and made changes in to the <code>main.m</code> and <code>report.tex</code> files. Let's stage and commit those files.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">  &gt; git add main.m
+  &gt; git add report.tex
+  &gt; git commit -m <span style="color: #2aa198;">"Made computations for Exercise 1 and wrote analysis on report."</span>
+  [master 8b47a1c] Made computations for Exercise 1 and wrote analysis on report.
+   2 files changed, 0 insertions(+), 0 deletions(-)
+   create mode 100644 main.m
+   create mode 100644 report.tex
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org5e85550" class="outline-2">
+<h2 id="org5e85550">History of Commits</h2>
+<div class="outline-text-2" id="text-org5e85550">
+<p>
+We can see the history of all commits by using the <code>git log</code> command:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">  &gt; git log
+  commit 8b47a1c1f34a24ab59c8fb1a19c3df2e8a00c7ac (HEAD -&gt; master)
+  Author: Guilherme Salome <a href="mailto:guilhermesalome%40gmail.com">&lt;guilhermesalome@gmail.com&gt;</a>
+  Date:   Tue Aug 28 10:09:30 2018 -0400
+
+      Made computations for Exercise 1 and wrote analysis on report.
+
+  commit 8b8c33f977e43668ac46c7676267685ae6f1d0ec
+  Author: Guilherme Salome <a href="mailto:guilhermesalome%40gmail.com">&lt;guilhermesalome@gmail.com&gt;</a>
+  Date:   Tue Aug 28 10:00:12 2018 -0400
+
+      Initial commit.
+</pre>
+</div>
+<p>
+It shows the commits in reverse chronological order (most recent to oldest).
+Each commit has an identifying number, a field showing the author and date of the commit, and a paragraph with the commit message.
+It is important to have good commit messages so that you can identify versions of your project more easily.
+</p>
+
+<p>
+It is possible to limit the number of commits displayed:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">  git log -2                    <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">will only show the last 2 commits</span>
+</pre>
+</div>
+<p>
+It is also possible to see what were the incremental changes from one commit to another with the <code>-p|--patch</code> option:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">  git log -2 -p                 <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">shows incremental changes of previous 2 commits</span>
+</pre>
+</div>
+<p>
+The <code>--stat</code> option adds a summary of the changes when displaying the log:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">  &gt; git log --stat
+  commit 8b47a1c1f34a24ab59c8fb1a19c3df2e8a00c7ac (HEAD -&gt; master)
+  Author: Guilherme Salome <a href="mailto:guilhermesalome%40gmail.com">&lt;guilhermesalome@gmail.com&gt;</a>
+  Date:   Tue Aug 28 10:09:30 2018 -0400
+
+      Made computations for Exercise 1 and wrote analysis on report.
+
+   main.m     | 0
+   report.tex | 0
+   2 files changed, 0 insertions(+), 0 deletions(-)
+
+  commit 8b8c33f977e43668ac46c7676267685ae6f1d0ec
+  Author: Guilherme Salome <a href="mailto:guilhermesalome%40gmail.com">&lt;guilhermesalome@gmail.com&gt;</a>
+  Date:   Tue Aug 28 10:00:12 2018 -0400
+
+      Initial commit.
+
+   README.md | 2 ++
+   1 file changed, 2 insertions(+)
+</pre>
+</div>
+
+<p>
+The <code>git log</code> command can take the option <code>--pretty</code> which allows us to decide what we want to see in the log.
+There are a few pre-built options, like <code>oneline</code>, <code>short</code>, <code>full</code> and <code>fuller</code>.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">  git log --pretty=oneline
+</pre>
+</div>
+<p>
+We can add a small visual representation with the <code>--graph</code> option:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">  git log --pretty=oneline --graph
+</pre>
+</div>
+<p>
+For more options on controlling the log output (like selecting log by dates) please see the reference.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0e0c3db" class="outline-2">
+<h2 id="org0e0c3db">Undoing Stages</h2>
+<div class="outline-text-2" id="text-org0e0c3db">
+<p>
+Let's say you discover you can add all files from the Working Tree to the Staging Area with the command <code>git add -A</code>, and accidentally end up adding a file that you do not want to track, say <code>#README.md#</code>.
+In order to unstage this file, you can use the command <code>git reset HEAD #README.md#</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">  &gt; git status -s
+  A  <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">README.md#</span>
+  &gt; git reset HEAD <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">README.md#          # HEAD refers to the last commit in the repository.</span>
+</pre>
+</div>
+
+<p>
+Now suppose you make modifications to a file in the Working Tree, but regret the changes and want to go back to how the file was at the last commit.
+Then you can use the command <code>git checkout -- &lt;filename&gt;</code>.
+Git will substitute the file in the Working Tree for the version of the file in the last commit.
+</p>
+
+<p>
+A common problem is committing too early, and then you realize you forgot to stage an important file or missed something in the commit message.
+To fix this problem, first stage the files you missed (if any) and create a new commit with the option <code>--amend</code>.
+When you run <code>git commit --amend</code>, the editor will open up for you to update the commit message.
+This amended commit will <span class="underline">replace</span> the previous commit.
+</p>
+</div>
+</div>
+<div id="outline-container-org5ac86d3" class="outline-2">
+<h2 id="org5ac86d3">Removing Files</h2>
+<div class="outline-text-2" id="text-org5ac86d3">
+<p>
+To remove a file from the repository <span class="underline">and</span> from the directory use the command <code>git rm [filename]</code>.
+This command immediately deletes the file from your folder, and also untracks this file on the next commit.
+If you want to keep the file in the directory but have it not be tracked anymore, then use <code>git rm --cached [filename]</code>.
+To rename a file use <code>git mv [filename] [new_filename]</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org695598d" class="outline-2">
+<h2 id="org695598d">Ignoring Files</h2>
+<div class="outline-text-2" id="text-org695598d">
+<p>
+Let's go back to our example.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">  &gt; git status -s
+  ?? <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">README.md#</span>
+</pre>
+</div>
+<p>
+The file <code>#README.md#</code> automatically showed up.
+We do not care about it, since it is just a backup in case the editor freezes, and it will show up every time we make changes to our files.
+So, we do not want to have to delete it by hand every time, and we do not want it to show up in the output of <code>git status</code>.
+</p>
+
+<p>
+To have Git ignore these files, we will create a <code>.gitignore</code> file.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">  touch .gitignore              <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">add the line \#*# to the file</span>
+</pre>
+</div>
+<p>
+This tells Git to ignore all files that start with a hash and end with a hash.
+Now, if you run <code>git status -s</code>, the file <code>#README.md#</code> will not be displayed anymore.
+</p>
+
+<p>
+We will add to this file when we start working with Latex.
+This will be necessary because compiling <code>.pdf</code> files with Latex generates lots of intermediary files we are not interested in tracking, nor in deleting by hand.
+</p>
+
+<p>
+Lastly, let's talk about using a Remote Repository.
+</p>
+</div>
+</div>
+<div id="outline-container-org02d92df" class="outline-2">
+<h2 id="org02d92df">Working with a Local and a Remote Repository</h2>
+<div class="outline-text-2" id="text-org02d92df">
+<p>
+We previously used a remote repository with Git to create a new repository on our local computer.
+Let's leave our current repository and move back to the one we cloned:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">  <span style="color: #d33682; font-style: italic;">cd</span> ~/Repositories/test/               <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">this repository was created with git clone</span>
+</pre>
+</div>
+<p>
+When Git clones a remote repository, it associates the local repository with the remote version.
+We can use the command <code>git remote</code> to find the information Git saved about the remote repository:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">  &gt; git remote --verbose                <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">same as -v</span>
+  origin        https://github.com/Salompas/test.git (fetch)
+  origin        https://github.com/Salompas/test.git (push)
+</pre>
+</div>
+<p>
+The URLs above are the address from where the remote repository came from.
+Git uses <span class="underline">origin</span> as an <span class="underline">alias</span> (name) to the URL of the remote repository.
+Whenever you see this keyword, it is the same as if you were typing the URL of the remote repository.
+</p>
+
+<p>
+Now, you could have started a repository on your local machine (as we did) and want to send it to a remote repository.
+To do so, we need to associate the local repository with the URL of the remote repository.
+Let's first move back to the repository we created locally:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">  <span style="color: #d33682; font-style: italic;">cd</span> ~/Repositories/StagingAreaBasics/
+</pre>
+</div>
+<p>
+Now, go to <a href="https://github.com/new">GitHub and create a New and Empty repository</a>, and then copy the repository URL.
+We will use this URL to associate our local repository with the remote repository on GitHub:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">  &gt; git remote add &lt;name&gt; &lt;url&gt; <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">adds a remote &lt;url&gt; under the alias &lt;name&gt;</span>
+  &gt; git remote add origin https://github.com/Salompas/StagingAreaBasics.git
+  &gt; git remote -v
+  origin        https://github.com/Salompas/StagingAreaBasics.git (fetch)
+  origin        https://github.com/Salompas/StagingAreaBasics.git (push)
+</pre>
+</div>
+
+<p>
+Now, we can push the commits from the local repository to the remote repository using the <code>git push</code> command.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">  git push [-u] [&lt;repository&gt;] [&lt;branch&gt;]
+  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">&lt;repository&gt;: name (alias) or url, like origin; pushes to this repo</span>
+  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">-u: track this branch; sets the relationship between local and remote repos</span>
+  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">&lt;branch&gt;: name of the branch to push, usually master</span>
+  git push -u origin master <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">might ask for username and password</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orga4b560d" class="outline-2">
+<h2 id="orga4b560d">Git Workflow for Assignments and Summary of Commands</h2>
+<div class="outline-text-2" id="text-orga4b560d">
+<p>
+Now, let's discuss the Git workflow I expect you to use when solving the projects.
+</p>
+<ul class="org-ul">
+<li>On your computer, open a terminal and create a new directory called <code>PythonCourse</code> where you will clone the remote repository:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-bash"><span class="linenr">1: </span>mkdir ~/PythonCourse
+<span class="linenr">2: </span><span style="color: #d33682; font-style: italic;">cd</span> ~/PythonCourse
+<span class="linenr">3: </span>git clone url_to_your_assigned_remote_repository
+<span class="linenr">4: </span><span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">will create a folder called assignments-YourGithubUsername</span>
+</pre>
+</div>
+<ul class="org-ul">
+<li>Work on solving the assignment exercises.</li>
+<li>Whenever you solve an exercise, use <code>git add &lt;filename&gt;</code> to add all relevant files to the staging area.</li>
+<li>Commit the relevant files with <code>git commit -m "Your commit message"</code>.</li>
+<li>Push the changes to the remote repository with <code>git push origin master</code></li>
+</ul>
+<p>
+The assignments are due on August 11th by 11 pm.
+You should push the full contents of your assignments folder to GitHub before then, and it should include a <code>report.pdf</code> file for each of the assignments.
+</p>
+
+<p>
+The table below summarizes the commands:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-center" />
+
+<col  class="org-center" />
+
+<col  class="org-center" />
+
+<col  class="org-center" />
+
+<col  class="org-center" />
+
+<col  class="org-center" />
+
+<col  class="org-center" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-center">Working Tree</td>
+<td class="org-center">\(\rightarrow\)</td>
+<td class="org-center">Staging Area</td>
+<td class="org-center">\(\rightarrow\)</td>
+<td class="org-center">Local Repository</td>
+<td class="org-center">\(\leftrightarrow\)</td>
+<td class="org-center">Remote Repository</td>
+</tr>
+
+<tr>
+<td class="org-center"><i class="fas fa-sitemap fa-lg"></i></td>
+<td class="org-center">&#xa0;</td>
+<td class="org-center"><i class="fas fa-box-open fa-lg"></i></td>
+<td class="org-center">&#xa0;</td>
+<td class="org-center"><i class="fas fa-archive fa-lg"></i> \(\rightarrow\) <i class="fas fa-database fa-lg"></i></td>
+<td class="org-center">&#xa0;</td>
+<td class="org-center"><i class="fas fa-cloud fa-lg"></i></td>
+</tr>
+
+<tr>
+<td class="org-center"><code>git status</code></td>
+<td class="org-center"><code>git add &lt;filename&gt;</code></td>
+<td class="org-center"><code>git rm &lt;filename&gt;</code></td>
+<td class="org-center"><code>git commit</code></td>
+<td class="org-center"><code>git log -2 -p</code></td>
+<td class="org-center"><code>git push -u origin master</code></td>
+<td class="org-center">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-center"><code>git status -s</code></td>
+<td class="org-center">&#xa0;</td>
+<td class="org-center"><code>git rm --cached &lt;filename&gt;</code></td>
+<td class="org-center"><code>git commit -m "Message"</code></td>
+<td class="org-center"><code>git log --pretty=oneline -graph</code></td>
+<td class="org-center">&#xa0;</td>
+<td class="org-center">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-center"><code>.gitignore</code></td>
+<td class="org-center">&#xa0;</td>
+<td class="org-center"><code>git mv &lt;filename&gt; &lt;new filename&gt;</code></td>
+<td class="org-center"><code>git commit --amend</code></td>
+<td class="org-center"><code>git log --stat</code></td>
+<td class="org-center">&#xa0;</td>
+<td class="org-center">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-center">&#xa0;</td>
+<td class="org-center">&#xa0;</td>
+<td class="org-center"><code>git reset HEAD &lt;filename&gt;</code></td>
+<td class="org-center">&#xa0;</td>
+<td class="org-center"><code>git remote -v</code></td>
+<td class="org-center">&#xa0;</td>
+<td class="org-center">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-center">&#xa0;</td>
+<td class="org-center">&#xa0;</td>
+<td class="org-center"><code>git checkout -- &lt;filename&gt;</code></td>
+<td class="org-center">&#xa0;</td>
+<td class="org-center"><code>git remote add origin path/to/repo.git</code></td>
+<td class="org-center">&#xa0;</td>
+<td class="org-center">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-center">&#xa0;</td>
+<td class="org-center">&#xa0;</td>
+<td class="org-center">&#xa0;</td>
+<td class="org-center">&#xa0;</td>
+<td class="org-center"><code>git init</code></td>
+<td class="org-center">&#xa0;</td>
+<td class="org-center">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgc6826bc" class="outline-2">
+<h2 id="orgc6826bc">Reference</h2>
+<div class="outline-text-2" id="text-orgc6826bc">
+<p>
+A good reference book for Git is <a href="https://git-scm.com/book/en/v2">Pro Git</a> (free download).</p>
+</div>
+</div>
+</div>
+</body>
+</html>
