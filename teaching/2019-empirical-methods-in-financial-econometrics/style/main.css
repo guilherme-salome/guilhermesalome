@@ -53,7 +53,8 @@ body {
 }
 
 .office-hours {
-
+    word-wrap: break-word;
+    width: 90%;
 }
 
 #instructor {
@@ -214,6 +215,7 @@ body {
 .name:hover {
     cursor: pointer;
     color: rgba(235,235,235,1);
+    text-decoration: underline;
 }
 
 
@@ -226,46 +228,46 @@ body {
 /* =============================== VIEWPORTS ======================================= */
 @media (max-width: 629px) {
     #intro-container {
-	min-width: 320px;
+        min-width: 320px;
     }
 
     #hi-message {
-	padding-left: 10px;
+        padding-left: 10px;
     }
 
     #blog-description {
-	padding-left: 10px;
+        padding-left: 10px;
     }
 
     #course-description {
-	padding-left: 10px;
+        padding-left: 10px;
     }
 
     .intro {
-	width: 320px;
+        width: 320px;
     }
 
     #content-container {
-	width: 320px;
+        width: 320px;
     }
 
     .blog-post {
-	width: 90%;
+        width: 90%;
     }
 
     .date-box {
-	width: 80px;
+        width: 80px;
     }
 
     .title {
-	width: 220px;
-	font-size: 20px;
-	left: 90px;
-	padding: 0px;
+        width: 220px;
+        font-size: 20px;
+        left: 90px;
+        padding: 0px;
     }
 
     .title-long {
-	font-size: 14px;
+        font-size: 14px;
     }
 }
 /*================================================================================== */
