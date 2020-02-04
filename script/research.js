@@ -9,7 +9,7 @@ document.addEventListener('click', function (event) {
         window.location.href = address.slice(0, address.lastIndexOf('/'));
     } else if (event.target.matches('.paper-title')) {
         // div containing only paper title
-        filename = parsePaperTitle(event.target.innerText)
+        filename = parsePaperTitle(event.target.innerText);
         window.location.href = './research/' + filename + '.pdf';
     } else if (event.target.matches('.summary')) {
         // sibling div that has summary text
@@ -25,5 +25,7 @@ document.addEventListener('click', function (event) {
 });
 
 function parsePaperTitle (title) {
-    return title.replace(/,/g, '').split(' ').join('-').toLowerCase();
+    // ,|- replaces commas or hyphens
+    // \s+ splits on multiple whitespaces instead of a single whitespace
+    return title.replace(/,|-/g, '').split(/\s+/).join('-').toLowerCase();
 }
