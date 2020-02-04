@@ -12,7 +12,7 @@ body {
     margin: 0 auto 0 auto;
 }
 
-#working-papers-title {
+.working-papers-title {
     font-family: 'Open Sans', 'Cousine', sans-serif;
     font-size: 32px;
     font-weight: 300;
@@ -44,10 +44,14 @@ body {
     font-family: 'Open Sans', 'Cousine', sans-serif;
     color: #434242;
     font-weight: 300;
-    font-size: 12px;
+    font-size: 14px;
     box-sizing: border-box;
     width: 100%;
     padding: 10px 10px 0px 0px;
+}
+
+#bottom-space {
+    padding-bottom: 260px;
 }
 /* ===================================== INTRO ===================================== */
 #intro-container {
@@ -130,8 +134,8 @@ body {
     margin: 0 auto 0 auto;
 }
 
-#working-papers {
-    margin: 0 auto 0 auto;
+.working-papers {
+    margin: 20px auto 0 auto;
 }
 /* ================================================================================= */
 
