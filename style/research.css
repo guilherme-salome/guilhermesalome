@@ -40,6 +40,15 @@ body {
     cursor: pointer;
 }
 
+.summary {
+    font-family: 'Open Sans', 'Cousine', sans-serif;
+    color: #434242;
+    font-weight: 300;
+    font-size: 12px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 10px 0px 0px;
+}
 /* ===================================== INTRO ===================================== */
 #intro-container {
     margin: 40px 0px 20px 0px;
@@ -209,38 +218,38 @@ body {
 /* =============================== VIEWPORTS ======================================= */
 @media (max-width: 629px) {
     #intro-container {
-	min-width: 320px;
+        min-width: 320px;
 
     }
 
     .intro {
-	width: 320px;
+        width: 320px;
     }
 
     #content-container {
-	width: 320px;
+        width: 320px;
     }
 
     #working-papers {
-	width: 100%;
+        width: 100%;
     }
     .blog-post {
-	width: 300px;
+        width: 300px;
     }
 
     .date-box {
-	width: 80px;
+        width: 80px;
     }
 
     .title {
-	width: 220px;
-	font-size: 22px;
-	left: 90px;
-	padding: 0px;
+        width: 220px;
+        font-size: 22px;
+        left: 90px;
+        padding: 0px;
     }
 
     .title-long {
-	font-size: 14px;
+        font-size: 14px;
     }
 }
 /*================================================================================== */
